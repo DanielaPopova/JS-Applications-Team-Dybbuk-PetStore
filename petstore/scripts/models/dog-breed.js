@@ -1,52 +1,55 @@
-class DogBreed {
-    constructor(breedName, coatLength, activityLevel, trainability, description) {
-        if (typeof breedName != 'string') {
-            throw new Error('breedName must be string');
-        }
+import { VALIDATOR } from 'validator';
+import { Breed } from 'breed';
 
-        this._breedName = breedName;
-
-        if (Object.values(CoatLengthEnum).indexOf(coatLength) < 0) {
-            throw new Error(`coatLength (value ${coatLength}) does not exist in CoatLengthEnum`);
-        }
-
-        this._coatLength = coatLength;
-
-        if (Object.values(ActivityLevelEnum).indexOf(activityLevel) < 0) {
-            throw new Error(`coatLength (value ${activityLevel}) does not exist in ActivityLevelEnum`);
-        }
-
-        this._activityLevel = activityLevel;
-
-        if (Object.values(TrainabilityEnum).indexOf(trainability) < 0) {
-            throw new Error(`coatLength (value ${trainability}) does not exist in TrainabilityEnum`);
-        }
-
-        this._trainability = trainability;
-
-        if (typeof description != 'string') {
-            throw new Error('description must be string');
-        }
-        this._description = description;
+class DogBreed extends Breed {
+    constructor(name, imageURL, description, childFriendly, grooming, shedding, healthIssues, intelligence,
+        appFriendly, barking, exerciseNeeds, trainability) {
+        super(name, imageURL, description, childFriendly, grooming, shedding, healthIssues, intelligence);
+        this.appFriendly = appFriendly;
+        this.barking = barking;
+        this.exerciseNeeds = exerciseNeeds;
+        this.trainability = trainability;
     }
 
-    get breedName() {
-        return this._breedName;
+    get appFriendly() {
+        return this._appFriendly;
     }
 
-    get coatLength() {
-        return this._coatLength;
+    set appFriendly(value) {
+        VALIDATOR.isOfTypeNumber(value);
+        VALIDATOR.isInRange(value, 1, 5);
+        this._appFriendly = value;
     }
 
-    get activityLevel() {
-        return this._activityLevel;
+    get barking() {
+        return this._barking;
+    }
+
+    set barking(value) {
+        VALIDATOR.isOfTypeNumber(value);
+        VALIDATOR.isInRange(value, 1, 5);
+        this._barking = value;
+    }
+
+    get exerciseNeeds() {
+        return this._exerciseNeeds;
+    }
+
+    set exerciseNeeds(value) {
+        VALIDATOR.isOfTypeNumber(value);
+        VALIDATOR.isInRange(value, 1, 5);
+        this._exerciseNeeds = value;
     }
 
     get trainability() {
         return this._trainability;
     }
 
-    get description() {
-        return this._description;
+    set trainability(value) {
+        VALIDATOR.isOfTypeNumber(value);
+        VALIDATOR.isInRange(value, 1, 5);
+        this._trainability = value;
     }
 }
+
+export { DogBreed };
