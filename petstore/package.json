@@ -9,11 +9,9 @@
   "author": "team dybbuk",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
+
     "firebase": "^3.8.0",
-=======
     "bootstrap": "^3.3.7",
->>>>>>> 27eee5741edd05e109702dda3ad6cfbdb02b1b89
     "systemjs": "^0.20.12",
     "systemjs-plugin-babel": "0.0.21"
   }

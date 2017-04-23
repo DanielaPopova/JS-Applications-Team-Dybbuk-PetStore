@@ -90,4 +90,4 @@ class Breed {
     }
 }
 
-export { Breed }
+export { Breed };
