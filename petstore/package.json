@@ -9,6 +9,7 @@
   "author": "team dybbuk",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "systemjs": "^0.20.12",
     "systemjs-plugin-babel": "0.0.21"
   }
