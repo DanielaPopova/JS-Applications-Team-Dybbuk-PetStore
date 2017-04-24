@@ -2,11 +2,10 @@ import { VALIDATOR } from 'validator';
 import { Breed } from 'breed';
 
 class DogBreed extends Breed {
-    constructor(name, imageURL, description, childFriendly, grooming, shedding, healthIssues, intelligence,
-        appFriendly, barking, exerciseNeeds, trainability, size) {
-        super(name, imageURL, description, childFriendly, grooming, shedding, healthIssues, intelligence);
-        this.appFriendly = appFriendly;
-        this.barking = barking;
+    constructor(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence,
+        appFriendly, exerciseNeeds, trainability, size) {
+        super(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence);
+        this.appFriendly = appFriendly;        
         this.exerciseNeeds = exerciseNeeds;
         this.trainability = trainability;
 		this.size = size;
@@ -20,17 +19,7 @@ class DogBreed extends Breed {
         VALIDATOR.isOfTypeNumber(value);
         VALIDATOR.isInRange(value, 1, 5);
         this._appFriendly = value;
-    }
-
-    get barking() {
-        return this._barking;
-    }
-
-    set barking(value) {
-        VALIDATOR.isOfTypeNumber(value);
-        VALIDATOR.isInRange(value, 1, 5);
-        this._barking = value;
-    }
+    }  
 
     get exerciseNeeds() {
         return this._exerciseNeeds;

@@ -1,13 +1,12 @@
 import { VALIDATOR } from 'validator';
 
 class Breed {
-    constructor(name, imageURL, description, childFriendly, grooming, shedding, healthIssues, intelligence) {
+    constructor(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence) {
         this.name = name;
         this.imageURL = imageURL;
         this.description = description;
         this.childFriendly = childFriendly;
-        this.grooming = grooming;
-        this.shedding = shedding;
+        this.grooming = grooming;        
         this.healthIssues = healthIssues;
         this.intelligence = intelligence;
     }
@@ -57,17 +56,7 @@ class Breed {
         VALIDATOR.isOfTypeNumber(value);
         VALIDATOR.isInRange(value, 1, 5);
         this._grooming = value;
-    }
-
-    get shedding() {
-        return this._shedding;
-    }
-
-    set shedding(value) {
-        VALIDATOR.isOfTypeNumber(value);
-        VALIDATOR.isInRange(value, 1, 5);
-        this._shedding = value;
-    }
+    }  
 
     get healthIssues() {
         return this._healthIssues;

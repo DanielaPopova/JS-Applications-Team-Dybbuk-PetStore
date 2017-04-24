@@ -2,9 +2,9 @@ import { VALIDATOR } from 'validator';
 import { Breed } from 'breed';
 
 class CatBreed extends Breed {
-    constructor(name, imageURL, description, childFriendly, grooming, shedding, healthIssues, intelligence,
+    constructor(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence,
         energyLevel, adaptability, affectionLevel) {
-        super(name, imageURL, description, childFriendly, grooming, shedding, healthIssues, intelligence);
+        super(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence);
         this.energyLevel = energyLevel;
         this.adaptability = adaptability;
         this.affectionLevel = affectionLevel;
