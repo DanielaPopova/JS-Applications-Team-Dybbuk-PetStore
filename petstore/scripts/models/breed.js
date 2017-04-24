@@ -16,7 +16,9 @@ class Breed {
     }
 
     set name(value) {
-        VALIDATOR.isOfTypeString(value);
+        VALIDATOR.isNonEmptyString(value);
+        VALIDATOR.hasInvalidSymbols(value);
+        VALIDATOR.isInRange(value.length, 2, 20);
         this._name = value;
     }
 
@@ -25,7 +27,7 @@ class Breed {
     }
 
     set imageURL(value) {
-        VALIDATOR.isOfTypeString(value);
+        VALIDATOR.isNonEmptyString(value);
         this._imageURL = value;
     }
 
@@ -34,7 +36,7 @@ class Breed {
     }
 
     set description(value) {
-        VALIDATOR.isOfTypeString(value);
+        VALIDATOR.isNonEmptyString(value);
         this._description = value;
     }
 
