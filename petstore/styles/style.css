@@ -2,6 +2,10 @@
 /*16*/
 /*20*/
 /*62*/
+
+
+/*navigation style*/
+
 #wrapper header .navbar-inverse {
   background-color: #6E3667;
   border-color: #6E3667;
@@ -43,6 +47,45 @@
     top: 18px;
 }
 
+/*end navigation style*/
+
+/*food details style*/
+#test {
+    display: flex;
+    align-content: center;
+}
+
+.food-info {
+    background-color: #fff;
+    padding: 15px;
+    margin: auto;
+}
+
+.food-info img {
+    width: 200px;
+    float: left;
+    margin-right: 10px;
+    clear:both;
+}
+
+.food-info p {
+    text-align: justify;
+} 
+/*end food details style*/
+
+#wrapper {
+    padding: 0;
+}
+
+main {
+    padding: 0 15px 0 15px;
+    margin-bottom: 20px;
+}
+
+
+
+/*slider style*/
+
 #slider-container {
     width: 70%;
     margin: auto;
@@ -55,28 +98,17 @@ img {
   margin: auto;
 }
 
-footer {
-     color: #fff;
-     background-color: #6E3667;
-     height: 50px;
-     text-align: center;
-}
+/*end slider style*/
 
-footer p a {
-   color: #9d9d9d;
-}
-
-footer p a:hover {
-    color: #fff;
-    background-color: #4c063f;
-    cursor: pointer;
-    text-decoration: none;
-}
-
+/*reg form style*/
 
 input {
     margin-bottom: 10px;
 }
+
+/*end ref form style*/
+
+/*dog food list style*/
 
 #filter {
     padding-left:50px;
@@ -93,7 +125,6 @@ input {
     padding-left: 25px;
 }
 
-
 .food-list-item {
     border: 1px solid #fff;
     background-color: #535353;
@@ -103,6 +134,11 @@ input {
 .food-list-item img {
     width: 200px;
 }
+
+/*end food list style*/
+
+
+/*customize components styles*/
 
 .shadow
 {
@@ -138,3 +174,27 @@ input {
   right: 10px;
   left: auto;
 }
+
+/* end customize components styles*/
+
+/*footer style*/
+
+footer {
+     color: #fff;
+     background-color: #6E3667;
+     height: 50px;
+     text-align: center;
+}
+
+footer p a {
+   color: #9d9d9d;
+}
+
+footer p a:hover {
+    color: #fff;
+    background-color: #4c063f;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/*end footer style*/
