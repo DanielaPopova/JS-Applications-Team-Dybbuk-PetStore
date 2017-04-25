@@ -1,0 +1,140 @@
+/*look themes*/
+/*16*/
+/*20*/
+/*62*/
+#wrapper header .navbar-inverse {
+  background-color: #6E3667;
+  border-color: #6E3667;
+}
+
+#nav-controls-container ul .dropdown-toggle {
+     background-color: #6E3667;
+}
+
+#nav-controls-container ul .dropdown-toggle:hover{
+    background-color:  #4c063f;
+}
+
+#nav-controls-container ul li a:hover{
+    background-color:  #4c063f;
+}
+
+#nav-controls-container ul .dropdown .dropdown-menu li a:hover{
+     color:#fff;
+    background-color: #535353;
+}
+
+.shopping-cart {
+    background-color: #88D317;
+}
+
+.navbar-nav > li{
+  margin-left:5px;
+  /*margin-right:5px;*/
+  margin-bottom: 5px;
+}
+
+ ul li .badge {
+    color:#fff;
+    background-color: #f00;
+    /*margin-left:2px;*/
+    position: relative;
+    right:10px;
+    top: 18px;
+}
+
+#slider-container {
+    width: 70%;
+    margin: auto;
+}
+img {
+    width: 100%;
+}
+
+.carousel-inner img {
+  margin: auto;
+}
+
+footer {
+     color: #fff;
+     background-color: #6E3667;
+     height: 50px;
+     text-align: center;
+}
+
+footer p a {
+   color: #9d9d9d;
+}
+
+footer p a:hover {
+    color: #fff;
+    background-color: #4c063f;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+input {
+    margin-bottom: 10px;
+}
+
+#filter {
+    padding-left:50px;
+    padding-bottom: 25px;
+    background:#f8eee7;
+    margin-bottom: 50px;
+}
+
+#items-container {
+    padding: 0 0 0 7px;
+}
+
+.sub-filter {
+    padding-left: 25px;
+}
+
+
+.food-list-item {
+    border: 1px solid #fff;
+    background-color: #535353;
+    color: #fff;
+}
+
+.food-list-item img {
+    width: 200px;
+}
+
+.shadow
+{
+  position: relative;
+}
+.shadow:before, .shadow:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+}
+.shadow:after
+{
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg);
+  right: 10px;
+  left: auto;
+}
