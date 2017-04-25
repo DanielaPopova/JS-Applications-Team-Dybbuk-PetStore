@@ -337,7 +337,7 @@
       "intelligence": 5,
       "energyLevel": 5,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 2
     },
     {
       "name": "American Bobtail",
@@ -349,7 +349,7 @@
       "intelligence": 5,
       "energyLevel": 3,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 3
     },
     {
       "name": "American Curl",
@@ -361,7 +361,7 @@
       "intelligence": 3,
       "energyLevel": 3,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 3
     },
     {
       "name": "Bengal",
@@ -373,7 +373,7 @@
       "intelligence": 5,
       "energyLevel": 5,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 3
     },
     {
       "name": "Bombay",
@@ -385,7 +385,7 @@
       "intelligence": 5,
       "energyLevel": 3,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 3
     },
     {
       "name": "Cymric",
@@ -397,7 +397,7 @@
       "intelligence": 5,
       "energyLevel": 5,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 5
     },
     {
       "name": "Devon Rex",
@@ -409,7 +409,7 @@
       "intelligence": 5,
       "energyLevel": 5,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 1
     },
     {
       "name": "Egyptian Mau",
@@ -421,7 +421,7 @@
       "intelligence": 4,
       "energyLevel": 5,
       "adaptability": 2,
-      "affectionLevel": 5
+      "sheddingLevel": 3
     },
     {
       "name": "Exotic Shorthair",
@@ -433,7 +433,7 @@
       "intelligence": 3,
       "energyLevel": 3,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 2
     },
     {
       "name": "Himalayan",
@@ -445,7 +445,7 @@
       "intelligence": 3,
       "energyLevel": 1,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 4
     },
     {
       "name": "Li Hua",
@@ -457,7 +457,7 @@
       "intelligence": 3,
       "energyLevel": 3,
       "adaptability": 3,
-      "affectionLevel": 3
+      "sheddingLevel": 3
     },
     {
       "name": "Maine Coon",
@@ -469,7 +469,7 @@
       "intelligence": 5,
       "energyLevel": 3,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 3
     },
     {
       "name": "Manx",
@@ -481,7 +481,7 @@
       "intelligence": 5,
       "energyLevel": 5,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 5
     },
     {
       "name": "Norwegian Forest Cat",
@@ -493,7 +493,7 @@
       "intelligence": 4,
       "energyLevel": 3,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 3
     },
     {
       "name": "Persian",
@@ -505,7 +505,7 @@
       "intelligence": 3,
       "energyLevel": 1,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 4
     },
     {
       "name": "Ragamuffin",
@@ -517,7 +517,7 @@
       "intelligence": 5,
       "energyLevel": 3,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 3
     },
     {
       "name": "Russian Blue",
@@ -529,7 +529,7 @@
       "intelligence": 3,
       "energyLevel": 3,
       "adaptability": 3,
-      "affectionLevel": 3
+      "sheddingLevel": 3
     },
     {
       "name": "Selkirk Rex",
@@ -541,7 +541,7 @@
       "intelligence": 3,
       "energyLevel": 3,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 1
     },
     {
       "name": "Somali",
@@ -553,7 +553,7 @@
       "intelligence": 5,
       "energyLevel": 5,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 4
     },
     {
       "name": "Turkish Van",
@@ -565,7 +565,7 @@
       "intelligence": 5,
       "energyLevel": 5,
       "adaptability": 5,
-      "affectionLevel": 5
+      "sheddingLevel": 3
     }
   ],
   "dogFood": [

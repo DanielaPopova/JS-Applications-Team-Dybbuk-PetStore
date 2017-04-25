@@ -4,11 +4,11 @@ import { Breed } from 'breed';
 
 class CatBreed extends Breed {
     constructor(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence,
-        energyLevel, adaptability, affectionLevel) {
+        energyLevel, adaptability, sheddingLevel) {
         super(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence);
         this.energyLevel = energyLevel;
         this.adaptability = adaptability;
-        this.affectionLevel = affectionLevel;
+        this.sheddingLevel = sheddingLevel;
     }
 
     get energyLevel() {
@@ -31,14 +31,14 @@ class CatBreed extends Breed {
         this._adaptability = value;
     }
 
-    get affectionLevel() {
-        return this._affectionLevel;
+    get sheddingLevel() {
+        return this._sheddingLevel;
     }
 
-    set affectionLevel(value) {
+    set sheddingLevel(value) {
         VALIDATOR.isOfTypeNumber(value);
         VALIDATOR.isInRange(value, CONSTANTS.BREED_FEATURE_MIN_LEVEL, CONSTANTS.BREED_FEATURE_MAX_LEVEL);
-        this._affectionLevel = value;
+        this._sheddingLevel = value;
     }
 }
 

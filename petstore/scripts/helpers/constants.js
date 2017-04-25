@@ -7,7 +7,7 @@ const DOG_AGE_CATEGORIES = ['puppy', 'adult', 'senior'];
 const CAT_AGE_CATEGORIES = ['kitten', 'adult', 'senior'];
 
 const BREED_NAME_MIN_LENGTH = 2;
-const BREED_NAME_MAX_LENGTH = 20;
+const BREED_NAME_MAX_LENGTH = 30;
 const DESCRIPTION_MIN_LENGTH = 10;
 const DESCRIPTION_MAX_LENGTH = 400;
 
