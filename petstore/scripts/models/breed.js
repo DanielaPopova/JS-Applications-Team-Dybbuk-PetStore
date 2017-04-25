@@ -1,4 +1,5 @@
 import { VALIDATOR } from 'validator';
+import { CONSTANTS } from 'constants';
 
 class Breed {
     constructor(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence) {
@@ -18,7 +19,7 @@ class Breed {
     set name(value) {
         VALIDATOR.isNonEmptyString(value);
         VALIDATOR.hasInvalidSymbols(value);
-        VALIDATOR.isInRange(value.length, 2, 20);
+        VALIDATOR.isInRange(value.length, CONSTANTS.BREED_NAME_MIN_LENGTH, CONSTANTS.BREED_NAME_MIN_LENGTH);
         this._name = value;
     }
 
@@ -37,6 +38,7 @@ class Breed {
 
     set description(value) {
         VALIDATOR.isNonEmptyString(value);
+        VALIDATOR.isInRange(value, CONSTANTS.DESCRIPTION_MIN_LENGTH, CONSTANTS.DESCRIPTION_MAX_LENGTH);
         this._description = value;
     }
 
@@ -46,7 +48,7 @@ class Breed {
 
     set childFriendly(value) {
         VALIDATOR.isOfTypeNumber(value);
-        VALIDATOR.isInRange(value, 1, 5);
+        VALIDATOR.isInRange(value, CONSTANTS.BREED_FEATURE_MIN_LEVEL, CONSTANTS.BREED_FEATURE_MAX_LEVEL);
         this._childFriendly = value;
     }
 
@@ -56,7 +58,7 @@ class Breed {
 
     set grooming(value) {
         VALIDATOR.isOfTypeNumber(value);
-        VALIDATOR.isInRange(value, 1, 5);
+        VALIDATOR.isInRange(value, CONSTANTS.BREED_FEATURE_MIN_LEVEL, CONSTANTS.BREED_FEATURE_MAX_LEVEL);
         this._grooming = value;
     }  
 
@@ -66,7 +68,7 @@ class Breed {
 
     set healthIssues(value) {
         VALIDATOR.isOfTypeNumber(value);
-        VALIDATOR.isInRange(value, 1, 5);
+        VALIDATOR.isInRange(value, CONSTANTS.BREED_FEATURE_MIN_LEVEL, CONSTANTS.BREED_FEATURE_MAX_LEVEL);
         this._healthIssues = value;
     }
 
@@ -76,7 +78,7 @@ class Breed {
 
     set intelligence(value) {
         VALIDATOR.isOfTypeNumber(value);
-        VALIDATOR.isInRange(value, 1, 5);
+        VALIDATOR.isInRange(value, CONSTANTS.BREED_FEATURE_MIN_LEVEL, CONSTANTS.BREED_FEATURE_MAX_LEVEL);
         this._intelligence = value;
     }
 }

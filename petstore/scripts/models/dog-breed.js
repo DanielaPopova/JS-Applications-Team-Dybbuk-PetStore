@@ -1,4 +1,5 @@
 import { VALIDATOR } from 'validator';
+import { CONSTANTS } from 'constants';
 import { Breed } from 'breed';
 
 class DogBreed extends Breed {
@@ -17,7 +18,7 @@ class DogBreed extends Breed {
 
     set appFriendly(value) {
         VALIDATOR.isOfTypeNumber(value);
-        VALIDATOR.isInRange(value, 1, 5);
+        VALIDATOR.isInRange(value, CONSTANTS.BREED_FEATURE_MIN_LEVEL, CONSTANTS.BREED_FEATURE_MAX_LEVEL);
         this._appFriendly = value;
     }  
 
@@ -27,7 +28,7 @@ class DogBreed extends Breed {
 
     set exerciseNeeds(value) {
         VALIDATOR.isOfTypeNumber(value);
-        VALIDATOR.isInRange(value, 1, 5);
+        VALIDATOR.isInRange(value, CONSTANTS.BREED_FEATURE_MIN_LEVEL, CONSTANTS.BREED_FEATURE_MAX_LEVEL);
         this._exerciseNeeds = value;
     }
 
@@ -37,7 +38,7 @@ class DogBreed extends Breed {
 
     set trainability(value) {
         VALIDATOR.isOfTypeNumber(value);
-        VALIDATOR.isInRange(value, 1, 5);
+        VALIDATOR.isInRange(value, CONSTANTS.BREED_FEATURE_MIN_LEVEL, CONSTANTS.BREED_FEATURE_MAX_LEVEL);
         this._trainability = value;
     }
 	
@@ -47,7 +48,7 @@ class DogBreed extends Breed {
 
     set size(value) {
         VALIDATOR.isOfTypeNumber(value);
-        VALIDATOR.isInRange(value, 1, 4);
+        VALIDATOR.isInRange(value, CONSTANTS.DOG_MIN_SIZE, CONSTANTS.DOG_MAX_SIZE);
         this._size = value;
     }
 }

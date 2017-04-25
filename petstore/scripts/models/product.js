@@ -1,4 +1,5 @@
 import { VALIDATOR } from 'validator';
+import { CONSTANTS } from 'constants';
 
 class Product {
     constructor(name, imageURL, description, price) {
@@ -32,6 +33,7 @@ class Product {
 
     set description(value) {
         VALIDATOR.isNonEmptyString(value);
+        VALIDATOR.isInRange(value, CONSTANTS.DESCRIPTION_MIN_LENGTH, CONSTANTS.DESCRIPTION_MAX_LENGTH);
         this._description = value;
     }
 

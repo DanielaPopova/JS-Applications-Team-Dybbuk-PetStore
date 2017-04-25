@@ -1,0 +1,26 @@
+const BREED_FEATURE_MIN_LEVEL = 1;
+const BREED_FEATURE_MAX_LEVEL = 5;
+const DOG_MIN_SIZE = 1;
+const DOG_MAX_SIZE = 4;
+
+const DOG_AGE_CATEGORIES = ['puppy', 'adult', 'senior'];
+const CAT_AGE_CATEGORIES = ['kitten', 'adult', 'senior'];
+
+const BREED_NAME_MIN_LENGTH = 2;
+const BREED_NAME_MAX_LENGTH = 20;
+const DESCRIPTION_MIN_LENGTH = 10;
+const DESCRIPTION_MAX_LENGTH = 400;
+
+let constants = {
+    BREED_FEATURE_MIN_LEVEL,
+    BREED_FEATURE_MAX_LEVEL,
+    DOG_MAX_SIZE,
+    DOG_AGE_CATEGORIES,
+    CAT_AGE_CATEGORIES,
+    BREED_NAME_MIN_LENGTH,
+    BREED_NAME_MAX_LENGTH,
+    DESCRIPTION_MIN_LENGTH,
+    DESCRIPTION_MAX_LENGTH   
+};
+
+export { constants as CONSTANTS };

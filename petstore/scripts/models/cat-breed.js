@@ -1,4 +1,5 @@
 import { VALIDATOR } from 'validator';
+import { CONSTANTS } from 'constants';
 import { Breed } from 'breed';
 
 class CatBreed extends Breed {
@@ -16,7 +17,7 @@ class CatBreed extends Breed {
 
     set energyLevel(value) {
         VALIDATOR.isOfTypeNumber(value);
-        VALIDATOR.isInRange(value, 1, 5);
+        VALIDATOR.isInRange(value, CONSTANTS.BREED_FEATURE_MIN_LEVEL, CONSTANTS.BREED_FEATURE_MAX_LEVEL);
         this._energyLevel = value;
     }
 
@@ -26,7 +27,7 @@ class CatBreed extends Breed {
 
     set adaptability(value) {
         VALIDATOR.isOfTypeNumber(value);
-        VALIDATOR.isInRange(value, 1, 5);
+        VALIDATOR.isInRange(value, CONSTANTS.BREED_FEATURE_MIN_LEVEL, CONSTANTS.BREED_FEATURE_MAX_LEVEL);
         this._adaptability = value;
     }
 
@@ -36,7 +37,7 @@ class CatBreed extends Breed {
 
     set affectionLevel(value) {
         VALIDATOR.isOfTypeNumber(value);
-        VALIDATOR.isInRange(value, 1, 5);
+        VALIDATOR.isInRange(value, CONSTANTS.BREED_FEATURE_MIN_LEVEL, CONSTANTS.BREED_FEATURE_MAX_LEVEL);
         this._affectionLevel = value;
     }
 }

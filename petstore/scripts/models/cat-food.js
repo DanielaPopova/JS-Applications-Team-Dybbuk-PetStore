@@ -1,4 +1,5 @@
 import { VALIDATOR } from 'validator';
+import { CONSTANTS } from 'constants';
 import { Food } from 'food';
 
 class CatFood extends Food {
@@ -12,7 +13,7 @@ class CatFood extends Food {
     }
 
     set catAgeSpecific(value) {
-        VALIDATOR.checkCatAge(value);
+        VALIDATOR.checkPetAgeCategory(value, CONSTANTS.CAT_AGE_CATEGORIES);
         this._catAgeSpecific = value;
     }
 }

@@ -1,4 +1,5 @@
 import { VALIDATOR } from 'validator';
+import { CONSTANTS } from 'constants';
 import { Food } from 'food';
 
 class DogFood extends Food {
@@ -13,7 +14,7 @@ class DogFood extends Food {
     }
 
     set dogAgeSpecific(value) {
-        VALIDATOR.checkDogAge(value);
+        VALIDATOR.checkPetAgeCategory(value, CONSTANTS.DOG_AGE_CATEGORIES);
         this._dogAgeSpecific = value;
     }
 
@@ -23,7 +24,7 @@ class DogFood extends Food {
 
     set dogSizeSpecific(value) {
         VALIDATOR.isOfTypeNumber(value);
-        VALIDATOR.isInRange(value, 1, 4);
+        VALIDATOR.isInRange(value, CONSTANTS.DOG_MIN_SIZE, CONSTANTS.DOG_MAX_SIZE);
         this._dogSizeSpecific = value;
     }
 }

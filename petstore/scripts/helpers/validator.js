@@ -10,7 +10,7 @@ const VALIDATOR = {
         }
     },
     hasInvalidSymbols: function (str) {
-        let regex = /[^a-zA-Z\s]/;
+        let regex = /[^a-zA-Z ]/;
         if (str.match(regex)) {
             throw new Error(`${str} contains invalid symbols!`);
         }
@@ -30,16 +30,9 @@ const VALIDATOR = {
             throw new Error(`${value} should be in range ${min} - ${max}`);
         }
     },
-    checkDogAge: function(value){
-        let dogAgeCategories = ['puppy', 'adult', 'senior'];
-        if(!dogAgeCategories.includes(value.toLowerCase())){
-            throw new Error('Dog age categories are [puppy adult senior].');
-        }
-    },
-    checkCatAge: function(value){
-        let catAgeCategories = ['kitten', 'adult', 'senior'];
-        if(!catAgeCategories.includes(value.toLowerCase())){
-            throw new Error('Cat age categories are [kitten adult senior].');
+    checkPetAgeCategory: function(value, petAgeCategories){        
+        if(!petAgeCategories.includes(value.toLowerCase())){
+            throw new Error(`${value} is not a pet age category! Choose one out of ${petAgeCategories}`);
         }
     }
 };
