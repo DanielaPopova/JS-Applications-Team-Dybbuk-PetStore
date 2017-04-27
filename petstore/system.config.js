@@ -5,9 +5,13 @@ SystemJS.config({
 		'plugin-babel': './node_modules/systemjs-plugin-babel/plugin-babel.js',
 		'systemjs-babel-build': './node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',	
 		
+		// libs
+		'handlebars': './node_modules/handlebars/dist/handlebars.amd.min.js',
+		
 		
 		// local
 		'main': './main.js',
+		'templates': './scripts/helpers/template.js',
 		'validator': './scripts/helpers/validator.js',
 		'constants': './scripts/helpers/constants.js',
 		'breed': './scripts/models/breed.js',
