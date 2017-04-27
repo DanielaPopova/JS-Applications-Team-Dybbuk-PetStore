@@ -4,7 +4,7 @@ SystemJS.config({
 		// system
 		'plugin-babel': './node_modules/systemjs-plugin-babel/plugin-babel.js',
 		'systemjs-babel-build': './node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',	
-		'firebase': './node_modules/firebase/firebase.js',
+		
 		
 		// local
 		'main': './main.js',
