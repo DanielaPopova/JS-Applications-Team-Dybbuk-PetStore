@@ -6,8 +6,8 @@ SystemJS.config({
 		'systemjs-babel-build': './node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',	
 		
 		// libs
-		'handlebars': './node_modules/handlebars/dist/handlebars.amd.min.js',
-		
+		'handlebars': './node_modules/handlebars/dist/handlebars.js',
+		'jquery': './node_modules/jquery/dist/jquery.js',
 		
 		// local
 		'main': './main.js',

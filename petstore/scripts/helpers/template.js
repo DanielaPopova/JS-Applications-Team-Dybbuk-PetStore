@@ -1,6 +1,5 @@
-
- import { Handlebars } from './node_modules/handlebars/dist/handlebars.amd.min.js';  
-
+import handlebars  from 'handlebars';
+import $ from 'jquery';
 
 function getTemplate(name) {
     var cache = {};
