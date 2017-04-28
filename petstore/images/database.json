@@ -628,7 +628,7 @@
       "imageURL": "./images/dog-food/adult-large.png",
       "description": "Dybbuk Maxi dry dog food formulas address the needs of the large dog throughout its lifetime-from the large dog's longer growth period, to nutrients to help limit inflammation of the joints and highly digestible proteins to ease digestion.",
       "price": 13.5,
-      "amountInKg": 3.0,
+      "amountInKg": 2.0,
       "dogAgeSpecific": "adult",
       "dogSizeSpecific": 3
     },
@@ -637,7 +637,7 @@
       "imageURL": "./images/dog-food/adult-large.png",
       "description": "Dybbuk Maxi dry dog food formulas address the needs of the large dog throughout its lifetime-from the large dog's longer growth period, to nutrients to help limit inflammation of the joints and highly digestible proteins to ease digestion.",
       "price": 24.0,
-      "amountInKg": 7.0,
+      "amountInKg": 5.0,
       "dogAgeSpecific": "adult",
       "dogSizeSpecific": 3
     },
@@ -646,7 +646,7 @@
       "imageURL": "./images/dog-food/adult-small.png",
       "description": "Small dogs have very distinct physiological traits such as jaw size, bone structure, digestive systems, and high energy requirements which can benefit from specialized nutrition.",
       "price": 6.5,
-      "amountInKg": 1.0,
+      "amountInKg": 2.0,
       "dogAgeSpecific": "adult",
       "dogSizeSpecific": 1
     },
@@ -655,7 +655,7 @@
       "imageURL": "./images/dog-food/adult-small.png",
       "description": "Small dogs have very distinct physiological traits such as jaw size, bone structure, digestive systems, and high energy requirements which can benefit from specialized nutrition.",
       "price": 12.0,
-      "amountInKg": 3.0,
+      "amountInKg": 5.0,
       "dogAgeSpecific": "adult",
       "dogSizeSpecific": 1
     },
@@ -718,7 +718,7 @@
       "imageURL": "./images/dog-food/senior-large.png",
       "description": "Dybbuk Maxi dry dog food formulas address the needs of the large dog throughout its lifetime-from the large dog's longer growth period, to nutrients to help limit inflammation of the joints and highly digestible proteins to ease digestion.",
       "price": 13.5,
-      "amountInKg": 3.0,
+      "amountInKg": 2.0,
       "dogAgeSpecific": "senior",
       "dogSizeSpecific": 3
     },
@@ -727,7 +727,7 @@
       "imageURL": "./images/dog-food/senior-large.png",
       "description": "Dybbuk Maxi dry dog food formulas address the needs of the large dog throughout its lifetime-from the large dog's longer growth period, to nutrients to help limit inflammation of the joints and highly digestible proteins to ease digestion.",
       "price": 24.0,
-      "amountInKg": 7.0,
+      "amountInKg": 5.0,
       "dogAgeSpecific": "senior",
       "dogSizeSpecific": 3
     },
@@ -736,7 +736,7 @@
       "imageURL": "./images/dog-food/adult-giant.png",
       "description": "To help ease digestive upset, Giant formulas include highly digestible proteins and the proper blend of fermentable and non-fermentable fibers. Supports bone & joint health, heart and cellular health.",
       "price": 16.0,
-      "amountInKg": 4.5,
+      "amountInKg": 2.0,
       "dogAgeSpecific": "adult",
       "dogSizeSpecific": 4
     },
@@ -745,7 +745,7 @@
       "imageURL": "./images/dog-food/adult-giant.png",
       "description": "To help ease digestive upset, Giant formulas include highly digestible proteins and the proper blend of fermentable and non-fermentable fibers. Supports bone & joint health, heart and cellular health.",
       "price": 30.0,
-      "amountInKg": 10,
+      "amountInKg": 5.0,
       "dogAgeSpecific": "adult",
       "dogSizeSpecific": 4
     }
@@ -804,7 +804,7 @@
       "imageURL": "./images/cat-food/adult.png",
       "description": "A sensitive stomach and digestive tract may result in a large quantity of poor quality stool, which can be indicative of poor digestion. Additionally, swallowing too quickly without sufficient chewing can lead to regurgitation. Digestive Care is for adult cats and is formulated to help support healthy digestion.",
       "price": 6.5,
-      "amountInKg": 2.0,
+      "amountInKg": 1.5,
       "catAgeSpecific": "adult"
     },
     {
@@ -812,7 +812,7 @@
       "imageURL": "./images/cat-food/adult.png",
       "description": "A sensitive stomach and digestive tract may result in a large quantity of poor quality stool, which can be indicative of poor digestion. Additionally, swallowing too quickly without sufficient chewing can lead to regurgitation. Digestive Care is for adult cats and is formulated to help support healthy digestion.",
       "price": 11.0,
-      "amountInKg": 5.0,
+      "amountInKg": 4.0,
       "catAgeSpecific": "adult"
     },
     {
@@ -844,7 +844,7 @@
       "imageURL": "./images/cat-food/adult2.png",
       "description": "Maintaining an ideal body condition and muscle mass is a crucial aspect of a cat's overall health. Triangular shaped kibble helps encourage chewing and helps reduces plaque formation.",
       "price": 10.0,
-      "amountInKg": 3.5,
+      "amountInKg": 4.0,
       "catAgeSpecific": "adult"
     },
     {
@@ -860,7 +860,7 @@
       "imageURL": "./images/cat-food/adult3.png",
       "description": "Tartar build-up is the mineralization of dental plaque in contact with saliva, which can lead to sensitive gums. Oral hygiene plays an important role in your cat's overall health.",
       "price": 10.0,
-      "amountInKg": 3.5,
+      "amountInKg": 4.0,
       "catAgeSpecific": "adult"
     },
     {
@@ -868,7 +868,7 @@
       "imageURL": "./images/cat-food/senior.png",
       "description": "Dybbuk Appetite Control is recommended for cats from 7 to 12 years old and helps fight the first signs of aging while maintaining your cat's ideal body weight. ",
       "price": 5.5,
-      "amountInKg": 2.0,
+      "amountInKg": 1.5,
       "catAgeSpecific": "senior"
     },
     {
@@ -876,7 +876,7 @@
       "imageURL": "./images/cat-food/senior.png",
       "description": "Dybbuk Appetite Control is recommended for cats from 7 to 12 years old and helps fight the first signs of aging while maintaining your cat's ideal body weight. ",
       "price": 11.5,
-      "amountInKg": 5.0,
+      "amountInKg": 4.0,
       "catAgeSpecific": "senior"
     },
     {
@@ -900,7 +900,7 @@
       "imageURL": "./images/cat-food/senior2.png",
       "description": "AGING SPAYED/NEUTERED 12+ is recommended for cats 12 years and older and supplies a range of nutrients to promote healthy aging. Supports healthy aging and helps maintain ideal weight.",
       "price": 6.0,
-      "amountInKg": 2.5,
+      "amountInKg": 1.5,
       "catAgeSpecific": "senior"
     },
     {
@@ -908,7 +908,7 @@
       "imageURL": "./images/cat-food/senior2.png",
       "description": "AGING SPAYED/NEUTERED 12+ is recommended for cats 12 years and older and supplies a range of nutrients to promote healthy aging. Supports healthy aging and helps maintain ideal weight.",
       "price": 10.5,
-      "amountInKg": 5.5,
+      "amountInKg": 4.0,
       "catAgeSpecific": "senior"
     }
   ],
