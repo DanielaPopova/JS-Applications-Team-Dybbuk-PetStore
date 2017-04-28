@@ -207,7 +207,7 @@ function filterDogFoodByDogAgeAndSize(dogAgeCategory, dogSize){
 	}
 
 	if(!dogSize){
-		throw new Error('Enter dog size [1 - 4!');
+		throw new Error('Enter dog size [1 - 4]!');
 	}
 
 	VALIDATOR.checkPetAgeCategory(dogAgeCategory, CONSTANTS.DOG_AGE_CATEGORIES);
