@@ -2,7 +2,7 @@
 import { CatFood } from 'cat-food';
 import { DogBreed } from 'dog-breed';
 
-function data(){
+let data = (() => {
 
 	let arr = [];
 	let allDogBreeds = [];
@@ -11,12 +11,27 @@ function data(){
 		allDogBreeds.push(snap.val());
 
 	});
-	dogBreeds.then(function(){
-		
+	dogBreeds.then(function () {
+
 		//console.log(allDogBreeds[0].akita);
 	});
 
 	console.log(allDogBreeds[0]);
-}
+
+	function testFunction() {
+
+		let arr = ['batman', 'pesho', 'todor'];
+
+		return arr;
+	}
+
+	return {
+		testFunction
+	}
+
+})();
 
 export { data };
+
+
+
