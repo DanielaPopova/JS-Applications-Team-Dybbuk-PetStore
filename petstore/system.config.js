@@ -14,6 +14,7 @@ SystemJS.config({
 		'data': './scripts/helpers/data.js',
 		'router': './scripts/helpers/routing.js',
 		'templates': './scripts/helpers/template.js',
+		'db': './scripts/helpers/firebaseDB.js',
 		'validator': './scripts/helpers/validator.js',
 		'constants': './scripts/helpers/constants.js',
 		'breed': './scripts/models/breed.js',

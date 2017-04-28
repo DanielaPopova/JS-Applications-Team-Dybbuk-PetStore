@@ -12,7 +12,7 @@ import { CatAccessory } from 'cat-accessory';
 // Filter using firebase QUERY
 // Message when no results are found
 
-function getAllDogBreeds() {
+export function getAllDogBreeds() {
 	return firebase.database().ref('dogBreeds').once('value').then(function (snapshot) {
 		let dogBreeds = [],
 			allDogs = snapshot.val();
@@ -38,7 +38,7 @@ function getAllDogBreeds() {
 	});
 }
 
-function getAllCatBreeds() {
+export function getAllCatBreeds() {
 	return firebase.database().ref('catBreeds').once('value').then(function (snapshot) {
 		let catBreeds = [],
 			allCats = snapshot.val();
@@ -63,7 +63,7 @@ function getAllCatBreeds() {
 	});
 }
 
-function getAllDogFood(){
+export function getAllDogFood(){
 	return firebase.database().ref('dogFood').once('value').then(function (snapshot) {
 		let dogFoodList = [],
 			allDogFood = snapshot.val();
@@ -85,7 +85,7 @@ function getAllDogFood(){
 	});
 }
 
-function getAllCatFood(){
+export function getAllCatFood(){
 	return firebase.database().ref('catFood').once('value').then(function (snapshot) {
 		let catFoodList = [],
 			allCatFood = snapshot.val();
@@ -106,7 +106,7 @@ function getAllCatFood(){
 	});
 }
 
-function getAllDogAccessories(){
+export function getAllDogAccessories(){
 	return firebase.database().ref('dogAccessories').once('value').then(function (snapshot) {
 		let dogAccessories = [],
 			allDogAccessories = snapshot.val();
@@ -125,7 +125,7 @@ function getAllDogAccessories(){
 	});
 }
 
-function getAllCatAccessories(){
+export function getAllCatAccessories(){
 	return firebase.database().ref('catAccessories').once('value').then(function (snapshot) {
 		let catAccessories = [],
 			allCatAccessories = snapshot.val();
@@ -144,7 +144,7 @@ function getAllCatAccessories(){
 	});
 }
 
-function filterCatFoodByCatAge(catAgeCategory){
+export function filterCatFoodByCatAge(catAgeCategory){
 
 	if(!catAgeCategory){
 		throw new Error(`Enter cat age category - ${CONSTANTS.CAT_AGE_CATEGORIES}`);
@@ -161,7 +161,7 @@ function filterCatFoodByCatAge(catAgeCategory){
 	});
 }
 
-function filterDogFoodByDogAge(dogAgeCategory){
+export function filterDogFoodByDogAge(dogAgeCategory){
 
 	if(!dogAgeCategory){
 		throw new Error(`Enter dog age category - ${CONSTANTS.DOG_AGE_CATEGORIES}`);
@@ -178,7 +178,7 @@ function filterDogFoodByDogAge(dogAgeCategory){
 	});
 }
 
-function filterDogFoodByDogSize(dogSize){
+export function filterDogFoodByDogSize(dogSize){
 
 	if(!dogSize){
 		throw new Error('Enter dog size [1 - 4]');
@@ -196,7 +196,7 @@ function filterDogFoodByDogSize(dogSize){
 	});
 }
 
-function filterDogFoodByDogAgeAndSize(dogAgeCategory, dogSize){
+export function filterDogFoodByDogAgeAndSize(dogAgeCategory, dogSize){
 
 	if(arguments.length === 0){
 		throw new Error('Enter dog age category and dog size!');
@@ -223,7 +223,7 @@ function filterDogFoodByDogAgeAndSize(dogAgeCategory, dogSize){
 	});
 }
 
-function filterDogFoodByAmount(amount){
+export function filterDogFoodByAmount(amount){
 
 	if(!amount){
 		throw new Error(`Enter food amount - ${CONSTANTS.DOG_FOOD_AVAILABLE_AMOUNTS}`);
@@ -240,7 +240,7 @@ function filterDogFoodByAmount(amount){
 	});
 }
 
-function filterCatFoodByAmount(amount){
+export function filterCatFoodByAmount(amount){
 
 	if(!amount){
 		throw new Error(`Enter food amount - ${CONSTANTS.CAT_FOOD_AVAILABLE_AMOUNTS}`);
