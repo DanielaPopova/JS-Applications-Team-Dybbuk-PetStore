@@ -5,5 +5,7 @@
 
  
  router.init();
- getTemplate();
-data();
+getTemplate();
+
+ let test = data.testFunction();
+console.log(' test ' + test);
