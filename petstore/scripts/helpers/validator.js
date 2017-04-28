@@ -34,6 +34,11 @@ const VALIDATOR = {
         if(!petAgeCategories.includes(value.toLowerCase())){
             throw new Error(`${value} is not a pet age category! Choose one out of ${petAgeCategories}`);
         }
+    },
+    checkAvailableFoodAmount: function(value, availableAmounts){
+        if(!availableAmounts.includes(value)){
+            throw new Error(`${value} is not an available amount! Choose one out of ${availableAmounts}`);
+        }
     }
 };
 
