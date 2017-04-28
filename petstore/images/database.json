@@ -157,8 +157,8 @@
       "size": 3
     },
     {
-      "name": "Golden Terriever",
-      "imageURL": "./images/dogs/gilden.jpg",
+      "name": "Golden Retriever",
+      "imageURL": "./images/dogs/golden.jpg",
       "description": "This sporting breed has a sweet, gentle, people-pleasing personality. A well-bred Golden Retriever does not have strong guarding instincts, so don’t expect him to protect your home from burglars. He will, however, make friends with them and show them where the treats are.",
       "childFriendly": 5,
       "grooming": 3,
