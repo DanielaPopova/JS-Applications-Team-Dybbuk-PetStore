@@ -11,6 +11,8 @@ SystemJS.config({
 		
 		// local
 		'main': './main.js',
+		'data': './scripts/helpers/data.js',
+		'router': './scripts/helpers/routing.js',
 		'templates': './scripts/helpers/template.js',
 		'validator': './scripts/helpers/validator.js',
 		'constants': './scripts/helpers/constants.js',
