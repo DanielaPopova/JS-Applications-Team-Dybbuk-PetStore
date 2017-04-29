@@ -9,7 +9,7 @@
         <div class="sub-filter">
             {{#each catAges}}
                 <div> 
-                    <input id="filter-age-{{ageString}}" type="checkbox" name="" value="" {{#if isSelected}}checked="checked"{{/if}}>
+                    <input id="filter-age-{{ageString}}" type="checkbox" name="catAgeSpecific" value="{{ageString}}" {{#if isSelected}}checked="checked"{{/if}}>
                     <label for="filter-age-{{ageString}}">{{ageString}}</label>
                 </div>
             {{/each}}
@@ -18,12 +18,12 @@
         <div class="sub-filter">
             {{#each catFoodAvailableAmounts}}
                 <div> 
-                    <input id="filter-age-{{amountInKg}}" type="checkbox" name="" value="" {{#if isSelected}}checked="checked"{{/if}}>
+                    <input id="filter-age-{{amountInKg}}" type="checkbox" name="amountInKg" value="{{amountInKg}}" {{#if isSelected}}checked="checked"{{/if}}>
                     <label for="filter-age-{{amountInKg}}">{{amountInKg}} kg</label>
                 </div>
             {{/each}}
         </div>
-        <button class="btn-lg btn-primary" type="button">Filter</button>
+        <button id="filter-cat-food-button" class="btn-lg btn-primary" type="button">Filter</button>
     </aside>
     <!-- end aside -->
 
