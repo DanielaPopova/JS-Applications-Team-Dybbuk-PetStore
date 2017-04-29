@@ -35,26 +35,39 @@ db.getAllCatFood().then(function (filteredFood) {
         // div.appendChild(img);
         // div.appendChild(p);
 
-         console.log(filteredFood);
-        getTemplateAjax('templates/cat-food.handlebars');
-   // });
-});
-
-function getTemplateAjax(path) {
-    var source;
-    var template;
-
-    $.ajax({
-        url: path, //ex. js/templates/mytemplate.handlebars
+         //console.log(filteredFood);
+        
+        $.ajax({
+        url: 'templates/cat-food.handlebars',
         cache: true,
         success: function (data) {
-            source = data;
-            console.log(source);
-            template = handlebars.compile(source);
-            $('#main-content-container').html(template);
+           
+            console.log(data);
+            var template = handlebars.compile(data);
+            var text = template(filteredFood);
+            $('#main-content-container').html(text);
         }
-    });
-}
+    });   
+});
 
-let test = data.testFunction();
-console.log(' test ' + test);
+// function getTemplateAjax(path) {
+//     var source;
+//     var template;
+
+//     $.ajax({
+//         url: path, //ex. js/templates/mytemplate.handlebars
+//         cache: true,
+//         success: function (data) {
+           
+//             //console.log(data);
+//             template = handlebars.compile(data);
+//             var text = template();
+//             $('#main-content-container').html(template);
+//         }
+//     });
+// }
+
+
+
+// let test = data.testFunction();
+// console.log(' test ' + test);

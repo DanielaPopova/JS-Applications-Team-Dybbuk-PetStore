@@ -16,8 +16,7 @@ let data = (() => {
 		//console.log(allDogBreeds[0].akita);
 	});
 
-	console.log(allDogBreeds[0]);
-
+	
 	function testFunction() {
 
 		let arr = ['batman', 'pesho', 'todor'];

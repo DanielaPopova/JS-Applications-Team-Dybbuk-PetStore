@@ -3,7 +3,7 @@ import $ from 'jquery';
 
 function getTemplate(name) {
     var cache = {};
-    name = 'dog-food';
+    name = 'cat-food';
     return new Promise(function (resolve, reject) {
 
         if (cache[name]) {
