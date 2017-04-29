@@ -38,8 +38,8 @@
         <section id="items-container" class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
             {{#each catFoodList}}
             <div class="food-list-item col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                <h4>{{catFood.name}}<span>{{catFood.price}}</span></h4>
-                <img src={{catFood.imageURL}} alt="food">
+                <h4>{{catFoodList.catFood.name}}<span>{{catFoodList.catFood.price}}</span></h4>
+                <img src={{catFoodList.catFood.imageURL}} alt="food">
                 <div>
                     <button class="btn btn-info">More...</button>
                     <button class="btn btn-info">Add</button>
@@ -47,4 +47,6 @@
             </div>
             {{/each}}
         </section>
+         <p>1111111111111111111111111111111111111111111111111111</p>
     </div>
+   
