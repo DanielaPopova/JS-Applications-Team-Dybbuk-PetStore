@@ -28,7 +28,8 @@ SystemJS.config({
         'cat-accessory': './scripts/models/cat-accessory.js',
         'requester': './scripts/helpers/requester.js',
         'products-controller': './scripts/controllers/products-controller.js',
-        'home-controller': './scripts/controllers/home-controller.js'
+        'home-controller': './scripts/controllers/home-controller.js',
+        'filter-string-to-filter-object': './scripts/helpers/filter-string-to-filter-object.js'
     }
 });
 
