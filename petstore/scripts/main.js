@@ -6,7 +6,7 @@ import handlebars from 'handlebars';
 import $ from 'jquery';
 
 router.init();
-
+console.log('Router loaded');
 // TESTING methods to extract data from firebase
 // db.filterCatFoodByAmount(1.5).then(function(filteredFood){
 //     if(filteredFood.length === 0){

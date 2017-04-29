@@ -27,7 +27,8 @@ SystemJS.config({
         'dog-accessory': './scripts/models/dog-accessory.js',
         'cat-accessory': './scripts/models/cat-accessory.js',
         'requester': './scripts/helpers/requester.js',
-        'products-controller': './scripts/controllers/products-controller.js'
+        'products-controller': './scripts/controllers/products-controller.js',
+        'home-controller': './scripts/controllers/home-controller.js'
     }
 });
 

@@ -17,7 +17,7 @@ class ProductsController {
 
             // var template = handlebars.compile('./templates/cat-food.handlebars');
             $('#main-content-container').html(template(catFoodList));
-        })
+        });
     }
 }
 

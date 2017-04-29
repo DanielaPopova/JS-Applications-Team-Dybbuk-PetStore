@@ -1,4 +1,5 @@
 import { productsController } from 'products-controller';
+import { homeController } from 'home-controller';
 
 let router = (() => {
     let router;
@@ -16,8 +17,24 @@ let router = (() => {
 
         });
 
-        router.on('/cat-food-list', () => {
+        router.on('/home', (template) => {
+            homeController.loadHome();
+        });
+
+        router.on('/cat-food-list/:filter', (params, query) => {
+            console.log('called with filter');
+            console.log(params);
             productsController.loadCatFood();
+        });
+
+
+        router.on('/cat-food-list', () => {
+            console.log('called without parameters');
+            productsController.loadCatFood();
+        });
+
+        router.notFound(() => {
+            router.navigate('/home');
         });
 
         router.resolve();

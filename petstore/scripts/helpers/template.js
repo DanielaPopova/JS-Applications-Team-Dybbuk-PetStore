@@ -1,15 +1,15 @@
-import handlebars  from 'handlebars';
+import handlebars from 'handlebars';
 import $ from 'jquery';
 
 function getTemplate(name) {
     var cache = {};
-    name = 'cat-food';
-    return new Promise(function (resolve, reject) {
+
+    return new Promise(function(resolve, reject) {
 
         if (cache[name]) {
             resolve(cache[name]);
         } else {
-            $.get(`../../templates/${name}.handlebars`, function (templateHtml) {
+            $.get(`../../templates/${name}.handlebars`, function(templateHtml) {
                 var template = handlebars.compile(templateHtml);
                 cache[name] = template;
                 resolve(template);
