@@ -8,23 +8,19 @@ import { filterObjectToFilterString } from 'filter-string-to-filter-object';
 class ProductsController {
     loadCatFood(filterString) {
         let filter = {};
-        let showEverything;
 
         if (typeof filterString == 'string') {
             filter = filterStringToFilterObject(filterString);
-            showEverything = false;
-        } else {
-            showEverything = true;
         }
 
-        let requestCatFoodData = getCatFood();
+        let requestCatFoodData = getCatFood(filter);
         let requestCatFoodTemplate = getTemplate('cat-food');
 
         Promise.all([requestCatFoodData, requestCatFoodTemplate]).then(([catFoodList, template]) => {
             const catAges = [];
             CONSTANTS.CAT_AGE_CATEGORIES.forEach(catAgeString => {
                 // if filter is not present include every element. That's what Array.isArray is for.
-                const isInFilter = showEverything || Array.isArray(filter.catAgeSpecific) && filter.catAgeSpecific.indexOf(catAgeString) >= 0;
+                const isInFilter = !Array.isArray(filter.catAgeSpecific) || filter.catAgeSpecific.indexOf(catAgeString) >= 0;
 
                 const newCatAge = {
                     ageString: catAgeString,
@@ -37,7 +33,7 @@ class ProductsController {
             const catFoodAvailableAmounts = [];
             CONSTANTS.CAT_FOOD_AVAILABLE_AMOUNTS.forEach(amountInKg => {
                 // if filter is not present include every element. That's what Array.isArray is for.
-                const isInFilter = showEverything || Array.isArray(filter.amountInKg) && filter.amountInKg.indexOf('' + amountInKg) >= 0;
+                const isInFilter = !Array.isArray(filter.amountInKg) || filter.amountInKg.indexOf('' + amountInKg) >= 0;
                 const newCatFoodAmount = {
                     amountInKg,
                     isSelected: isInFilter
