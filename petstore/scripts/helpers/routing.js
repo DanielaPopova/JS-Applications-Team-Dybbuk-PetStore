@@ -1,11 +1,12 @@
-let router = (() => {
+import { productsController } from 'products-controller';
 
-    let rout;
+let router = (() => {
+    let router;
 
     function init() {
-        rout = new Navigo(null, false);
+        router = new Navigo(null, false);
 
-        rout.on('/dogsBreed', () => {
+        router.on('/dogsBreed', () => {
             // TODO: change href attributes in a tags to existing routs  example href"#/home"
             //Promise.all(([data, template]), tl.get('allDogFood'))
             // 1 get data()
@@ -13,8 +14,13 @@ let router = (() => {
 
             console.log('e vi go');
 
-        })
+        });
 
+        router.on('/cat-food-list', () => {
+            productsController.loadCatFood();
+        });
+
+        router.resolve();
     }
 
     return {

@@ -5,6 +5,8 @@ import * as db from 'db';
 import handlebars from 'handlebars';
 import $ from 'jquery';
 
+router.init();
+
 // TESTING methods to extract data from firebase
 // db.filterCatFoodByAmount(1.5).then(function(filteredFood){
 //     if(filteredFood.length === 0){
@@ -23,32 +25,34 @@ import $ from 'jquery';
 // });
 
 //router.init();
-db.getAllCatFood().then(function(filteredFood) {
-    // filteredFood.forEach(function (food) {
-    // let img = document.createElement('img');
-    // let p = document.createElement('p');
-    // p.innerHTML = food.name;
-    // img.style.width = '200px';
-    // img.style.height = '200px';
-    // img.src = food.imageURL;
-    // let div = document.getElementById('main-content-container');
-    // div.appendChild(img);
-    // div.appendChild(p);
+// db.getAllCatFood().then(function(filteredFood) {
+//     // filteredFood.forEach(function (food) {
+//     // let img = document.createElement('img');
+//     // let p = document.createElement('p');
+//     // p.innerHTML = food.name;
+//     // img.style.width = '200px';
+//     // img.style.height = '200px';
+//     // img.src = food.imageURL;
+//     // let div = document.getElementById('main-content-container');
+//     // div.appendChild(img);
+//     // div.appendChild(p);
 
-    //console.log(filteredFood);
+//     //console.log(filteredFood);
 
-    $.ajax({
-        url: 'templates/cat-food.handlebars',
-        cache: true,
-        success: function(data) {
+//     // $.ajax({
+//     //     url: 'templates/cat-food.handlebars',
+//     //     cache: true,
+//     //     success: function(data) {
 
-            console.log(data);
-            var template = handlebars.compile(data);
-            var text = template(filteredFood);
-            $('#main-content-container').html(text);
-        }
-    });
-});
+//     //         console.log(data);
+//     //         var template = handlebars.compile(data);
+//     //         var text = template(filteredFood);
+//     //         $('#main-content-container').html(text);
+//     //     }
+//     // });
+
+
+// });
 
 // function getTemplateAjax(path) {
 //     var source;

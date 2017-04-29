@@ -26,7 +26,8 @@ SystemJS.config({
         'cat-food': './scripts/models/cat-food.js',
         'dog-accessory': './scripts/models/dog-accessory.js',
         'cat-accessory': './scripts/models/cat-accessory.js',
-        'requester': './scripts/helpers/requester.js'
+        'requester': './scripts/helpers/requester.js',
+        'products-controller': './scripts/controllers/products-controller.js'
     }
 });
 
