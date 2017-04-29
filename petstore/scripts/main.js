@@ -1,4 +1,4 @@
-import { getTemplate } from './scripts/helpers/template.js';
+import { getTemplate } from 'templates';
 import { data } from 'data';
 import { router } from 'router';
 import * as db from 'db';
@@ -23,31 +23,31 @@ import $ from 'jquery';
 // });
 
 //router.init();
-db.getAllCatFood().then(function (filteredFood) {
-   // filteredFood.forEach(function (food) {
-        // let img = document.createElement('img');
-        // let p = document.createElement('p');
-        // p.innerHTML = food.name;
-        // img.style.width = '200px';
-        // img.style.height = '200px';
-        // img.src = food.imageURL;
-        // let div = document.getElementById('main-content-container');
-        // div.appendChild(img);
-        // div.appendChild(p);
+db.getAllCatFood().then(function(filteredFood) {
+    // filteredFood.forEach(function (food) {
+    // let img = document.createElement('img');
+    // let p = document.createElement('p');
+    // p.innerHTML = food.name;
+    // img.style.width = '200px';
+    // img.style.height = '200px';
+    // img.src = food.imageURL;
+    // let div = document.getElementById('main-content-container');
+    // div.appendChild(img);
+    // div.appendChild(p);
 
-         //console.log(filteredFood);
-        
-        $.ajax({
+    //console.log(filteredFood);
+
+    $.ajax({
         url: 'templates/cat-food.handlebars',
         cache: true,
-        success: function (data) {
-           
+        success: function(data) {
+
             console.log(data);
             var template = handlebars.compile(data);
             var text = template(filteredFood);
             $('#main-content-container').html(text);
         }
-    });   
+    });
 });
 
 // function getTemplateAjax(path) {
@@ -58,7 +58,7 @@ db.getAllCatFood().then(function (filteredFood) {
 //         url: path, //ex. js/templates/mytemplate.handlebars
 //         cache: true,
 //         success: function (data) {
-           
+
 //             //console.log(data);
 //             template = handlebars.compile(data);
 //             var text = template();
