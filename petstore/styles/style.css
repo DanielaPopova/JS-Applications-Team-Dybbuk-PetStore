@@ -131,9 +131,28 @@ input {
     color: #fff;
 }
 
-.food-list-item img {
+#img-container {
     width: 200px;
+    height: 200px;
 }
+
+#img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.food-list-item h4 {
+    font-weight: normal;
+}
+
+.food-list-item h4 span {
+    font-weight: bold;
+}
+
+#name-and-price {
+    height: 40px;
+}
+
 
 /*end food list style*/
 
