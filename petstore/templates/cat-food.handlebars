@@ -2,41 +2,33 @@
 
     <aside id="filter" class="col-lg-3 col-md-3 col-sm-4 col-xs-11 shadow">
 
-        <input type="checkbox" name="" value="">
-        <label for="">Show all kind of food</label>
+        <input id="show-all-products" type="checkbox" name="" value="">
+        <label for="show-all-products">Show all</label>
 
-        <h4>filter the food by dog's size</h4>
+        <h4>Filter by cat's age</h4>
         <div class="sub-filter">
-            <div><input type="checkbox" name="" value="">
-                <label for="">very small</label></div>
-            <div><input type="checkbox" name="" value="">
-                <label for="">small</label></div>
-            <div> <input type="checkbox" name="" value="">
-                <label for="">big</label></div>
-            <div> <input type="checkbox" name="" value="">
-                <label for="">giant</label></div>
+            {{#each catAges}}
+                <div> 
+                    <input id="filter-age-{{ageString}}" type="checkbox" name="" value="" {{#if isSelected}}checked="checked"{{/if}}>
+                    <label for="filter-age-{{ageString}}">{{ageString}}</label>
+                </div>
+            {{/each}}
         </div>
-        <h4>filter the food by dog's age</h4>
+        <h4>Filter by amount</h4>
         <div class="sub-filter">
-            <div> <input type="checkbox" name="" value="">
-                <label for="">puppy</label>
-            </div>
-
-            <div>
-                <input type="checkbox" name="" value="">
-                <label for="">adult</label>
-            </div>
-            <div>
-                <input type="checkbox" name="" value="">
-                <label for="">senior</label>
-            </div>
+            {{#each catFoodAvailableAmounts}}
+                <div> 
+                    <input id="filter-age-{{amountInKg}}" type="checkbox" name="" value="" {{#if isSelected}}checked="checked"{{/if}}>
+                    <label for="filter-age-{{amountInKg}}">{{amountInKg}} kg</label>
+                </div>
+            {{/each}}
         </div>
         <button class="btn-lg btn-primary" type="button">Filter</button>
     </aside>
     <!-- end aside -->
 
     <section id="items-container" class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-        {{#each this}}
+        {{#each catFoodList}}
         <div class="food-list-item col-lg-4 col-md-6 col-sm-12 col-xs-12">
             <div id="name-and-price">
                 <h4>{{name}}<span> ${{price}}</span></h4>

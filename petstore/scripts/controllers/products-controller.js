@@ -1,6 +1,7 @@
 import handlebars from 'handlebars';
 import { getCatFood } from 'db';
 import { getTemplate } from 'templates';
+import { CONSTANTS } from 'constants';
 
 class ProductsController {
     loadCatFood(filter) {
@@ -15,8 +16,31 @@ class ProductsController {
             console.log(catFoodList, template);
             // console.log(catFoodList);
 
-            // var template = handlebars.compile('./templates/cat-food.handlebars');
-            $('#main-content-container').html(template(catFoodList));
+            const catAges = [];
+            CONSTANTS.CAT_AGE_CATEGORIES.forEach(catAgeString => {
+                const newCatAge = {
+                    ageString: catAgeString,
+                    isSelected: true
+                }
+                catAges.push(newCatAge);
+            });
+
+            const catFoodAvailableAmounts = [];
+            CONSTANTS.CAT_FOOD_AVAILABLE_AMOUNTS.forEach(amountInKg => {
+                const newCatFoodAmount = {
+                    amountInKg,
+                    isSelected: true
+                };
+
+                catFoodAvailableAmounts.push(newCatFoodAmount);
+            });
+
+            const templateObject = {
+                catFoodList,
+                catAges,
+                catFoodAvailableAmounts
+            }
+            $('#main-content-container').html(template(templateObject));
         });
     }
 }
