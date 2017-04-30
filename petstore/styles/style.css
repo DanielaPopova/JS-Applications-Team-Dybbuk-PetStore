@@ -49,6 +49,26 @@
 
 /*end navigation style*/
 
+/*login register style*/
+
+#loginFormContainer form div input {
+    margin-bottom: 10px;
+}
+
+#loginFormContainer {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#loginFormContainer div{
+    background-color: #efe7d5;
+}
+
+
+/*end login register style*/
+
 /*food details style*/
 #test {
     display: flex;
@@ -78,7 +98,7 @@
 }
 
 main {
-    padding: 0 15px 0 15px;
+    padding: 0 15px 60px 15px;
     margin-bottom: 20px;
 }
 
@@ -100,13 +120,6 @@ img {
 
 /*end slider style*/
 
-/*reg form style*/
-
-input {
-    margin-bottom: 10px;
-}
-
-/*end ref form style*/
 
 /*dog food list style*/
 
