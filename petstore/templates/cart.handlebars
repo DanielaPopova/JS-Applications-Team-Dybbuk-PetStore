@@ -1,0 +1,20 @@
+<section>
+    <h2>Shopping cart</h2>
+    {{#each products}}
+    <div class="item-container">
+        <h3>{{name}}</h3>
+        <div class="img-container">
+            <img src={{imageURL}} alt="food">
+        </div>
+        <div><span>Description:</span> <span>{{description}}</span></div>
+        <div><span>Amount:</span> <span>{{amountInKg}} kg</span></div>
+        <div><span>Price:</span> <span><span class="item-price">{{price}}</span> BGN</span></div>
+        <a class="btn btn-info" href="#{{productDetailPath}}">More info</a>
+        <button class="remove-from-cart-button btn btn-danger" name="{{idInCart}}">Remove from cart</button>    
+    </div>
+    {{/each}}
+    <div>
+        <span>Total:</span> <span><span id="total-price-container">{{totalPrice}}</span> BGN</span>
+    </div>
+    <button class="btn btn-warning">Buy the products</button>
+</section>

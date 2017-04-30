@@ -8,6 +8,7 @@ SystemJS.config({
         // libs
         'handlebars': './node_modules/handlebars/dist/handlebars.js',
         'jquery': './node_modules/jquery/dist/jquery.js',
+        'bootstrap': 'node_modules/bootstrap/dist/js/bootstrap.min.js',
 
         // local
         'main': './scripts/main.js',
@@ -30,7 +31,9 @@ SystemJS.config({
         'products-controller': './scripts/controllers/products-controller.js',
         'home-controller': './scripts/controllers/home-controller.js',
         'user-controller': './scripts/controllers/user-controller.js',
-        'filter-string-to-filter-object': './scripts/helpers/filter-string-to-filter-object.js'
+        'cart-controller': './scripts/controllers/cart-controller.js',
+        'filter-string-to-filter-object': './scripts/helpers/filter-string-to-filter-object.js',
+        'cart-manipulator': './scripts/helpers/cart-manipulator.js'
     }
 });
 

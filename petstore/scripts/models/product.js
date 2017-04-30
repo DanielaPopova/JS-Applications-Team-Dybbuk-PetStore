@@ -2,7 +2,16 @@ import { VALIDATOR } from 'validator';
 import { CONSTANTS } from 'constants';
 
 class Product {
-    constructor(name, imageURL, description, price, productDetailPath) {
+    constructor(firstArgument) {
+        if (typeof firstArgument == 'object') {
+            // we need this because when strigifying we cannot store the whole class, only its properties
+            Object.assign(this, firstArgument);
+        } else {
+            this.constructWithInitialValues(...arguments);
+        }
+    }
+
+    constructWithInitialValues(name, imageURL, description, price, productDetailPath) {
         this.name = name;
         this.imageURL = imageURL;
         this.description = description;

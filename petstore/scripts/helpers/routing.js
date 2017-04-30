@@ -1,6 +1,11 @@
 import { productsController } from 'products-controller';
 import { homeController } from 'home-controller';
+<<<<<<< HEAD
 import { userController } from 'user-controller';
+=======
+import { userControler } from 'user-controller';
+import { cartController } from 'cart-controller';
+>>>>>>> 381a49ebd7cc04214703abc264b049950cd607b6
 
 let router = (() => {
     let router;
@@ -45,9 +50,13 @@ let router = (() => {
             userController.initApp();
         });
 
-        // router.notFound(() => {
-        //     router.navigate('/home');
-        // });
+        router.on('/cart', () => {
+            cartController.loadCart();
+        });
+
+        router.notFound(() => {
+            router.navigate('/home');
+        });
 
         router.resolve();
     }
