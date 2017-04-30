@@ -80,13 +80,13 @@ ul li .badge {
 
 /*food details style*/
 
-#test {
+#food-details {
     display: flex;
     align-content: center;
 }
 
 .food-info {
-    background-color: #fff;
+    background-color: #f5f5f5;
     padding: 15px;
     margin: auto;
 }
