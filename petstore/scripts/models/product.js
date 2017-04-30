@@ -2,11 +2,12 @@ import { VALIDATOR } from 'validator';
 import { CONSTANTS } from 'constants';
 
 class Product {
-    constructor(name, imageURL, description, price) {
+    constructor(name, imageURL, description, price, productDetailPath) {
         this.name = name;
         this.imageURL = imageURL;
         this.description = description;
         this.price = price;
+        this.productDetailPath = productDetailPath
     }
 
     get name() {
@@ -14,7 +15,7 @@ class Product {
     }
 
     set name(value) {
-        VALIDATOR.isNonEmptyString(value);        
+        VALIDATOR.isNonEmptyString(value);
         this._name = value;
     }
 
@@ -45,6 +46,14 @@ class Product {
         VALIDATOR.isOfTypeNumber(value);
         VALIDATOR.isNegativeNumber(value);
         this._price = value;
+    }
+
+    get productDetailPath() {
+        return this._productDetailPath;
+    }
+
+    set productDetailPath(value) {
+        this._productDetailPath = value;
     }
 }
 

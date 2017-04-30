@@ -85,6 +85,30 @@ export function getAllDogFood() {
     });
 }
 
+export function getCatFoodDetails(id) {
+    return firebase.database().ref('catFood/' + id).once('value').then(function(snapshot) {
+        const catFood = snapshot.val();
+
+        if (!catFood) {
+            return null;
+        }
+
+        let name = catFood.name,
+            imageURL = catFood.imageURL,
+            description = catFood.description,
+            price = catFood.price,
+            amountInKg = catFood.amountInKg,
+            catAgeSpecific = catFood.catAgeSpecific;
+
+        let catFoodObj = new CatFood(name, imageURL, description, price, amountInKg, catAgeSpecific);
+        // Maybe these should be in the constructor...
+        catFoodObj.catFoodId = id;
+        catFoodObj.productDetailPath = '/cat-food-details/' + id;
+
+        return catFoodObj;
+    });
+}
+
 export function getCatFood(filter) {
     if (typeof filter != 'object') {
         filter = {};
@@ -94,7 +118,7 @@ export function getCatFood(filter) {
         let catFoodList = [],
             catFoodListIn = snapshot.val();
 
-        catFoodListIn.forEach(function(catFood) {
+        catFoodListIn.forEach(function(catFood, index) {
             let name = catFood.name,
                 imageURL = catFood.imageURL,
                 description = catFood.description,
@@ -103,6 +127,9 @@ export function getCatFood(filter) {
                 catAgeSpecific = catFood.catAgeSpecific;
 
             let catFoodObj = new CatFood(name, imageURL, description, price, amountInKg, catAgeSpecific);
+            // Maybe these should be in the constructor...
+            catFoodObj.catFoodId = index;
+            catFoodObj.productDetailPath = '/cat-food-details/' + index;
             catFoodList.push(catFoodObj);
         });
 

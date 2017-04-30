@@ -16,6 +16,14 @@ class CatFood extends Food {
         VALIDATOR.checkPetAgeCategory(value, CONSTANTS.CAT_AGE_CATEGORIES);
         this._catAgeSpecific = value;
     }
+
+    get catFoodId() {
+        return this._catFoodId;
+    }
+
+    set catFoodId(value) {
+        this._catFoodId = value;
+    }
 }
 
 export { CatFood };

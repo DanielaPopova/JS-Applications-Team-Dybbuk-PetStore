@@ -31,6 +31,10 @@ let router = (() => {
             productsController.loadCatFood();
         });
 
+        router.on('/cat-food-details/:catfoodid', (params, query) => {
+            productsController.loadCatFoodDetails(params.catfoodid);
+        });
+
         router.on('/dog-food-list', () => {
             productsController.loadDogFood();
         });
@@ -40,9 +44,9 @@ let router = (() => {
             userControler.renderLoginForm();
         });
 
-        router.notFound(() => {
-            router.navigate('/home');
-        });
+        // router.notFound(() => {
+        //     router.navigate('/home');
+        // });
 
         router.resolve();
     }

@@ -1,5 +1,6 @@
 import handlebars from 'handlebars';
 import { getCatFood } from 'db';
+import { getCatFoodDetails } from 'db';
 import { getAllDogFood } from 'db';
 import { getTemplate } from 'templates';
 import { CONSTANTS } from 'constants';
@@ -72,16 +73,29 @@ class ProductsController {
         });
     }
 
+    loadCatFoodDetails(catFoodId) {
+        let requestCatFoodDetails = getCatFoodDetails(catFoodId);
+        let requestCatFoodTemplate = getTemplate('cat-food-details');
+
+        Promise.all([requestCatFoodDetails, requestCatFoodTemplate]).then(([catFoodDetails, catFoodTemplate]) => {
+            if (!catFoodDetails) {
+                // if not found return to the cat food list
+                window.location.href = "/#/cat-food-list/";
+            }
+            $('#main-content-container').html(catFoodTemplate(catFoodDetails));
+        });
+    }
+
     loadDogFood() {
 
         let requestDogFoodData = getAllDogFood();
         let requestDogFoodTemplate = getTemplate('dog-food');
 
-         Promise.all([requestDogFoodData, requestDogFoodTemplate]).then(([dogFoodList, template]) => {
+        Promise.all([requestDogFoodData, requestDogFoodTemplate]).then(([dogFoodList, template]) => {
 
             console.log(dogFoodList);
             $('#main-content-container').html(template(dogFoodList));
-         });
+        });
     }
 }
 
