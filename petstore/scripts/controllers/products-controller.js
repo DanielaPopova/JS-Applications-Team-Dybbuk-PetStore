@@ -1,5 +1,6 @@
 import handlebars from 'handlebars';
 import { getCatFood } from 'db';
+import { getAllDogFood } from 'db';
 import { getTemplate } from 'templates';
 import { CONSTANTS } from 'constants';
 import { filterStringToFilterObject } from 'filter-string-to-filter-object';
@@ -69,6 +70,18 @@ class ProductsController {
                 }
             });
         });
+    }
+
+    loadDogFood() {
+
+        let requestDogFoodData = getAllDogFood();
+        let requestDogFoodTemplate = getTemplate('dog-food');
+
+         Promise.all([requestDogFoodData, requestDogFoodTemplate]).then(([dogFoodList, template]) => {
+
+            console.log(dogFoodList);
+            $('#main-content-container').html(template(dogFoodList));
+         });
     }
 }
 

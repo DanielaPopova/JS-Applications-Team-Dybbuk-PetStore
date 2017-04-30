@@ -29,6 +29,7 @@ SystemJS.config({
         'requester': './scripts/helpers/requester.js',
         'products-controller': './scripts/controllers/products-controller.js',
         'home-controller': './scripts/controllers/home-controller.js',
+        'user-controller': './scripts/controllers/user-controller.js',
         'filter-string-to-filter-object': './scripts/helpers/filter-string-to-filter-object.js'
     }
 });
