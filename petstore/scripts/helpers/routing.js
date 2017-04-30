@@ -6,7 +6,7 @@ let router = (() => {
     let router;
 
     function init() {
-        router = new Navigo(null, false);
+        router = new Navigo(null, true);
 
         router.on('/dogsBreed', () => {
             // TODO: change href attributes in a tags to existing routs  example href"#/home"
