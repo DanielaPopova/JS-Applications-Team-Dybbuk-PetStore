@@ -82,6 +82,8 @@ class ProductsController {
                 // if not found return to the cat food list
                 window.location.href = "/#/cat-food-list/";
             }
+
+            console.log(catFoodDetails);
             $('#main-content-container').html(catFoodTemplate(catFoodDetails));
         });
     }
