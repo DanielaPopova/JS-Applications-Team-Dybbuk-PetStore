@@ -42,8 +42,7 @@ let router = (() => {
 
         router.on('/login', () => {
             console.log('login');
-            userController.renderLoginForm();
-            userController.initApp();
+            userController.renderLoginForm();            
         });
 
         router.on('/cart', () => {
