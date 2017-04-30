@@ -1,6 +1,7 @@
 import { productsController } from 'products-controller';
 import { homeController } from 'home-controller';
 import { userControler } from 'user-controller';
+import { cartController } from 'cart-controller';
 
 let router = (() => {
     let router;
@@ -44,9 +45,13 @@ let router = (() => {
             userControler.renderLoginForm();
         });
 
-        // router.notFound(() => {
-        //     router.navigate('/home');
-        // });
+        router.on('/cart', () => {
+            cartController.loadCart();
+        });
+
+        router.notFound(() => {
+            router.navigate('/home');
+        });
 
         router.resolve();
     }

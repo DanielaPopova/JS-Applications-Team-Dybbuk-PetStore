@@ -6,7 +6,7 @@ import { getTemplate } from 'templates';
 import { CONSTANTS } from 'constants';
 import { filterStringToFilterObject } from 'filter-string-to-filter-object';
 import { filterObjectToFilterString } from 'filter-string-to-filter-object';
-import { addToCart } from 'add-to-cart';
+import { addToCart } from 'cart-manipulator';
 
 class ProductsController {
     loadCatFood(filterString) {
@@ -70,6 +70,12 @@ class ProductsController {
 
                     window.location.href = "/#/cat-food-list/" + filterString;
                 }
+            });
+
+            $('.add-to-cart-button').click(function() {
+                const indexInCatFoodList = $(this).val();
+
+                addToCart(catFoodList[indexInCatFoodList]);
             });
         });
     }
