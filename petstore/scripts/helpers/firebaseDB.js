@@ -108,8 +108,8 @@ export function getCatFood(filter) {
 
         for (let filterKey in filter) {
             catFoodList = catFoodList.filter(catFoodItem => {
-                for (let filterValue of filter) {
-                    if (catFoodItem[filterKey] === filterValue) {
+                for (let filterValue of filter[filterKey]) {
+                    if (catFoodItem[filterKey] == filterValue) {
                         return true;
                     }
                 }

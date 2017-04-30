@@ -1,5 +1,6 @@
 import { productsController } from 'products-controller';
 import { homeController } from 'home-controller';
+import { userControler } from 'user-controller';
 
 let router = (() => {
     let router;
@@ -22,15 +23,21 @@ let router = (() => {
         });
 
         router.on('/cat-food-list/:filter', (params, query) => {
-            console.log('called with filter');
-            console.log(params);
-            productsController.loadCatFood();
+            productsController.loadCatFood(params.filter);
         });
 
 
         router.on('/cat-food-list', () => {
-            console.log('called without parameters');
             productsController.loadCatFood();
+        });
+
+        router.on('/dog-food-list', () => {
+            productsController.loadDogFood();
+        });
+
+        router.on('/login', () => {
+            console.log('login');
+            userControler.renderLoginForm();
         });
 
         router.notFound(() => {
