@@ -27,7 +27,7 @@ export function addToCart(product) {
 
     $('#message-container').append($successMessage);
     $successMessage.alert();
-    $successMessage.fadeTo(3000, 500).slideUp(500, function() {
+    $successMessage.fadeTo(3000, 500).slideUp(500, function () {
         $successMessage.slideUp(500).remove();
     });
 }
@@ -41,7 +41,12 @@ export function getProductsInCart() {
 }
 
 export function updateCartIcon(productCount) {
-    $('#shopping-cart-item-count').html(getProductsInCart().length);
+    if (getProductsInCart().length) {
+        $('#shopping-cart-item-count').html(getProductsInCart().length);
+    } else {
+        $('#shopping-cart-item-count').html('');
+    }
+
 }
 
 export function removeFromCart(idInCart) {
