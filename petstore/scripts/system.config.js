@@ -30,7 +30,8 @@ SystemJS.config({
         'products-controller': './scripts/controllers/products-controller.js',
         'home-controller': './scripts/controllers/home-controller.js',
         'user-controller': './scripts/controllers/user-controller.js',
-        'filter-string-to-filter-object': './scripts/helpers/filter-string-to-filter-object.js'
+        'filter-string-to-filter-object': './scripts/helpers/filter-string-to-filter-object.js',
+        'add-to-cart': './scripts/helpers/add-to-cart.js'
     }
 });
 
