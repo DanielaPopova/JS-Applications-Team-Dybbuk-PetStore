@@ -1,6 +1,6 @@
 import { productsController } from 'products-controller';
 import { homeController } from 'home-controller';
-import { userControler } from 'user-controller';
+import { userController } from 'user-controller';
 
 let router = (() => {
     let router;
@@ -41,7 +41,8 @@ let router = (() => {
 
         router.on('/login', () => {
             console.log('login');
-            userControler.renderLoginForm();
+            userController.renderLoginForm();
+            userController.initApp();
         });
 
         // router.notFound(() => {
