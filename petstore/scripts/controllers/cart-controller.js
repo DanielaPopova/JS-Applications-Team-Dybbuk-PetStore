@@ -27,7 +27,7 @@ class CartController {
                 // correct the total price before removing the element itself
                 const currentTotalPrice = +$('#total-price-container').html();
                 const removedItemPrice = +$(this)
-                    .closest('.item-container')
+                    .closest('.shopping-cart-item')
                     .find('.item-price').html();
                 $('#total-price-container').html(currentTotalPrice - removedItemPrice);
 

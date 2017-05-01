@@ -1,6 +1,6 @@
 import { Product } from 'product';
 import $ from 'jquery';
-import Bootstrap from 'bootstrap';
+// import Bootstrap from 'bootstrap';
 
 export function addToCart(product) {
     const productCart = getProductsInCart();
