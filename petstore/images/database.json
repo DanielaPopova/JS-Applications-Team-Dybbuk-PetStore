@@ -11,7 +11,7 @@
       "appFriendly": 5,
       "exerciseNeeds": 4,
       "trainability": 3,
-      "size": 3
+      "size": "large"
     },
     {
       "name": "Beagle",
@@ -24,7 +24,7 @@
       "appFriendly": 2,
       "exerciseNeeds": 5,
       "trainability": 1,
-      "size": 2
+      "size": "medium"
     },
     {
       "name": "Bernese Mountain Dog",
@@ -37,7 +37,7 @@
       "appFriendly": 2,
       "exerciseNeeds": 3,
       "trainability": 3,
-      "size": 4
+      "size": "giant"
     },
     {
       "name": "Bulldog",
@@ -50,7 +50,7 @@
       "appFriendly": 5,
       "exerciseNeeds": 1,
       "trainability": 3,
-      "size": 2
+      "size": "medium"
     },
     {
       "name": "Chihuahua",
@@ -63,7 +63,7 @@
       "appFriendly": 5,
       "exerciseNeeds": 1,
       "trainability": 3,
-      "size": 1
+      "size": "small"
     },
     {
       "name": "Chow Chow",
@@ -76,7 +76,7 @@
       "appFriendly": 3,
       "exerciseNeeds": 2,
       "trainability": 2,
-      "size": 3
+      "size": "large"
     },
     {
       "name": "Collie",
@@ -89,7 +89,7 @@
       "appFriendly": 1,
       "exerciseNeeds": 5,
       "trainability": 5,
-      "size": 3
+      "size": "large"
     },
     {
       "name": "Dachshund",
@@ -102,7 +102,7 @@
       "appFriendly": 4,
       "exerciseNeeds": 3,
       "trainability": 2,
-      "size": 1
+      "size": "small"
     },
     {
       "name": "Doberman Pincher",
@@ -115,7 +115,7 @@
       "appFriendly": 5,
       "exerciseNeeds": 3,
       "trainability": 5,
-      "size": 3
+      "size": "large"
     },
     {
       "name": "Dogo Argentino",
@@ -128,7 +128,7 @@
       "appFriendly": 1,
       "exerciseNeeds": 4,
       "trainability": 2,
-      "size": 3
+      "size": "large"
     },
     {
       "name": "French Bulldog",
@@ -141,7 +141,7 @@
       "appFriendly": 5,
       "exerciseNeeds": 2,
       "trainability": 3,
-      "size": 2
+      "size": "medium"
     },
     {
       "name": "German Shepherd",
@@ -154,7 +154,7 @@
       "appFriendly": 3,
       "exerciseNeeds": 3,
       "trainability": 5,
-      "size": 3
+      "size": "large"
     },
     {
       "name": "Golden Retriever",
@@ -167,7 +167,7 @@
       "appFriendly": 2,
       "exerciseNeeds": 5,
       "trainability": 5,
-      "size": 3
+      "size": "large"
     },
     {
       "name": "Komondor",
@@ -180,7 +180,7 @@
       "appFriendly": 2,
       "exerciseNeeds": 3,
       "trainability": 4,
-      "size": 3
+      "size": "large"
     },
     {
       "name": "Labrador Retriever",
@@ -193,7 +193,7 @@
       "appFriendly": 5,
       "exerciseNeeds": 5,
       "trainability": 5,
-      "size": 3
+      "size": "large"
     },
     {
       "name": "Neapolitan Mastiff",
@@ -206,7 +206,7 @@
       "appFriendly": 2,
       "exerciseNeeds": 2,
       "trainability": 3,
-      "size": 4
+      "size": "giant"
     },
     {
       "name": "Pekingese",
@@ -219,7 +219,7 @@
       "appFriendly": 5,
       "exerciseNeeds": 1,
       "trainability": 2,
-      "size": 1
+      "size": "small"
     },
     {
       "name": "Pomeranian",
@@ -232,7 +232,7 @@
       "appFriendly": 5,
       "exerciseNeeds": 2,
       "trainability": 3,
-      "size": 1
+      "size": "small"
     },
     {
       "name": "Pug",
@@ -245,7 +245,7 @@
       "appFriendly": 5,
       "exerciseNeeds": 1,
       "trainability": 3,
-      "size": 1
+      "size": "small"
     },
     {
       "name": "Rottweiler",
@@ -258,7 +258,7 @@
       "appFriendly": 3,
       "exerciseNeeds": 3,
       "trainability": 3,
-      "size": 3
+      "size": "large"
     },
     {
       "name": "Samoyed",
@@ -271,7 +271,7 @@
       "appFriendly": 3,
       "exerciseNeeds": 4,
       "trainability": 3,
-      "size": 2
+      "size": "medium"
     },
     {
       "name": "Siberian Husky",
@@ -284,7 +284,7 @@
       "appFriendly": 2,
       "exerciseNeeds": 4,
       "trainability": 1,
-      "size": 2
+      "size": "medium"
     },
     {
       "name": "Saint Bernard",
@@ -297,7 +297,7 @@
       "appFriendly": 3,
       "exerciseNeeds": 2,
       "trainability": 3,
-      "size": 4
+      "size": "giant"
     },
     {
       "name": "Vizsla",
@@ -310,7 +310,7 @@
       "appFriendly": 2,
       "exerciseNeeds": 5,
       "trainability": 5,
-      "size": 3
+      "size": "large"
     },
     {
       "name": "Yorkshire Terrier",
@@ -323,7 +323,7 @@
       "appFriendly": 5,
       "exerciseNeeds": 1,
       "trainability": 3,
-      "size": 1
+      "size": "small"
     }
   ],
   "catBreeds": [
@@ -576,7 +576,7 @@
       "price": 2.50,
       "amountInKg": 0.2,
       "dogAgeSpecific": "puppy",
-      "dogSizeSpecific": 1
+      "dogSizeSpecific": "small"
     },
     {
       "name": "Puppy canned food for small dogs",
@@ -585,7 +585,7 @@
       "price": 4.50,
       "amountInKg": 0.5,
       "dogAgeSpecific": "puppy",
-      "dogSizeSpecific": 1
+      "dogSizeSpecific": "small"
     },
     {
       "name": "Giant junior dry dog food",
@@ -594,7 +594,7 @@
       "price": 10.5,
       "amountInKg": 2.0,
       "dogAgeSpecific": "puppy",
-      "dogSizeSpecific": 4
+      "dogSizeSpecific": "giant"
     },
     {
       "name": "Giant junior dry dog food",
@@ -603,7 +603,7 @@
       "price": 20.0,
       "amountInKg": 5.0,
       "dogAgeSpecific": "puppy",
-      "dogSizeSpecific": 4
+      "dogSizeSpecific": "giant"
     },
     {
       "name": "Medium puppy dry food",
@@ -612,7 +612,7 @@
       "price": 10.5,
       "amountInKg": 2.0,
       "dogAgeSpecific": "puppy",
-      "dogSizeSpecific": 2
+      "dogSizeSpecific": "medium"
     },
     {
       "name": "Medium puppy dry food",
@@ -621,7 +621,7 @@
       "price": 20.0,
       "amountInKg": 5.0,
       "dogAgeSpecific": "puppy",
-      "dogSizeSpecific": 2
+      "dogSizeSpecific": "medium"
     },
     {
       "name": "Maxi adult dry dog food",
@@ -630,7 +630,7 @@
       "price": 13.5,
       "amountInKg": 2.0,
       "dogAgeSpecific": "adult",
-      "dogSizeSpecific": 3
+      "dogSizeSpecific": "large"
     },
     {
       "name": "Maxi adult dry dog food",
@@ -639,7 +639,7 @@
       "price": 24.0,
       "amountInKg": 5.0,
       "dogAgeSpecific": "adult",
-      "dogSizeSpecific": 3
+      "dogSizeSpecific": "large"
     },
     {
       "name": "Mini adult dry dog food",
@@ -648,7 +648,7 @@
       "price": 6.5,
       "amountInKg": 2.0,
       "dogAgeSpecific": "adult",
-      "dogSizeSpecific": 1
+      "dogSizeSpecific": "small"
     },
     {
       "name": "Mini adult dry dog food",
@@ -657,7 +657,7 @@
       "price": 12.0,
       "amountInKg": 5.0,
       "dogAgeSpecific": "adult",
-      "dogSizeSpecific": 1
+      "dogSizeSpecific": "small"
     },
     {
       "name": "Urban life adult canned dog food",
@@ -666,7 +666,7 @@
       "price": 2.50,
       "amountInKg": 0.2,
       "dogAgeSpecific": "adult",
-      "dogSizeSpecific": 2
+      "dogSizeSpecific": "medium"
     },
     {
       "name": "Urban life adult canned dog food",
@@ -675,7 +675,7 @@
       "price": 4.50,
       "amountInKg": 0.5,
       "dogAgeSpecific": "adult",
-      "dogSizeSpecific": 2
+      "dogSizeSpecific": "medium"
     },
     {
       "name": "Medium aging 10+ dry dog food",
@@ -684,7 +684,7 @@
       "price": 10.5,
       "amountInKg": 2.0,
       "dogAgeSpecific": "senior",
-      "dogSizeSpecific": 2
+      "dogSizeSpecific": "medium"
     },
     {
       "name": "Medium aging 10+ dry dog food",
@@ -693,7 +693,7 @@
       "price": 20.0,
       "amountInKg": 5.0,
       "dogAgeSpecific": "senior",
-      "dogSizeSpecific": 2
+      "dogSizeSpecific": "medium"
     },
     {
       "name": "X-small aging 12+ dry dog food",
@@ -702,7 +702,7 @@
       "price": 10.5,
       "amountInKg": 2.0,
       "dogAgeSpecific": "senior",
-      "dogSizeSpecific": 1
+      "dogSizeSpecific": "small"
     },
     {
       "name": "X-small aging 12+ dry dog food",
@@ -711,7 +711,7 @@
       "price": 20.0,
       "amountInKg": 5.0,
       "dogAgeSpecific": "senior",
-      "dogSizeSpecific": 1
+      "dogSizeSpecific": "small"
     },
     {
       "name": "Maxi aging 8+ dry dog food",
@@ -720,7 +720,7 @@
       "price": 13.5,
       "amountInKg": 2.0,
       "dogAgeSpecific": "senior",
-      "dogSizeSpecific": 3
+      "dogSizeSpecific": "large"
     },
     {
       "name": "Maxi aging 8+ dry dog food",
@@ -729,7 +729,7 @@
       "price": 24.0,
       "amountInKg": 5.0,
       "dogAgeSpecific": "senior",
-      "dogSizeSpecific": 3
+      "dogSizeSpecific": "large"
     },
     {
       "name": "Giant adult dry dog food",
@@ -738,7 +738,7 @@
       "price": 16.0,
       "amountInKg": 2.0,
       "dogAgeSpecific": "adult",
-      "dogSizeSpecific": 4
+      "dogSizeSpecific": "giant"
     },
     {
       "name": "Giant adult dry dog food",
@@ -747,7 +747,7 @@
       "price": 30.0,
       "amountInKg": 5.0,
       "dogAgeSpecific": "adult",
-      "dogSizeSpecific": 4
+      "dogSizeSpecific": "giant"
     }
   ],
   "catFood": [

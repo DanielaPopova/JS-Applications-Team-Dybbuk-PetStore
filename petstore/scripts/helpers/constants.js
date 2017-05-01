@@ -3,7 +3,7 @@ const BREED_FEATURE_MAX_LEVEL = 5;
 const DOG_MIN_SIZE = 1;
 const DOG_MAX_SIZE = 4;
 
-const DOG_AVAILABLE_SIZE = [1, 2, 3, 4];
+const DOG_AVAILABLE_SIZE = ['small', 'medium', 'large', 'giant'];
 
 const DOG_AGE_CATEGORIES = ['puppy', 'adult', 'senior'];
 const CAT_AGE_CATEGORIES = ['kitten', 'adult', 'senior'];
