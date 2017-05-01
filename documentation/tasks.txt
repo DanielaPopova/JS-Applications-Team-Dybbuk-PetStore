@@ -1,0 +1,26 @@
+Илия:
+1. dogFood
+2. dog-food-details
+3. best pet you
+
+Жоро
+1. Unit Testing
+- models
+- cat-food-details
+- cart
+2. Minification
+
+Даниела:
+1. Login
+- when not signed in - cannot checkout
+2. Accessory - for dogs/for cats
+- dog-accessory-details/cat-accessory-details
+3. Pet Info - cats/dogs
+- dog-breed-details/cat-breed-details
+
+TODO:
+1. Contact Form
+2. Share button - cat/dog-breed details
+3. Aks Cyki about modules - iife?
+4. Message when no results are found with filter
+5. Upload to http://best.telerikacademy.com/
