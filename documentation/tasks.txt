@@ -23,3 +23,4 @@ TODO:
 2. Share button - cat/dog-breed details
 3. Aks Cyki about modules - iife?
 4. Message when no results are found with filter
+5. Upload to http://best.telerikacademy.com/
