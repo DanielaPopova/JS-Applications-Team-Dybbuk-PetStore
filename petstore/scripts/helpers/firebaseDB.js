@@ -127,6 +127,30 @@ export function getDogFood(filter) {
     });
 }
 
+export function getDogFoodDetails(id) {
+    return firebase.database().ref('dogFood/' + id).once('value').then(function(snapshot) {
+        const dogFood = snapshot.val();
+
+        if (!dogFood) {
+            return null;
+        }
+
+        let name = dogFood.name,
+            imageURL = dogFood.imageURL,
+            description = dogFood.description,
+            price = dogFood.price,
+            amountInKg = dogFood.amountInKg,
+            dogAgeSpecific = dogFood.dogAgeSpecific,
+            dogSizeSpecific = dogFood.dogSizeSpecific;
+            					
+        let dogFoodObj = new DogFood(name, imageURL, description, price, amountInKg, dogAgeSpecific, dogSizeSpecific);
+        
+        dogFoodObj.dogFoodId = id;
+        dogFoodObj.productDetailPath = '/dog-food-details/' + id;
+
+        return dogFoodObj;
+    });
+}
 export function getCatFoodDetails(id) {
     return firebase.database().ref('catFood/' + id).once('value').then(function(snapshot) {
         const catFood = snapshot.val();

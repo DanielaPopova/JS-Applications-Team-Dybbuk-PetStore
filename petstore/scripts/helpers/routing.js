@@ -43,7 +43,7 @@ let router = (() => {
 
         // TODO:  loadDogFoodDetails  function
         router.on('/dog-food-details/:dogfoodid', (params, query) => {
-            productsController.loadCatFoodDetails(params.catfoodid);
+            productsController.loadDogFoodDetails(params.dogfoodid);
         });
 
         router.on('/dog-items-list', () => {            

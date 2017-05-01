@@ -2,6 +2,7 @@ import handlebars from 'handlebars';
 import { getCatFood } from 'db';
 import { getDogFood } from 'db';
 import { getCatFoodDetails } from 'db';
+import { getDogFoodDetails } from 'db';
 import { getAllDogFood } from 'db';
 import { getAllDogAccessories } from 'db';
 import { getDogAccessoryDetails } from 'db';
@@ -63,7 +64,7 @@ class ProductsController {
                     window.location.href = "/#/cat-food-list";
                 } else {
                     let filterItems = {};
-                    $('#filter input[type=checkbox]:checked').each(function() {
+                    $('#filter input[type=checkbox]:checked').each(function () {
                         const filterKey = $(this).attr('name');
                         if (typeof filterItems[filterKey] == 'undefined') {
                             filterItems[filterKey] = [];
@@ -77,7 +78,7 @@ class ProductsController {
                 }
             });
 
-            $('.add-to-cart-button').click(function() {
+            $('.add-to-cart-button').click(function () {
                 const indexInCatFoodList = $(this).val();
 
                 addToCart(catFoodList[indexInCatFoodList]);
@@ -104,7 +105,7 @@ class ProductsController {
     }
 
     loadDogFood(filterString) {
-         let filter = {};
+        let filter = {};
 
         if (typeof filterString == 'string') {
             filter = filterStringToFilterObject(filterString);
@@ -114,7 +115,7 @@ class ProductsController {
         let requestDogFoodTemplate = getTemplate('dog-food');
 
         Promise.all([requestDogFoodData, requestDogFoodTemplate]).then(([dogFoodList, template]) => {
-            
+
             const dogAges = [];
             CONSTANTS.DOG_AGE_CATEGORIES.forEach(dogAgeString => {
                 // if filter is not present include every element. That's what Array.isArray is for.
@@ -139,7 +140,7 @@ class ProductsController {
 
                 dogFoodAvailableAmounts.push(newDogFoodAmount);
             });
-            
+
             const dogAvailableSize = [];
             CONSTANTS.DOG_AVAILABLE_SIZE.forEach(availableSize => {
                 const isInFilter = !Array.isArray(filter.availableSize) || filter.availableSize.indexOf('' + availableSize) >= 0;
@@ -166,7 +167,7 @@ class ProductsController {
                     window.location.href = "/#/dog-food-list";
                 } else {
                     let filterItems = {};
-                    $('#filter input[type=checkbox]:checked').each(function() {
+                    $('#filter input[type=checkbox]:checked').each(function () {
                         const filterKey = $(this).attr('name');
                         if (typeof filterItems[filterKey] == 'undefined') {
                             filterItems[filterKey] = [];
@@ -180,7 +181,7 @@ class ProductsController {
                 }
             });
 
-            $('.add-to-cart-button').click(function() {
+            $('.add-to-cart-button').click(function () {
                 const indexInDogFoodList = $(this).val();
 
                 addToCart(dogFoodList[indexInDogFoodList]);
@@ -188,13 +189,30 @@ class ProductsController {
         });
     }
 
-     loadDogAccessories() {
+    loadDogFoodDetails(dogFoodId) {
+        let requestDogFoodDetails = getDogFoodDetails(dogFoodId);
+        let requestDogFoodTemplate = getTemplate('dog-food-details');
+
+        Promise.all([requestDogFoodDetails, requestDogFoodTemplate]).then(([dogFoodDetails, dogFoodTemplate]) => {
+            if (!dogFoodDetails) {
+                window.location.href = "/#/dog-food-list/";
+            }
+
+            $('#main-content-container').html(dogFoodTemplate(dogFoodDetails));
+
+            $('#add-to-cart-button').click(() => {
+                addToCart(dogFoodDetails);
+            })
+        });
+    }
+
+    loadDogAccessories() {
         let requestDogAccessories = getAllDogAccessories();
         let requestDogAccessoriesTemplate = getTemplate('dog-accessories');
 
         Promise.all([requestDogAccessories, requestDogAccessoriesTemplate]).then(([dogAccessories, dogAccessoriesTemplate]) => {
-            
-            if (!dogAccessories) {               
+
+            if (!dogAccessories) {
                 window.location.href = "/#/dog-items-list/";
             }
 
@@ -204,19 +222,19 @@ class ProductsController {
                 const indexInDogAccessories = $(this).val();
 
                 addToCart(dogAccessories[indexInDogAccessories]);
-            });            
+            });
         });
     }
 
-     loadDogAccessoryDetails(dogAccessoryId) {
+    loadDogAccessoryDetails(dogAccessoryId) {
         let requestDogAccessoryDetails = getDogAccessoryDetails(dogAccessoryId);
         let requestDogAccessoryTemplate = getTemplate('dog-accessory-details');
 
         Promise.all([requestDogAccessoryDetails, requestDogAccessoryTemplate]).then(([accessoryDetails, accessoryTemplate]) => {
-            if (!accessoryDetails) {               
+            if (!accessoryDetails) {
                 window.location.href = "/#/dog-items-list/";
             }
-            
+
             $('#main-content-container').html(accessoryTemplate(accessoryDetails));
 
             $('#add-to-cart-button').click(() => {
@@ -228,19 +246,19 @@ class ProductsController {
     loadCatAccessories() {
         let requestCatAccessories = getAllCatAccessories();
         let requestCatAccessoriesTemplate = getTemplate('cat-accessories');
-        
+
         Promise.all([requestCatAccessories, requestCatAccessoriesTemplate]).then(([catAccessories, catAccessoriesTemplate]) => {
-            if (!catAccessories) {               
+            if (!catAccessories) {
                 window.location.href = "/#/cat-items-list/";
             }
-           
+
             $('#main-content-container').html(catAccessoriesTemplate(catAccessories));
 
             $('.add-to-cart-button').click(function () {
                 const indexInCatAccessories = $(this).val();
 
                 addToCart(catAccessories[indexInCatAccessories]);
-            }); 
+            });
         });
     }
 
@@ -249,7 +267,7 @@ class ProductsController {
         let requestCatAccessoryTemplate = getTemplate('cat-accessory-details');
 
         Promise.all([requestCatAccessoryDetails, requestCatAccessoryTemplate]).then(([accessoryDetails, accessoryTemplate]) => {
-            if (!accessoryDetails) {                
+            if (!accessoryDetails) {
                 window.location.href = "/#/cat-items-list/";
             }
 
