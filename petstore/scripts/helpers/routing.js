@@ -2,6 +2,7 @@ import { productsController } from 'products-controller';
 import { homeController } from 'home-controller';
 import { userController } from 'user-controller';
 import { cartController } from 'cart-controller';
+import Navigo from 'navigo';
 
 let router = (() => {
     let router;
@@ -45,8 +46,23 @@ let router = (() => {
             productsController.loadCatFoodDetails(params.catfoodid);
         });
 
-        router.on('/login', () => {
-            console.log('login');
+        router.on('/dog-items-list', () => {            
+            productsController.loadDogAccessories();
+        });
+
+         router.on('/dog-items-details/:dogaccessoryid', (params, query) => {
+            productsController.loadDogAccessoryDetails(params.dogaccessoryid);
+        });
+
+        router.on('/cat-items-list', () => {
+            productsController.loadCatAccessories();
+        });
+
+         router.on('/cat-items-details/:cataccessoryid', (params, query) => {
+            productsController.loadCatAccessoryDetails(params.cataccessoryid);
+        });
+
+        router.on('/login', () => {            
             userController.renderLoginForm();            
         });
 

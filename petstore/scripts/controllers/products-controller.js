@@ -1,7 +1,12 @@
 import handlebars from 'handlebars';
 import { getCatFood } from 'db';
+import { getDogFood } from 'db';
 import { getCatFoodDetails } from 'db';
 import { getAllDogFood } from 'db';
+import { getAllDogAccessories } from 'db';
+import { getDogAccessoryDetails } from 'db';
+import { getCatAccessoryDetails } from 'db';
+import { getAllCatAccessories } from 'db';
 import { getTemplate } from 'templates';
 import { CONSTANTS } from 'constants';
 import { filterStringToFilterObject } from 'filter-string-to-filter-object';
@@ -180,6 +185,79 @@ class ProductsController {
 
                 addToCart(dogFoodList[indexInDogFoodList]);
             });
+        });
+    }
+
+     loadDogAccessories() {
+        let requestDogAccessories = getAllDogAccessories();
+        let requestDogAccessoriesTemplate = getTemplate('dog-accessories');
+
+        Promise.all([requestDogAccessories, requestDogAccessoriesTemplate]).then(([dogAccessories, dogAccessoriesTemplate]) => {
+            
+            if (!dogAccessories) {               
+                window.location.href = "/#/dog-items-list/";
+            }
+
+            $('#main-content-container').html(dogAccessoriesTemplate(dogAccessories));
+
+            $('.add-to-cart-button').click(function () {
+                const indexInDogAccessories = $(this).val();
+
+                addToCart(dogAccessories[indexInDogAccessories]);
+            });            
+        });
+    }
+
+     loadDogAccessoryDetails(dogAccessoryId) {
+        let requestDogAccessoryDetails = getDogAccessoryDetails(dogAccessoryId);
+        let requestDogAccessoryTemplate = getTemplate('dog-accessory-details');
+
+        Promise.all([requestDogAccessoryDetails, requestDogAccessoryTemplate]).then(([accessoryDetails, accessoryTemplate]) => {
+            if (!accessoryDetails) {               
+                window.location.href = "/#/dog-items-list/";
+            }
+            
+            $('#main-content-container').html(accessoryTemplate(accessoryDetails));
+
+            $('#add-to-cart-button').click(() => {
+                addToCart(accessoryDetails);
+            })
+        });
+    }
+
+    loadCatAccessories() {
+        let requestCatAccessories = getAllCatAccessories();
+        let requestCatAccessoriesTemplate = getTemplate('cat-accessories');
+        
+        Promise.all([requestCatAccessories, requestCatAccessoriesTemplate]).then(([catAccessories, catAccessoriesTemplate]) => {
+            if (!catAccessories) {               
+                window.location.href = "/#/cat-items-list/";
+            }
+           
+            $('#main-content-container').html(catAccessoriesTemplate(catAccessories));
+
+            $('.add-to-cart-button').click(function () {
+                const indexInCatAccessories = $(this).val();
+
+                addToCart(catAccessories[indexInCatAccessories]);
+            }); 
+        });
+    }
+
+    loadCatAccessoryDetails(catAccessoryId) {
+        let requestCatAccessoryDetails = getCatAccessoryDetails(catAccessoryId);
+        let requestCatAccessoryTemplate = getTemplate('cat-accessory-details');
+
+        Promise.all([requestCatAccessoryDetails, requestCatAccessoryTemplate]).then(([accessoryDetails, accessoryTemplate]) => {
+            if (!accessoryDetails) {                
+                window.location.href = "/#/cat-items-list/";
+            }
+
+            $('#main-content-container').html(accessoryTemplate(accessoryDetails));
+
+            $('#add-to-cart-button').click(() => {
+                addToCart(accessoryDetails);
+            })
         });
     }
 }

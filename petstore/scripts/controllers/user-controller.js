@@ -4,100 +4,6 @@ import $ from 'jquery';
 
 class UserController {
 
-    renderLoginForm() {
-
-        getTemplate('login-register-form')
-            .then((template) => {
-                $('#main-content-container').html(template);
-                this.initApp();
-            });
-    };   
-
-    userSignIn() {
-        if (firebase.auth().currentUser) {            
-            firebase.auth().signOut();            
-        } else {
-            let $email = $('#sign-in-email').val();
-            let $password = $('#sign-in-password').val();
-            
-            firebase.auth().signInWithEmailAndPassword($email, $password).catch(function (error) {
-                // Handle Errors here.
-                let errorCode = error.code;
-                let errorMessage = error.message;
-                
-                if (errorCode === 'auth/wrong-password') {
-                    alert('Wrong password.');
-                } else {
-                    alert(errorMessage);
-                }
-                console.log(error);               
-            });            
-        }        
-    };
-
-    userSignUp(){
-        console.log('Sign Up Start');
-        let $email = $('#sign-up-email').val(),
-            $password = $('#sign-up-password').val(),
-            $repeatedPassword = $('#sign-up-repeat-password').val(),
-            $firstName = $('#user-first-name').val(),
-            $lastName = $('#user-last-name').val();
-
-            // $email = this.formatUserInput($email);
-            // $password = this.formatUserInput($password);
-            // $repeatedPassword = this.formatUserInput($repeatedPassword);
-            // $firstName = this.formatUserInput($firstName);
-            // $lastName = this.formatUserInput($lastName);
-
-            // this.validateEmail($email);
-            // this.validatePassword($password);
-
-            // if($repeatedPassword !== $password){
-            //     throw new Error('Password does not match!');
-            // }
-
-            // this.validateName($firstName);
-            // this.validateName( $lastName);
-            
-
-        firebase.auth().createUserWithEmailAndPassword($email, $password).catch(function(error) {        
-            let errorCode = error.code;
-            let errorMessage = error.message;
-            
-            if (errorCode == 'auth/weak-password') {
-                alert('The password is too weak.');
-            } else {
-                alert(errorMessage);
-            }
-            console.log(error);
-      });
-    };
-
-    initApp() {
-        console.log('Init START');
-        firebase.auth().onAuthStateChanged(function (user) {            
-            if (user) {
-                $('#nav-login-btn').html('Sing Out');
-                //window.location.href = "/home";
-
-                // User is signed in.
-                let displayName = user.displayName;
-                let email = user.email;
-                let emailVerified = user.emailVerified;
-                let photoURL = user.photoURL;
-                let isAnonymous = user.isAnonymous;
-                let uid = user.uid;
-                let providerData = user.providerData;
-
-            } else {
-                $('#nav-login-btn').html('Sing In');
-            }
-
-        });
-        $('#sign-up-btn').on('click', this.userSignUp);
-        $('#sign-in-btn').on('click', this.userSignIn);
-    };
-
     formatUserInput(value) {
         value = value.trim();
         let htmlEscaper = /[&<>"'\/]/g,
@@ -120,26 +26,99 @@ class UserController {
         return value;
     };
 
-    validatePassword(pass){
-        let pattern = /[^a-zA-Z0-9_!#$%&?]{6,}/g;
-        if (pass.match(pattern)) {
-            throw new Error(`${pass} contains invalid symbols!`);
-        }
+    validateUserInput(input, pattern) {
+        return pattern.test(input);
     };
 
-    validateEmail(email){
-        let pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-         if (email.match(pattern)) {
-            throw new Error('Invalid email address!');
+    alertWithErrorMessage(element, message) {
+        $(element).css('border-color', 'red');
+        $(element).focus();
+        $(element).after(`</span><span class="help-block">${message}</span>`); 
+    }    
+
+    userSignUp(){
+        let _this = this;
+        
+        let $email = this.formatUserInput($('#sign-up-email').val()),        
+            $password = this.formatUserInput($('#sign-up-password').val()),
+            $repeatedPassword = this.formatUserInput($('#sign-up-repeat-password').val());
+            
+
+        let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/,
+            passwordPattern = /[a-zA-Z0-9_!#$%&?]{6,}/;
+           
+        
+        let validEmail = this.validateUserInput($email, emailPattern),
+            validPassword = this.validateUserInput($password, passwordPattern),
+            validRepetedPassword = ($password === $repeatedPassword);
+           
+        if (!validEmail) {
+            this.alertWithErrorMessage('#sign-up-email', 'Invalid email address!');
+        } else if (!validPassword) {
+            this.alertWithErrorMessage('#sign-up-password', 'Passoword should be at least 6 symbols!');
+        } else if (!validRepetedPassword) {
+            this.alertWithErrorMessage('#sign-up-repeat-password', 'Password does not match!');
         }
+
+        firebase.auth().createUserWithEmailAndPassword($email, $password).catch(function (error) {
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            if (errorCode == 'auth/email-already-in-use') {
+                _this.alertWithErrorMessage('#sign-up-email', errorMessage);
+            }
+        });
+        
+        $('#sign-up-email').val('');
+        $('#sign-up-password').val('');
+        $('#sign-up-repeat-password').val('');
     };
+
+    userSignIn() {
+        
+        if (firebase.auth().currentUser) {            
+            firebase.auth().signOut(); 
+            
+        } else {
+            let $email = $('#sign-in-email').val();
+            let $password = $('#sign-in-password').val();
+            
+            firebase.auth().signInWithEmailAndPassword($email, $password).catch(function (error) {
+                // Handle Errors here.
+                let errorCode = error.code;
+                let errorMessage = error.message;
+                
+                if (errorCode === 'auth/wrong-password') {
+                    alert('Wrong password.');
+                } else {
+                    alert(errorMessage);
+                }                           
+            });            
+        }        
+    };
+
+    initApp() {        
+        firebase.auth().onAuthStateChanged(function (user) {            
+            if (user) {
+                $('#main-log-in-btn').html('Log Out');             
+            } else {
+                $('#main-log-in-btn').html('Log In');
+            }
+        });
+
+        $('#sign-up-btn').on('click', () => this.userSignUp());
+        $('#sign-in-btn').on('click', () => this.userSignIn());
+    };
+
+    renderLoginForm() {
+
+        getTemplate('login-register-form')
+            .then((template) => {
+                $('#main-content-container').html(template);
+                this.initApp();
+            });
+    };     
+
     
-    validateName(name){
-        let pattern = /[^a-zA-Z]/;
-        if (name.match(pattern)) {
-            throw new Error('Invalid email address!');
-        }
-    };  
 }
 
 let userController = new UserController();

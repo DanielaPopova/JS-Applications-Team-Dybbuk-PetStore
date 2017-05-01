@@ -106,7 +106,7 @@ export function getDogFood(filter) {
             let dogFoodObj = new DogFood(name, imageURL, description, price, amountInKg, dogAgeSpecific, dogSizeSpecific);
             // Maybe these should be in the constructor...
            
-            dogFoodObj.догFoodId = index;
+            dogFoodObj.dogFoodId = index;
             dogFoodObj.productDetailPath = '/dog-food-details/' + index;
             dogFoodList.push(dogFoodObj);
         });
@@ -217,17 +217,42 @@ export function getAllDogAccessories() {
         let dogAccessories = [],
             allDogAccessories = snapshot.val();
 
-        allDogAccessories.forEach(function(dogAccessory) {
+        allDogAccessories.forEach(function(dogAccessory, index) {
             let name = dogAccessory.name,
                 imageURL = dogAccessory.imageURL,
                 description = dogAccessory.description,
                 price = dogAccessory.price;
 
             let dogAccessoryObj = new DogAccessory(name, imageURL, description, price);
+
+            dogAccessoryObj.dogAccessoryId = index;
+            dogAccessoryObj.productDetailPath = '/dog-items-details/' + index;
             dogAccessories.push(dogAccessoryObj);
         });
 
         return dogAccessories;
+    });
+}
+
+export function getDogAccessoryDetails(id) {
+    return firebase.database().ref('dogAccessories/' + id).once('value').then(function(snapshot) {
+        const dogAccessories = snapshot.val();
+
+        if (!dogAccessories) {
+            return null;
+        }
+
+        let name = dogAccessories.name,
+            imageURL = dogAccessories.imageURL,
+            description = dogAccessories.description,
+            price = dogAccessories.price;           
+
+        let dogAccessoryObj = new DogAccessory(name, imageURL, description, price);
+       
+        dogAccessoryObj.dogAccessoryId = id;
+        dogAccessoryObj.productDetailPath = '/dog-items-details/' + id;
+        
+        return dogAccessoryObj;
     });
 }
 
@@ -236,17 +261,41 @@ export function getAllCatAccessories() {
         let catAccessories = [],
             allCatAccessories = snapshot.val();
 
-        allCatAccessories.forEach(function(catAccessory) {
+        allCatAccessories.forEach(function(catAccessory, index) {
             let name = catAccessory.name,
                 imageURL = catAccessory.imageURL,
                 description = catAccessory.description,
                 price = catAccessory.price;
 
-            let catAccessoryObj = new CatAccessory(name, imageURL, description, price);
+            let catAccessoryObj = new CatAccessory(name, imageURL, description, price);   
+            catAccessoryObj.catAccessoryId = index;
+            catAccessoryObj.productDetailPath = '/cat-items-details/' + index;         
             catAccessories.push(catAccessoryObj);
         });
 
         return catAccessories;
+    });
+}
+
+export function getCatAccessoryDetails(id) {
+    return firebase.database().ref('catAccessories/' + id).once('value').then(function(snapshot) {
+        const catAccessories = snapshot.val();
+
+        if (!catAccessories) {
+            return null;
+        }
+
+        let name = catAccessories.name,
+            imageURL = catAccessories.imageURL,
+            description = catAccessories.description,
+            price = catAccessories.price;           
+
+        let catAccessoryObj = new CatAccessory(name, imageURL, description, price);
+        
+        catAccessoryObj.catAccessoryId = id;
+        catAccessoryObj.productDetailPath = '/cat-items-details/' + id;        
+
+        return catAccessoryObj;
     });
 }
 
