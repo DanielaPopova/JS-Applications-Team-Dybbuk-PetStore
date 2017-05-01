@@ -32,7 +32,7 @@ class CartController {
                 $('#total-price-container').html(currentTotalPrice - removedItemPrice);
 
                 removeFromCart(idInCart);
-                $(this).closest('.item-container').remove();
+                $(this).closest('.shopping-cart-item').remove();
             });
         });
     }
