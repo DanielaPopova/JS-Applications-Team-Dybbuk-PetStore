@@ -142,10 +142,10 @@ class ProductsController {
             });
 
             const dogAvailableSize = [];
-            CONSTANTS.DOG_AVAILABLE_SIZE.forEach(availableSize => {
-                const isInFilter = !Array.isArray(filter.availableSize) || filter.availableSize.indexOf('' + availableSize) >= 0;
+            CONSTANTS.DOG_AVAILABLE_SIZE.forEach(dogSizeSpecific => {
+                const isInFilter = !Array.isArray(filter.dogSizeSpecific) || filter.dogSizeSpecific.indexOf('' + dogSizeSpecific) >= 0;
                 const newDogSize = {
-                    availableSize,
+                    dogSizeSpecific,
                     isSelected: isInFilter
                 };
 
@@ -176,6 +176,7 @@ class ProductsController {
                     });
 
                     const filterString = filterObjectToFilterString(filterItems);
+                    console.log(filterString);
 
                     window.location.href = "/#/dog-food-list/" + filterString;
                 }

@@ -19,9 +19,9 @@
         <div class="sub-filter">
             {{#each dogFoodAvailableAmounts}}
             <div>
-                <input id="filter-age-{{amountInKg}}" type="checkbox" name="amountInKg" value="{{amountInKg}}" {{#if isSelected}}checked="checked"
+                <input id="filter-amount-{{amountInKg}}" type="checkbox" name="amountInKg" value="{{amountInKg}}" {{#if isSelected}}checked="checked"
                     {{/if}}>
-                <label for="filter-age-{{amountInKg}}">{{amountInKg}} kg</label>
+                <label for="filter-amount-{{amountInKg}}">{{amountInKg}} kg</label>
             </div>
             {{/each}}
         </div>
@@ -29,12 +29,13 @@
         <h4>Filter by dog's size</h4>
         <div class="sub-filter">
 
+
+                                    {{!--rr--}}
             {{#each dogAvailableSize}}
             <div>
-                {{!--rr--}}
-                <input id="filter-age-{{availableSize}}" type="checkbox" name="amountInKg" value="{{availableSize}}" {{#if isSelected}}checked="checked"
+                <input id="filter-size-{{dogSizeSpecific}}" type="checkbox" name="dogSizeSpecific" value="{{dogSizeSpecific}}" {{#if isSelected}}checked="checked"
                     {{/if}}>
-                <label for="filter-age-{{availableSize}}">{{availableSize}}</label>
+                <label for="filter-size-{{dogSizeSpecific}}">{{dogSizeSpecific}}</label>
             </div>
             {{/each}}
         </div>

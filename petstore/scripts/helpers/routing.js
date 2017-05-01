@@ -37,18 +37,23 @@ let router = (() => {
             productsController.loadCatFoodDetails(params.catfoodid);
         });
 
+        router.on('/dog-food-list/:filter', (params, query) => {
+            productsController.loadDogFood(params.filter);
+        });
+
         router.on('/dog-food-list', () => {
             productsController.loadDogFood();
         });
 
-        // TODO:  loadDogFoodDetails  function
         router.on('/dog-food-details/:dogfoodid', (params, query) => {
             productsController.loadDogFoodDetails(params.dogfoodid);
         });
 
+
         router.on('/dog-items-list', () => {            
             productsController.loadDogAccessories();
         });
+        
 
          router.on('/dog-items-details/:dogaccessoryid', (params, query) => {
             productsController.loadDogAccessoryDetails(params.dogaccessoryid);
