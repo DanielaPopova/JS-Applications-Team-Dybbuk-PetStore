@@ -12,6 +12,7 @@
 
 Даниела:
 1. Login
+- when not signed in - cannot checkout
 2. Accessory - for dogs/for cats
 - dog-accessory-details/cat-accessory-details
 3. Pet Info - cats/dogs
