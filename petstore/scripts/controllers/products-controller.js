@@ -98,15 +98,88 @@ class ProductsController {
         });
     }
 
-    loadDogFood() {
+    loadDogFood(filterString) {
+         let filter = {};
 
-        let requestDogFoodData = getAllDogFood();
+        if (typeof filterString == 'string') {
+            filter = filterStringToFilterObject(filterString);
+        }
+
+        let requestDogFoodData = getDogFood(filter);
         let requestDogFoodTemplate = getTemplate('dog-food');
 
         Promise.all([requestDogFoodData, requestDogFoodTemplate]).then(([dogFoodList, template]) => {
+            
+            const dogAges = [];
+            CONSTANTS.DOG_AGE_CATEGORIES.forEach(dogAgeString => {
+                // if filter is not present include every element. That's what Array.isArray is for.
+                const isInFilter = !Array.isArray(filter.dogAgeSpecific) || filter.dogAgeSpecific.indexOf(dogAgeString) >= 0;
 
-            console.log(dogFoodList);
-            $('#main-content-container').html(template(dogFoodList));
+                const newDogAge = {
+                    ageString: dogAgeString,
+                    isSelected: isInFilter
+                };
+
+                dogAges.push(newDogAge);
+            });
+
+            const dogFoodAvailableAmounts = [];
+            CONSTANTS.DOG_FOOD_AVAILABLE_AMOUNTS.forEach(amountInKg => {
+                // if filter is not present include every element. That's what Array.isArray is for.
+                const isInFilter = !Array.isArray(filter.amountInKg) || filter.amountInKg.indexOf('' + amountInKg) >= 0;
+                const newDogFoodAmount = {
+                    amountInKg,
+                    isSelected: isInFilter
+                };
+
+                dogFoodAvailableAmounts.push(newDogFoodAmount);
+            });
+            
+            const dogAvailableSize = [];
+            CONSTANTS.DOG_AVAILABLE_SIZE.forEach(availableSize => {
+                const isInFilter = !Array.isArray(filter.availableSize) || filter.availableSize.indexOf('' + availableSize) >= 0;
+                const newDogSize = {
+                    availableSize,
+                    isSelected: isInFilter
+                };
+
+                dogAvailableSize.push(newDogSize);
+            });
+
+
+            const templateObject = {
+                dogFoodList,
+                dogAges,
+                dogFoodAvailableAmounts,
+                dogAvailableSize
+            }
+
+            $('#main-content-container').html(template(templateObject));
+
+            $('#filter-dog-food-button').click(() => {
+                if ($('#show-all-products').is(':checked')) {
+                    window.location.href = "/#/dog-food-list";
+                } else {
+                    let filterItems = {};
+                    $('#filter input[type=checkbox]:checked').each(function() {
+                        const filterKey = $(this).attr('name');
+                        if (typeof filterItems[filterKey] == 'undefined') {
+                            filterItems[filterKey] = [];
+                        }
+                        filterItems[filterKey].push($(this).val());
+                    });
+
+                    const filterString = filterObjectToFilterString(filterItems);
+
+                    window.location.href = "/#/dog-food-list/" + filterString;
+                }
+            });
+
+            $('.add-to-cart-button').click(function() {
+                const indexInDogFoodList = $(this).val();
+
+                addToCart(dogFoodList[indexInDogFoodList]);
+            });
         });
     }
 }

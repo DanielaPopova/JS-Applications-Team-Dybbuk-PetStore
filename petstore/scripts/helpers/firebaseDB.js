@@ -85,6 +85,48 @@ export function getAllDogFood() {
     });
 }
 
+export function getDogFood(filter) {
+    if (typeof filter != 'object') {
+        filter = {};
+    }
+
+    return firebase.database().ref('dogFood').once('value').then(function(snapshot) {
+        let dogFoodList = [],
+            dogFoodListIn = snapshot.val();
+
+        dogFoodListIn.forEach(function(dogFood, index) {
+            let name = dogFood.name,
+                imageURL = dogFood.imageURL,
+                description = dogFood.description,
+                price = dogFood.price,
+                amountInKg = dogFood.amountInKg,
+                dogAgeSpecific = dogFood.dogAgeSpecific,
+                dogSizeSpecific = dogFood.dogSizeSpecific;
+
+            let dogFoodObj = new DogFood(name, imageURL, description, price, amountInKg, dogAgeSpecific, dogSizeSpecific);
+            // Maybe these should be in the constructor...
+           
+            dogFoodObj.догFoodId = index;
+            dogFoodObj.productDetailPath = '/dog-food-details/' + index;
+            dogFoodList.push(dogFoodObj);
+        });
+        
+        for (let filterKey in filter) {
+            dogFoodList = dogFoodList.filter(dogFoodItem => {
+                for (let filterValue of filter[filterKey]) {
+                    if (dogFoodItem[filterKey] == filterValue) {
+                        return true;
+                    }
+                }
+
+                return false;
+            });
+        }
+
+        return dogFoodList;
+    });
+}
+
 export function getCatFoodDetails(id) {
     return firebase.database().ref('catFood/' + id).once('value').then(function(snapshot) {
         const catFood = snapshot.val();

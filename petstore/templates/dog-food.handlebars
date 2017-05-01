@@ -5,53 +5,58 @@
         <input id="show-all-products" type="checkbox" name="" value="">
         <label for="show-all-products">Show all</label>
 
-        <h4>Filter by dog's size</h4>
-        <div class="sub-filter">
-            <div><input id="very-small" type="checkbox" name="" value="">
-                <label for="very-small">very small</label></div>
-            <div><input id="small" type="checkbox" name="" value="">
-                <label for="small">small</label></div>
-            <div> <input id="big" type="checkbox" name="" value="">
-                <label for="big">big</label></div>
-            <div> <input id="giand" type="checkbox" name="" value="">
-                <label for="giant">giant</label></div>
-        </div>
         <h4>Filter by dog's age</h4>
         <div class="sub-filter">
-            <div> <input id="puppy" type="checkbox" name="" value="">
-                <label for="puppy">puppy</label>
-            </div>
-
+            {{#each dogAges}}
             <div>
-                <input id="adult" type="checkbox" name="" value="">
-                <label for="adult">adult</label>
+                <input id="filter-age-{{ageString}}" type="checkbox" name="dogAgeSpecific" value="{{ageString}}" {{#if isSelected}}checked="checked"
+                    {{/if}}>
+                <label for="filter-age-{{ageString}}">{{ageString}}</label>
             </div>
-            <div>
-                <input id="senior" type="checkbox" name="" value="">
-                <label for="senior">senior</label>
-            </div>
+            {{/each}}
         </div>
-        <button class="btn-lg btn-primary" type="button">Filter</button>
+        <h4>Filter by amount</h4>
+        <div class="sub-filter">
+            {{#each dogFoodAvailableAmounts}}
+            <div>
+                <input id="filter-age-{{amountInKg}}" type="checkbox" name="amountInKg" value="{{amountInKg}}" {{#if isSelected}}checked="checked"
+                    {{/if}}>
+                <label for="filter-age-{{amountInKg}}">{{amountInKg}} kg</label>
+            </div>
+            {{/each}}
+        </div>
+
+        <h4>Filter by dog's size</h4>
+        <div class="sub-filter">
+
+            {{#each dogAvailableSize}}
+            <div>
+                {{!--rr--}}
+                <input id="filter-age-{{availableSize}}" type="checkbox" name="amountInKg" value="{{availableSize}}" {{#if isSelected}}checked="checked"
+                    {{/if}}>
+                <label for="filter-age-{{availableSize}}">{{availableSize}}</label>
+            </div>
+            {{/each}}
+        </div>
+
+        <button id="filter-dog-food-button" class="btn-lg btn-primary" type="button">Filter</button>
     </aside>
     <!-- end aside -->
 
     <section id="items-container" class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-
-        {{#each this}}
+        {{#each dogFoodList}}
         <div class="food-list-item col-lg-4 col-md-6 col-sm-12 col-xs-12">
             <div id="name-and-price">
-                <h4>{{name}}<span> ${{price}}</span></h4>
+                <h4>{{name}}<span> {{price}} BGN</span></h4>
             </div>
             <div class="img-container">
                 <img src={{imageURL}} alt="food">
             </div>
             <div>
-                <button class="btn btn-info">More...</button>
-                <button class="btn btn-info">Add</button>
+                <a class="btn btn-info" href="#{{productDetailPath}}">More info</a>
+                <button class="add-to-cart-button btn btn-info" value="{{@index}}">Add to cart</button>
             </div>
         </div>
         {{/each}}
-
     </section>
-
 </div>

@@ -40,6 +40,11 @@ let router = (() => {
             productsController.loadDogFood();
         });
 
+        // TODO:  loadDogFoodDetails  function
+        router.on('/dog-food-details/:dogfoodid', (params, query) => {
+            productsController.loadCatFoodDetails(params.catfoodid);
+        });
+
         router.on('/login', () => {
             console.log('login');
             userController.renderLoginForm();            
