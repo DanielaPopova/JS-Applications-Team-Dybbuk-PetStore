@@ -1,20 +1,36 @@
 <section>
     <h2>Shopping cart</h2>
-    {{#each products}}
-    <div class="item-container">
-        <h3>{{name}}</h3>
-        <div class="img-container">
-            <img src={{imageURL}} alt="food">
-        </div>
-        <div><span>Description:</span> <span>{{description}}</span></div>
-        <div><span>Amount:</span> <span>{{amountInKg}} kg</span></div>
-        <div><span>Price:</span> <span><span class="item-price">{{price}}</span> BGN</span></div>
-        <a class="btn btn-info" href="#{{productDetailPath}}">More info</a>
-        <button class="remove-from-cart-button btn btn-danger" name="{{idInCart}}">Remove from cart</button>    
-    </div>
-    {{/each}}
-    <div>
+
+    <table class="table table-hover table-responsive">
+        <tr class="row">
+            <th class="col-lg-2 col-md-3 col-sm-6">Name</th>
+            <th class="col-lg-2 col-md-3 col-sm-6">Description</th>
+            <th class="col-lg-1 col-md-1 col-sm-4">Amount</th>
+            <th class="col-lg-1 col-md-1 col-sm-4">Price</th>
+            <th>info/remove</th>
+        </tr>
+        {{#each products}}
+        <tr class="row">
+            <td class="cart-img col-lg-2 col-md-3 col-sm-6">
+                <h4>{{name}}</h4>
+                <img src={{imageURL}} alt="food">
+            </td>
+            <td class="col-lg-2 col-md-3 col-sm-6">
+                <p>{{description}}</p>
+            </td>
+            <td class="col-lg-1 col-md-1 col-sm-4"><span>{{amountInKg}} kg</span></td>
+            <td class="col-lg-1 col-md-1 col-sm-4"><span>{{price}} BGN</span></td>
+            <td>
+                <a class="btn btn-info" href="#{{productDetailPath}}"><span class="glyphicon glyphicon-info-sign"></span></a>
+                <button class="remove-from-cart-button btn btn-danger" name="{{idInCart}}"><span class="glyphicon glyphicon-remove"></span></button>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+
+    <div class="buy">
         <span>Total:</span> <span><span id="total-price-container">{{totalPrice}}</span> BGN</span>
+        <button class="btn btn-success">Buy the products</button>
     </div>
-    <button class="btn btn-warning">Buy the products</button>
+
 </section>
