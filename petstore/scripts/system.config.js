@@ -8,7 +8,7 @@ SystemJS.config({
         // libs
         'handlebars': './node_modules/handlebars/dist/handlebars.js',
         'jquery': './node_modules/jquery/dist/jquery.js',
-        'bootstrap': 'node_modules/bootstrap/dist/js/bootstrap.min.js',
+        // 'bootstrap': 'node_modules/bootstrap/dist/js/bootstrap.min.js',
 
         // local
         'main': './scripts/main.js',
