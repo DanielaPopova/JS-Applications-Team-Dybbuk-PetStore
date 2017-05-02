@@ -344,6 +344,53 @@ div.el-inline {
 
 /* end customize components styles*/
 
+ /*best-pet */
+
+#cat-dog-radio {
+    background-color: #6E3667 ;
+    padding: 25px;
+}
+#holder {
+    width: 200px;
+    height: 130px;
+}
+
+label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+#dog-lbl > input + div{ /* IMAGE STYLES */
+  cursor:pointer;
+  /*border:2px solid transparent;*/
+   background: url('../images/best-pet-imgs/dog.png');
+   background-repeat: no-repeat;
+  
+}
+#dog-lbl > input:checked + div{ /* (RADIO CHECKED) IMAGE STYLES */
+   background: url('../images/best-pet-imgs/dog-selected.png');
+   background-repeat: no-repeat;
+}
+
+
+#cat-lbl > input + div{ /* IMAGE STYLES */
+  cursor:pointer;
+  /*border:2px solid transparent;*/
+   background: url('../images/best-pet-imgs/cat.png');
+   background-repeat: no-repeat;
+  
+}
+#cat-lbl > input:checked + div{ /* (RADIO CHECKED) IMAGE STYLES */
+   background: url('../images/best-pet-imgs/cat-selected.png');
+   background-repeat: no-repeat;
+}
+/*label > input:checked > div #dog-img {
+    visibility: hidden;
+}*/
+
+
+
+ /*end best-pet  */
+
 
 /*footer style*/
 

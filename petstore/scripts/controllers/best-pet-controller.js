@@ -8,7 +8,6 @@ class BestPetController {
         getTemplate('best-pet')
             .then((template) => {
                 $('#main-content-container').html(template);
-                this.initApp();
             });
     }
 }
