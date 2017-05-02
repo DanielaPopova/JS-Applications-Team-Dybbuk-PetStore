@@ -1,6 +1,7 @@
 import { productsController } from 'products-controller';
 import { homeController } from 'home-controller';
 import { userController } from 'user-controller';
+import { breedController } from 'breed-controller';
 import { cartController } from 'cart-controller';
 import Navigo from 'navigo';
 
