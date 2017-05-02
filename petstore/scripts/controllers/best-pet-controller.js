@@ -10,6 +10,7 @@ class BestPetController {
                 $('#main-content-container').html(template);
 
                 let $btn = $("#btn-continue");
+                
                 $btn.on("click", function () {
 
                     const $isDogChecked = $("#btn-dog").is(":checked");
@@ -26,8 +27,7 @@ class BestPetController {
                         console.log("nothing is checked")
                         loadCatDogChoise();
                     }
-
-                })
+                });
             });
     }
 
@@ -35,6 +35,24 @@ class BestPetController {
         getTemplate('best-pet-dog')
             .then((template) => {
                 $('#main-content-container').html(template);
+
+                let $btn = $("search-best");
+
+                $btn.on("click", function () {
+                    const $isInteligentDogChecked = $("#intelligent").is(":checked");
+                    const $isFamiliesDogChecked = $("#families").is(":checked");
+                    const $isAppartmentDogChecked = $("#appartment").is(":checked");
+
+                    if ($isInteligentDogChecked) {
+                        // invoke function
+                    } else if ($isFamiliesDogChecked) {
+                        //invoke function
+                    } else if ($isAppartmentDogChecked) {
+                        // ..
+                    } else {
+                        loadDogQuiz();
+                    }
+                });
             });
     }
 
@@ -42,6 +60,21 @@ class BestPetController {
         getTemplate('best-pet-cat')
             .then((template) => {
                 $('#main-content-container').html(template);
+
+                let $btn = $("search-best");
+
+                $btn.on("click", function () {
+                    const $isBestCatChecked = $("#best-cat").is(":checked");
+                    const $isLowCatChecked = $("#low-maintenance").is(":checked");
+
+                    if ($isBestCatChecked) {
+                        // invoke function
+                    } else if ($isLowCatChecked) {
+                        //invoke function
+                    } else {
+                        loadCatQuiz();
+                    }
+                });
             });
     }
 }
