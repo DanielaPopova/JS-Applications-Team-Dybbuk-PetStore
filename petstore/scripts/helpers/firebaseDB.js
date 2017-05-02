@@ -29,7 +29,7 @@ export function getAllDogBreeds() {
             let dogObj = new DogBreed(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence, appFriendly, exerciseNeeds, trainability, size);
 
             dogObj.dogId = index;
-            dogObj.breedDetailPath = '/dog-breeds-list/' + index;           
+            dogObj.breedDetailPath = '/dog-breeds-details/' + index;           
             dogBreeds.push(dogObj);
         });
 
@@ -86,7 +86,7 @@ export function getAllCatBreeds() {
             let catObj = new CatBreed(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence, energyLevel, adaptability, sheddingLevel);
             
             catObj.catId = index;
-            catObj.breedDetailPath = '/cat-breeds-list/' + index; 
+            catObj.breedDetailPath = '/cat-breeds-details/' + index; 
             catBreeds.push(catObj);
         });
 
