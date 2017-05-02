@@ -196,6 +196,25 @@ img {
 #name-and-price {
     height: 60px;
 }
+
+#breed-item {
+    margin: 5px;
+    width: 300px;
+    height: 300px;
+}
+
+#breed-item img {   
+    height: 200px;
+}
+
+#breed-item p {
+    margin: 10px;
+}
+
+#breed-item a {
+    margin: 5px;
+}
+
 /*end food list style*/
 
 /*shopping cart style*/

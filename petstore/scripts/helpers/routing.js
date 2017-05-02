@@ -66,6 +66,14 @@ let router = (() => {
          router.on('/cat-items-details/:cataccessoryid', (params, query) => {
             productsController.loadCatAccessoryDetails(params.cataccessoryid);
         });
+		
+		 router.on('/dog-breeds-list', () => {            
+            breedController.loadDogBreeds();
+        });
+
+        router.on('/cat-breeds-list', () => {
+            breedController.loadCatBreeds();
+        });
 
         router.on('/login', () => {            
             userController.renderLoginForm();            

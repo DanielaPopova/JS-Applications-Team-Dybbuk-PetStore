@@ -19,7 +19,7 @@ class Breed {
     set name(value) {
         VALIDATOR.isNonEmptyString(value);
         VALIDATOR.hasInvalidSymbols(value);
-        VALIDATOR.isInRange(value.length, CONSTANTS.BREED_NAME_MIN_LENGTH, CONSTANTS.BREED_NAME_MIN_LENGTH);
+        VALIDATOR.isInRange(value.length, CONSTANTS.BREED_NAME_MIN_LENGTH, CONSTANTS.BREED_NAME_MAX_LENGTH);
         this._name = value;
     }
 
