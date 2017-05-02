@@ -98,6 +98,14 @@ let router = (() => {
             bestPetController.loadCatDogChoise();
         });
 
+        router.on('/best-pet/dog', () => {
+            bestPetController.loadDogQuiz();
+        });
+
+        router.on('/best-pet/cat', () => {
+            bestPetController.loadCatQuiz();
+        });
+
         router.notFound(() => {
             router.navigate('/home');
         });
