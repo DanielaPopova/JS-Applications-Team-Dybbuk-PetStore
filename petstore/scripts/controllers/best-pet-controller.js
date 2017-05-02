@@ -1,12 +1,18 @@
+import { getTemplate } from 'templates';
 
 
-let $btnBestPet = $('#best-pet-btn');
+class BestPetController {
 
-let $div = $("<div>");
-$div.addClass("glass");
-let $container = $("#wrapper");
 
-$btnBestPet.on( "click", function (){
-   
-    console.log('eventaa');
-})
+    loadCatDogChoise() {
+        getTemplate('best-pet')
+            .then((template) => {
+                $('#main-content-container').html(template);
+                this.initApp();
+            });
+    }
+}
+
+const bestPetController = new BestPetController();
+
+export { bestPetController };

@@ -3,6 +3,7 @@ import { homeController } from 'home-controller';
 import { userController } from 'user-controller';
 import { breedController } from 'breed-controller';
 import { cartController } from 'cart-controller';
+import { bestPetController } from 'best-pet-controller';
 import Navigo from 'navigo';
 
 let router = (() => {
@@ -51,12 +52,12 @@ let router = (() => {
         });
 
 
-        router.on('/dog-items-list', () => {            
+        router.on('/dog-items-list', () => {
             productsController.loadDogAccessories();
         });
-        
 
-         router.on('/dog-items-details/:dogaccessoryid', (params, query) => {
+
+        router.on('/dog-items-details/:dogaccessoryid', (params, query) => {
             productsController.loadDogAccessoryDetails(params.dogaccessoryid);
         });
 
@@ -64,33 +65,37 @@ let router = (() => {
             productsController.loadCatAccessories();
         });
 
-         router.on('/cat-items-details/:cataccessoryid', (params, query) => {
+        router.on('/cat-items-details/:cataccessoryid', (params, query) => {
             productsController.loadCatAccessoryDetails(params.cataccessoryid);
         });
-		
-		 router.on('/dog-breeds-list', () => {            
+
+        router.on('/dog-breeds-list', () => {
             breedController.loadDogBreeds();
         });
-		
-		router.on('/dog-breeds-details/:dogbreedid', (params, query) => {            
+
+        router.on('/dog-breeds-details/:dogbreedid', (params, query) => {
             breedController.loadDogBreedDetails(params.dogbreedid);
         });
 
         router.on('/cat-breeds-list', () => {
             breedController.loadCatBreeds();
         });
-		
-		 router.on('/cat-breeds-details/:catbreedid', (params, query) => { 
-             console.log("loading");           
+
+        router.on('/cat-breeds-details/:catbreedid', (params, query) => {
+            console.log("loading");
             breedController.loadCatBreedDetails(params.catbreedid);
         });
 
-        router.on('/login', () => {            
-            userController.renderLoginForm();            
+        router.on('/login', () => {
+            userController.renderLoginForm();
         });
 
         router.on('/cart', () => {
             cartController.loadCart();
+        });
+
+         router.on('/best-pet', () => {
+            bestPetController.loadCatDogChoise();
         });
 
         router.notFound(() => {
