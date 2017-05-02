@@ -8,16 +8,12 @@ import { CatFood } from 'cat-food';
 import { DogAccessory } from 'dog-accessory';
 import { CatAccessory } from 'cat-accessory';
 
-// TODO:
-// Filter using firebase QUERY
-// Message when no results are found
-
 export function getAllDogBreeds() {
     return firebase.database().ref('dogBreeds').once('value').then(function(snapshot) {
         let dogBreeds = [],
             allDogs = snapshot.val();
 
-        allDogs.forEach(function(dog) {
+        allDogs.forEach(function(dog, index) {
             let name = dog.name,
                 imageURL = dog.imageURL,
                 description = dog.description,
@@ -31,6 +27,9 @@ export function getAllDogBreeds() {
                 size = dog.size;
 
             let dogObj = new DogBreed(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence, appFriendly, exerciseNeeds, trainability, size);
+
+            dogObj.dogId = index;
+            dogObj.breedDetailPath = '/dog-breeds-list/' + index;           
             dogBreeds.push(dogObj);
         });
 
@@ -43,7 +42,7 @@ export function getAllCatBreeds() {
         let catBreeds = [],
             allCats = snapshot.val();
 
-        allCats.forEach(function(cat) {
+        allCats.forEach(function(cat, index) {
             let name = cat.name,
                 imageURL = cat.imageURL,
                 description = cat.description,
@@ -56,6 +55,9 @@ export function getAllCatBreeds() {
                 sheddingLevel = cat.sheddingLevel;
 
             let catObj = new CatBreed(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence, energyLevel, adaptability, sheddingLevel);
+            
+            catObj.catId = index;
+            catObj.breedDetailPath = '/cat-breeds-list/' + index; 
             catBreeds.push(catObj);
         });
 

@@ -1,6 +1,7 @@
 import { productsController } from 'products-controller';
 import { homeController } from 'home-controller';
 import { userController } from 'user-controller';
+import { breedController } from 'breed-controller';
 import { cartController } from 'cart-controller';
 import Navigo from 'navigo';
 
@@ -65,6 +66,14 @@ let router = (() => {
 
          router.on('/cat-items-details/:cataccessoryid', (params, query) => {
             productsController.loadCatAccessoryDetails(params.cataccessoryid);
+        });
+		
+		 router.on('/dog-breeds-list', () => {            
+            breedController.loadDogBreeds();
+        });
+
+        router.on('/cat-breeds-list', () => {
+            breedController.loadCatBreeds();
         });
 
         router.on('/login', () => {            
