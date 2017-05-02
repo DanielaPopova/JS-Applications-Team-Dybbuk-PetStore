@@ -1,20 +1,22 @@
 {
-  "name": "petstore",
-  "version": "1.0.0",
-  "description": "spa",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "team dybbuk",
-  "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "firebase": "^3.8.0",
-    "handlebars": "^4.0.6",
-    "jquery": "^3.2.1",
-    "navigo": "^4.7.0",
-    "systemjs": "^0.20.12",
-    "systemjs-plugin-babel": "0.0.21"
-  }
+    "name": "petstore",
+    "version": "1.0.0",
+    "description": "spa",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha --recursive -R spec tests"
+    },
+    "author": "team dybbuk",
+    "license": "ISC",
+    "dependencies": {
+        "bootstrap": "^3.3.7",
+        "firebase": "^3.8.0",
+        "handlebars": "^4.0.6",
+        "jquery": "^3.2.1",
+        "navigo": "^4.7.0",
+        "systemjs": "^0.20.12",
+        "systemjs-plugin-babel": "0.0.21",
+        "chai": "^3.5.0",
+        "mocha": "^3.3.0"
+    }
 }
