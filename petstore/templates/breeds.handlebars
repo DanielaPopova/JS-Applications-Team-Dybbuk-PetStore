@@ -1,14 +1,11 @@
-<section class="breed-container">    
-    <ul class="list-inline">
-        {{#each this}}
+<section class="breed-container row">
+        <ul class="list-inline col-lg-10">
+            {{#each this}}
             <li class="list-group-item" id="breed-item">
-                <p class="h3">{{name}}</p>               
+                <p class="h3">{{name}}</p>
                 <img src="{{imageURL}}" alt="breed" class="img-responsive img-thumbnail">
                 <a class="btn btn-info" href="#{{breedDetailPath}}">More info</a>
             </li>
-        {{/each}}            
-    </ul>
+            {{/each}}
+        </ul>
 </section>
-
-
- 

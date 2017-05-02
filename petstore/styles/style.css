@@ -202,6 +202,12 @@ img {
     height: 60px;
 }
 
+
+
+/*end food list style*/
+
+/*breeds styles*/
+
 #breed-item {
     margin: 5px;
     width: 300px;
@@ -220,7 +226,15 @@ img {
     margin: 5px;
 }
 
-/*end food list style*/
+.breed-container {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+
+/*end breed style*/
 
 /*shopping cart style*/
 /*.shopping-row {
