@@ -1,4 +1,6 @@
 import { getTemplate } from 'templates';
+import { loadDogQuizResults } from 'db';
+import { loadCatQuizResults } from 'db';
 
 
 class BestPetController {
@@ -10,7 +12,7 @@ class BestPetController {
                 $('#main-content-container').html(template);
 
                 let $btn = $("#btn-continue");
-                
+
                 $btn.on("click", function () {
 
                     const $isDogChecked = $("#btn-dog").is(":checked");
@@ -44,11 +46,22 @@ class BestPetController {
                     const $isAppartmentDogChecked = $("#appartment").is(":checked");
 
                     if ($isInteligentDogChecked) {
-                        // invoke function
+                        let filter = { intelligence: 4 };
+
+                        let requestInteligentDogData = loadDogQuizResults(filter);
+                        let quizTemplate = getTemplate('');
+
+                        Promise.all([requestInteligentDogData, quizTemplate]).then(([dogBreedList, template]) => {
+
+
+                        })
+                        
                     } else if ($isFamiliesDogChecked) {
-                        //invoke function
+                        let filter = { childeFriendly: 4 };
+                        loadDogQuizResults(filter);
                     } else if ($isAppartmentDogChecked) {
-                        // ..
+                        let filter = { appFriendly: 4 };
+                        loadDogQuizResults(filter);
                     } else {
                         loadDogQuiz();
                     }

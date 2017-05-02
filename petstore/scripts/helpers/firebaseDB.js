@@ -391,9 +391,9 @@ export function loadDogQuizResults(filter){
     let allFilters = Object.keys(filter).length;
     let filteredDogBreeds = [];
 
-    getAllDogBreeds().then(function(dobBreedList){
+    getAllDogBreeds().then(function(dogBreedList){
 
-        dobBreedList.forEach(function (dogBreed) {
+        dogBreedList.forEach(function (dogBreed) {
             let matches = 0;
             for (let key in filter) {            
                 if (dogBreed[key] >= filter[key]) {
