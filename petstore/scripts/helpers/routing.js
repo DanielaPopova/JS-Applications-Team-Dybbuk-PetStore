@@ -1,7 +1,9 @@
 import { productsController } from 'products-controller';
 import { homeController } from 'home-controller';
 import { userController } from 'user-controller';
+import { breedController } from 'breed-controller';
 import { cartController } from 'cart-controller';
+import Navigo from 'navigo';
 
 let router = (() => {
     let router;
@@ -36,12 +38,53 @@ let router = (() => {
             productsController.loadCatFoodDetails(params.catfoodid);
         });
 
+        router.on('/dog-food-list/:filter', (params, query) => {
+            productsController.loadDogFood(params.filter);
+        });
+
         router.on('/dog-food-list', () => {
             productsController.loadDogFood();
         });
 
-        router.on('/login', () => {
-            console.log('login');
+        router.on('/dog-food-details/:dogfoodid', (params, query) => {
+            productsController.loadDogFoodDetails(params.dogfoodid);
+        });
+
+
+        router.on('/dog-items-list', () => {            
+            productsController.loadDogAccessories();
+        });
+        
+
+         router.on('/dog-items-details/:dogaccessoryid', (params, query) => {
+            productsController.loadDogAccessoryDetails(params.dogaccessoryid);
+        });
+
+        router.on('/cat-items-list', () => {
+            productsController.loadCatAccessories();
+        });
+
+         router.on('/cat-items-details/:cataccessoryid', (params, query) => {
+            productsController.loadCatAccessoryDetails(params.cataccessoryid);
+        });
+		
+		 router.on('/dog-breeds-list', () => {            
+            breedController.loadDogBreeds();
+        });
+		
+		router.on('/dog-breeds-details/:dogbreedid', (params, query) => {            
+            breedController.loadDogBreedDetails(params.dogbreedid);
+        });
+
+        router.on('/cat-breeds-list', () => {
+            breedController.loadCatBreeds();
+        });
+		
+		 router.on('/cat-breeds-details/:catbreedid', (params, query) => {            
+            breedController.loadCatBreedDetails(params.catbreedid);
+        });
+
+        router.on('/login', () => {            
             userController.renderLoginForm();            
         });
 

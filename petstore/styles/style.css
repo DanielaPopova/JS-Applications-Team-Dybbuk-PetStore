@@ -1,5 +1,10 @@
 /*look themes*/
 
+.glass {
+    width: 50%;
+    height: 200px;
+    background-color: #6E3667;
+}
 
 /*16*/
 
@@ -196,7 +201,77 @@ img {
 #name-and-price {
     height: 60px;
 }
+
+
+
 /*end food list style*/
+
+/*breeds styles*/
+
+#breed-item {
+    margin: 5px;
+    width: 300px;
+    height: 300px;
+}
+
+#breed-item img {   
+    height: 200px;
+}
+
+#breed-item p {
+    margin: 10px;
+}
+
+#breed-item a {
+    margin: 5px;
+}
+
+.breed-container {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#stars-1 .star.star-1 {
+    background-color: purple;
+}
+
+#stars-2 .star.star-1, #stars-2 .star.star-2 {
+    background-color: purple;
+}
+
+#stars-3 .star.star-1, #stars-3 .star.star-2, #stars-3 .star.star-3 {
+    background-color: purple;
+}
+
+#stars-4 .star.star-1, #stars-4 .star.star-2, #stars-4 .star.star-3, #stars-4 .star.star-4 {
+    background-color: purple;
+}
+
+#stars-5 .star.star-1, #stars-5 .star.star-2, #stars-5 .star.star-3, #stars-5 .star.star-4, #stars-5 .star.star-5 {
+    background-color: purple;
+}
+
+div.star {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.el-inline {
+    display: inline-block;
+    margin: 0;
+}
+
+div.el-inline {
+    float: right;
+}
+
+
+/*end breed style*/
 
 /*shopping cart style*/
 /*.shopping-row {

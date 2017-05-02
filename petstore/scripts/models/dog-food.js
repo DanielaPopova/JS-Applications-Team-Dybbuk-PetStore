@@ -23,8 +23,7 @@ class DogFood extends Food {
     }
 
     set dogSizeSpecific(value) {
-        VALIDATOR.isOfTypeNumber(value);
-        VALIDATOR.isInRange(value, CONSTANTS.DOG_MIN_SIZE, CONSTANTS.DOG_MAX_SIZE);
+        VALIDATOR.checkDogSizeCategory(value, CONSTANTS.DOG_AVAILABLE_SIZE);        
         this._dogSizeSpecific = value;
     }
 }

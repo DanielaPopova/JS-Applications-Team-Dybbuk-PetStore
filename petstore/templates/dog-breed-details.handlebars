@@ -1,0 +1,85 @@
+<section class="container">
+    <div class="col-lg-6 col-md-7 col-sm-10 col-xs-11">
+        <h2>{{name}}</h2>
+        <img src={{imageURL}} alt="dog-breed" class="img-responsive">
+        <h4>Description:</h4>
+        <p class="text-justify">{{description}}</p>
+        <h4>Breed Characteristics:</h4>
+        <ul class="list-group">            
+            <li class="list-group-item">
+                <p class="el-inline" data-toggle="tooltip" title="Dogs that tend to be more sturdy, playful and easygoing around children and more tolerant of children's behavior.">Child Friendly</p>
+                <div class="el-inline" id="stars-{{childFriendly}}"> 
+                    <div class="star star-1"></div> 
+                    <div class="star star-2"></div>
+                    <div class="star star-3"></div>
+                    <div class="star star-4"></div>
+                    <div class="star star-5"></div>       
+                </div>                             
+            </li>
+            <li class="list-group-item">
+                <p class="el-inline" data-toggle="tooltip" title="Amount of bathing, brushing, even professional grooming needed.">Grooming</p>
+                <div class="el-inline" id="stars-{{grooming}}"> 
+                    <div class="star star-1"></div> 
+                    <div class="star star-2"></div>
+                    <div class="star star-3"></div>
+                    <div class="star star-4"></div>
+                    <div class="star star-5"></div>       
+                </div>
+            </li>
+            <li class="list-group-item">
+                <p class="el-inline" data-toggle="tooltip" title="Level of health issues a breed tends to have.">Health Issues</p>
+                <div class="el-inline" id="stars-{{healthIssues}}"> 
+                    <div class="star star-1"></div> 
+                    <div class="star star-2"></div>
+                    <div class="star star-3"></div>
+                    <div class="star star-4"></div>
+                    <div class="star star-5"></div>       
+                </div>
+            </li>
+            <li class="list-group-item">
+                <p class="el-inline" data-toggle="tooltip" title="A dog's thinking and problem-solving ability (not trainability).">Intelligence</p>
+                <div class="el-inline" id="stars-{{intelligence}}"> 
+                    <div class="star star-1"></div> 
+                    <div class="star star-2"></div>
+                    <div class="star star-3"></div>
+                    <div class="star star-4"></div>
+                    <div class="star star-5"></div>       
+                </div>
+            </li>
+            <li class="list-group-item">
+                <p class="el-inline" data-toggle="tooltip" title="Factors such as dog size and his tendency to make noise.">Appartment Friendly</p>
+                <div class="el-inline" id="stars-{{appFriendly}}"> 
+                    <div class="star star-1"></div> 
+                    <div class="star star-2"></div>
+                    <div class="star star-3"></div>
+                    <div class="star star-4"></div>
+                    <div class="star star-5"></div>       
+                </div>
+            </li>
+            <li class="list-group-item">
+                <p class="el-inline" data-toggle="tooltip" title="Level of daily activity needed.">Exercise Needs</p>
+                <div class="el-inline" id="stars-{{exerciseNeeds}}"> 
+                    <div class="star star-1"></div> 
+                    <div class="star star-2"></div>
+                    <div class="star star-3"></div>
+                    <div class="star star-4"></div>
+                    <div class="star star-5"></div>       
+                </div>
+            </li>
+            <li class="list-group-item">
+                <p class="el-inline" data-toggle="tooltip" title="Level of ease in learning something new and a willingness to try new things.">Trainability</p>
+                <div class="el-inline" id="stars-{{trainability}}"> 
+                    <div class="star star-1"></div> 
+                    <div class="star star-2"></div>
+                    <div class="star star-3"></div>
+                    <div class="star star-4"></div>
+                    <div class="star star-5"></div>       
+                </div>
+            </li> 
+            <li class="list-group-item">
+                <p class="el-inline">Dog size</p>
+                <div class="el-inline">{{size}}</div>
+            </li>           
+        </ul>
+    </div>
+</section>
