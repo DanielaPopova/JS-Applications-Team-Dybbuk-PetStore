@@ -391,7 +391,7 @@ export function loadDogQuizResults(filter){
     let allFilters = Object.keys(filter).length;
     let filteredDogBreeds = [];
 
-    getAllDogBreeds().then(function(dogBreedList){
+    return getAllDogBreeds().then(function(dogBreedList){
 
         dogBreedList.forEach(function (dogBreed) {
             let matches = 0;
@@ -419,7 +419,7 @@ export function loadCatQuizResults(filter){
     let allFilters = Object.keys(filter).length;
     let filteredCatBreeds = [];
 
-    getAllCatBreeds().then(function(catBreedList){
+    return getAllCatBreeds().then(function(catBreedList){
 
         catBreedList.forEach(function (catBreed) {
             let matches = 0;

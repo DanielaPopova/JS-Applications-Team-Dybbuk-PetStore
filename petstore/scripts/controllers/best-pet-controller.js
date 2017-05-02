@@ -38,7 +38,7 @@ class BestPetController {
             .then((template) => {
                 $('#main-content-container').html(template);
 
-                let $btn = $("search-best");
+                let $btn = $("#search-best");
 
                 $btn.on("click", function () {
                     const $isInteligentDogChecked = $("#intelligent").is(":checked");
@@ -49,11 +49,10 @@ class BestPetController {
                         let filter = { intelligence: 4 };
 
                         let requestInteligentDogData = loadDogQuizResults(filter);
-                        let quizTemplate = getTemplate('');
-
-                        Promise.all([requestInteligentDogData, quizTemplate]).then(([dogBreedList, template]) => {
-
-
+                        let quizTemplate = getTemplate('breeds');
+                        
+                        Promise.all([requestInteligentDogData, quizTemplate]).then(([dogBreedList, template]) => {                            
+                            $('#main-content-container').html(template(dogBreedList));
                         })
                         
                     } else if ($isFamiliesDogChecked) {
