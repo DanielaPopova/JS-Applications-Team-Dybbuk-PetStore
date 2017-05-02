@@ -209,7 +209,7 @@ class ProductsController {
 
     loadDogAccessories() {
         let requestDogAccessories = getAllDogAccessories();
-        let requestDogAccessoriesTemplate = getTemplate('dog-accessories');
+        let requestDogAccessoriesTemplate = getTemplate('accessories');
 
         Promise.all([requestDogAccessories, requestDogAccessoriesTemplate]).then(([dogAccessories, dogAccessoriesTemplate]) => {
 
@@ -229,7 +229,7 @@ class ProductsController {
 
     loadDogAccessoryDetails(dogAccessoryId) {
         let requestDogAccessoryDetails = getDogAccessoryDetails(dogAccessoryId);
-        let requestDogAccessoryTemplate = getTemplate('dog-accessory-details');
+        let requestDogAccessoryTemplate = getTemplate('accessory-details');
 
         Promise.all([requestDogAccessoryDetails, requestDogAccessoryTemplate]).then(([accessoryDetails, accessoryTemplate]) => {
             if (!accessoryDetails) {
@@ -246,7 +246,7 @@ class ProductsController {
 
     loadCatAccessories() {
         let requestCatAccessories = getAllCatAccessories();
-        let requestCatAccessoriesTemplate = getTemplate('cat-accessories');
+        let requestCatAccessoriesTemplate = getTemplate('accessories');
 
         Promise.all([requestCatAccessories, requestCatAccessoriesTemplate]).then(([catAccessories, catAccessoriesTemplate]) => {
             if (!catAccessories) {
@@ -265,7 +265,7 @@ class ProductsController {
 
     loadCatAccessoryDetails(catAccessoryId) {
         let requestCatAccessoryDetails = getCatAccessoryDetails(catAccessoryId);
-        let requestCatAccessoryTemplate = getTemplate('cat-accessory-details');
+        let requestCatAccessoryTemplate = getTemplate('accessory-details');
 
         Promise.all([requestCatAccessoryDetails, requestCatAccessoryTemplate]).then(([accessoryDetails, accessoryTemplate]) => {
             if (!accessoryDetails) {
