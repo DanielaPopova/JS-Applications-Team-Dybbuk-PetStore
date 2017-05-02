@@ -71,9 +71,17 @@ let router = (() => {
 		 router.on('/dog-breeds-list', () => {            
             breedController.loadDogBreeds();
         });
+		
+		router.on('/dog-breeds-details/:dogbreedid', (params, query) => {            
+            breedController.loadDogBreedDetails(params.dogbreedid);
+        });
 
         router.on('/cat-breeds-list', () => {
             breedController.loadCatBreeds();
+        });
+		
+		 router.on('/cat-breeds-details/:catbreedid', (params, query) => {            
+            breedController.loadCatBreedDetails(params.catbreedid);
         });
 
         router.on('/login', () => {            

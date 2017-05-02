@@ -37,6 +37,35 @@ export function getAllDogBreeds() {
     });
 }
 
+export function getDogBreedDetails(id){
+     return firebase.database().ref('dogBreeds/' + id).once('value').then(function(snapshot) {
+        const dogBreed = snapshot.val();
+
+        if (!dogBreed) {
+            return null;
+        }
+
+        let name = dogBreed.name,
+            imageURL = dogBreed.imageURL,
+            description = dogBreed.description,
+            childFriendly = dogBreed.childFriendly,
+            grooming = dogBreed.grooming,
+            healthIssues = dogBreed.healthIssues,
+            intelligence = dogBreed.intelligence,
+            appFriendly = dogBreed.appFriendly,
+            exerciseNeeds = dogBreed.exerciseNeeds,
+            trainability = dogBreed.trainability,
+            size = dogBreed.size;
+
+        let dogBreedObj = new DogBreed(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence, appFriendly, exerciseNeeds, trainability, size);
+        
+        dogBreedObj.dogBreedId = id;
+        dogBreedObj.breedDetailPath = '/dog-breeds-details/' + id;
+
+        return dogBreedObj;
+    });
+}
+
 export function getAllCatBreeds() {
     return firebase.database().ref('catBreeds').once('value').then(function(snapshot) {
         let catBreeds = [],
@@ -62,6 +91,34 @@ export function getAllCatBreeds() {
         });
 
         return catBreeds;
+    });
+}
+
+export function getCatBreedDetails(id){
+     return firebase.database().ref('catBreeds/' + id).once('value').then(function(snapshot) {
+        const catBreed = snapshot.val();
+
+        if (!catBreed) {
+            return null;
+        }
+
+        let name = catBreed.name,
+            imageURL = catBreed.imageURL,
+            description = catBreed.description,
+            childFriendly = catBreed.childFriendly,
+            grooming = catBreed.grooming,
+            healthIssues = catBreed.healthIssues,
+            intelligence = catBreed.intelligence,
+            energyLevel = catBreed.energyLevel,
+            adaptability = catBreed.adaptability,
+            sheddingLevel = catBreed.sheddingLevel;
+            
+        let catBreedObj = new CatBreed(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence, energyLevel, adaptability, sheddingLevel);
+        
+        catBreedObj.catBreedId = id;
+        catBreedObj.breedDetailPath = '/cat-breeds-details/' + id;
+
+        return catBreedObj;
     });
 }
 
