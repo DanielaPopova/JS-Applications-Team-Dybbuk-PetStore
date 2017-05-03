@@ -270,6 +270,12 @@ div.el-inline {
     float: right;
 }
 
+.fb-share-btn{
+    cursor: pointer;
+    width: 80px;
+    height: 30px; 
+    display: inline-block;
+};
 
 /*end breed style*/
 
