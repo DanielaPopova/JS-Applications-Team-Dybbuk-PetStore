@@ -1,22 +1,5 @@
-/*look themes*/
-
-.glass {
-    width: 50%;
-    height: 200px;
-    background-color: #6E3667;
-}
-
-/*16*/
-
-
-/*20*/
-
-
-/*62*/
-
 
 /*navigation style*/
-
 #wrapper header .navbar-inverse {
     background-color: #6E3667;
     border-color: #6E3667;
@@ -45,7 +28,6 @@
 
 .navbar-nav>li {
     margin-left: 5px;
-    /*margin-right:5px;*/
     margin-bottom: 5px;
 }
 
@@ -57,11 +39,9 @@ ul li .badge {
     right: 10px;
     top: 18px;
 }
-
 /*end navigation style*/
 
 /*login register style*/
-
 #loginFormContainer form div input {
     margin-bottom: 10px;
 }
@@ -76,11 +56,9 @@ ul li .badge {
 #loginFormContainer div {
     background-color: #efe7d5;
 }
-
 /*end login register style*/
 
 /*product details style*/
-
 #product-details {
     display: flex;
     align-content: center;
@@ -102,7 +80,6 @@ ul li .badge {
 .product-info p {
     text-align: justify;
 }
-
 /*end product details style*/
 
 #wrapper {
@@ -123,7 +100,6 @@ main {
 }
 
 /*slider style*/
-
 #slider-container {
     width: 70%;
     margin: auto;
@@ -136,11 +112,9 @@ img {
 .carousel-inner img {
     margin: auto;
 }
-
 /*end slider style*/
 
 /*product list style*/
-
 #filter {
     padding: 10px;    
     background: #f8eee7;   
@@ -173,11 +147,9 @@ img {
 .product-name {
     height: 40px;
 }
-
 /*end product list style*/
 
 /*breeds styles*/
-
 #breed-item {
     margin: 5px;
     width: 300px;
@@ -246,26 +218,9 @@ div.el-inline {
     height: 30px; 
     display: inline-block;
 };
-
 /*end breed style*/
 
 /*shopping cart style*/
-/*.shopping-row {
-    padding: 15px;
-    margin: auto;
-}
-
-.shopping-row img {
-    width: 200px;
-    float: left;
-    margin-right: 10px;
-    clear: both;
-}
-
-.shopping-row p {
-    text-align: justify;
-}*/
-/*--------*/
 .cart-img img {
     width: 50px;
 }
@@ -283,13 +238,9 @@ div.el-inline {
     align-items: center;
     justify-content: center;
 }
-
-
 /*end shopping cart style*/
 
-
 /*customize components styles*/
-
 .shadow {
     position: relative;
 }
@@ -325,8 +276,51 @@ div.el-inline {
     left: auto;
 }
 
+/*radio btn*/
+.button-label {
+    display: inline-block;
+    padding: 1em 1em;
+    margin: 0.5em;
+    width: 270px;
+    cursor: pointer;
+    background: #efefef;
+    border-radius: 0.25em;
+}
 
+.custom-radio + .button-label:hover {
+    filter: brightness(85%);
+    box-shadow: 0 3px 10px pink;
+}
+
+.custom-radio:checked + .button-label:hover {
+    filter: brightness(85%);
+    box-shadow: 2px 3px 10px #2775d8;
+}
+
+.custom-radio:checked + .button-label {
+    background: #4183D7;
+    color: #fff;
+}
+
+.hidden {
+  display: none;
+}
 /* end customize components styles*/
+
+/*best pet cat/dog questions*/
+.questions {
+    background-color: #fff;
+    padding: 15px;
+    margin: auto;
+    box-shadow: 0 -3px 10px #777;
+    
+}
+
+#questions {
+    display: flex;
+    justify-content: center;
+}
+/*end best pet cat/dog questions*/
 
  /*best-pet */
 
