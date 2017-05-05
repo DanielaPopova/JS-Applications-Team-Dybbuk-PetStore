@@ -10,17 +10,7 @@ let router = (() => {
     let router;
 
     function init() {
-        router = new Navigo(null, true);
-
-        router.on('/dogsBreed', () => {
-            // TODO: change href attributes in a tags to existing routs  example href"#/home"
-            //Promise.all(([data, template]), tl.get('allDogFood'))
-            // 1 get data()
-            // 2 .then(load content)
-
-            console.log('e vi go');
-
-        });
+        router = new Navigo(null, true);       
 
         router.on('/home', (template) => {
             homeController.loadHome();
