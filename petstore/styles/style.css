@@ -83,32 +83,32 @@ ul li .badge {
 /*end login register style*/
 
 
-/*food details style*/
+/*product details style*/
 
-#food-details {
+#product-details {
     display: flex;
     align-content: center;
 }
 
-.food-info {
+.product-info {
     background-color: #f5f5f5;
     padding: 15px;
     margin: auto;
 }
 
-.food-info img {
+.product-info img {
     width: 200px;
     float: left;
     margin-right: 10px;
     clear: both;
 }
 
-.food-info p {
+.product-info p {
     text-align: justify;
 }
 
 
-/*end food details style*/
+/*end product details style*/
 
 #wrapper {
     padding: 0;
@@ -147,7 +147,7 @@ img {
 /*end slider style*/
 
 
-/*dog food list style*/
+/*product list style*/
 
 #filter {
     padding-left: 50px;
@@ -202,9 +202,7 @@ img {
     height: 60px;
 }
 
-
-
-/*end food list style*/
+/*end product list style*/
 
 /*breeds styles*/
 
