@@ -4,8 +4,7 @@ import { getCatQuizResults } from 'db';
 
 
 class BestPetController {
-
-
+    
     loadCatDogChoise() {
         getTemplate('best-pet')
             .then((template) => {
@@ -19,14 +18,11 @@ class BestPetController {
                     const $isCatChecked = $("#btn-cat").is(":checked");
 
                     if ($isDogChecked) {
-                        console.log("go to dog")
                         window.location.hash = "#/best-pet/dog";
                         console.log(window.location.hash);
                     } else if ($isCatChecked) {
                         window.location.hash = "#/best-pet/cat";
-                        console.log("go to cat")
                     } else {
-                        console.log("nothing is checked")
                         loadCatDogChoise();
                     }
                 });
@@ -46,21 +42,11 @@ class BestPetController {
                     const $isAppartmentDogChecked = $("#appartment").is(":checked");
 
                     if ($isInteligentDogChecked) {
-                        let filter = { intelligence: 4 };
-
-                        let requestInteligentDogData = getDogQuizResults(filter);
-                        let quizTemplate = getTemplate('breeds');
-                        
-                        Promise.all([requestInteligentDogData, quizTemplate]).then(([dogBreedList, template]) => {                            
-                            $('#main-content-container').html(template(dogBreedList));
-                        })
-                        
+                        window.location.hash = "#/best-pet/dog/intelligent";
                     } else if ($isFamiliesDogChecked) {
-                        let filter = { childeFriendly: 4 };
-                        getDogQuizResults(filter);
+                        window.location.hash = "#/best-pet/dog/families";
                     } else if ($isAppartmentDogChecked) {
-                        let filter = { appFriendly: 4 };
-                        getDogQuizResults(filter);
+                        window.location.hash = "#/best-pet/dog/appartment";
                     } else {
                         loadDogQuiz();
                     }
@@ -73,21 +59,40 @@ class BestPetController {
             .then((template) => {
                 $('#main-content-container').html(template);
 
-                let $btn = $("search-best");
-
+                let $btn = $("#search-best");
+                
                 $btn.on("click", function () {
                     const $isBestCatChecked = $("#best-cat").is(":checked");
                     const $isLowCatChecked = $("#low-maintenance").is(":checked");
 
                     if ($isBestCatChecked) {
-                        // invoke function
+                        window.location.hash = "#/best-pet/cat/best-cat";
                     } else if ($isLowCatChecked) {
-                        //invoke function
+                        window.location.hash = "#/best-pet/cat/low-maintenance";
                     } else {
-                        loadCatQuiz();
+                        loadCatQuiz()
                     }
                 });
             });
+    }
+
+
+    filterDog(filter) {
+        let requestDogData = getDogQuizResults(filter);
+        let quizTemplate = getTemplate('breeds');
+
+        Promise.all([requestDogData, quizTemplate]).then(([dogBreedList, template]) => {
+            $('#main-content-container').html(template(dogBreedList));
+        })
+    }
+
+    filterCat(filter) {
+        let requestCatData = getCatQuizResults(filter);
+        let quizTemplate = getTemplate('breeds');
+
+        Promise.all([requestCatData, quizTemplate]).then(([catBreedList, template]) => {
+            $('#main-content-container').html(template(catBreedList));
+        })
     }
 }
 

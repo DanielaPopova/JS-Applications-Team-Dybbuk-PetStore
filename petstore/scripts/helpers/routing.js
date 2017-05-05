@@ -10,7 +10,7 @@ let router = (() => {
     let router;
 
     function init() {
-        router = new Navigo(null, true);       
+        router = new Navigo(null, true);
 
         router.on('/home', (template) => {
             homeController.loadHome();
@@ -71,7 +71,7 @@ let router = (() => {
             breedController.loadCatBreeds();
         });
 
-        router.on('/cat-breeds-details/:catbreedid', (params, query) => {            
+        router.on('/cat-breeds-details/:catbreedid', (params, query) => {
             breedController.loadCatBreedDetails(params.catbreedid);
         });
 
@@ -83,12 +83,37 @@ let router = (() => {
             cartController.loadCart();
         });
 
-         router.on('/best-pet', () => {
+        router.on('/best-pet', () => {
             bestPetController.loadCatDogChoise();
         });
 
         router.on('/best-pet/dog', () => {
             bestPetController.loadDogQuiz();
+        });
+
+        router.on('/best-pet/dog/intelligent', () => {
+            let filter = { intelligence: 4 };
+            bestPetController.filterDog(filter);
+        });
+
+        router.on('/best-pet/dog/families', () => {
+            let filter = { childFriendly: 4 };
+            bestPetController.filterDog(filter);
+        });
+
+        router.on('/best-pet/dog/appartment', () => {
+            let filter = { appFriendly: 4 };
+            bestPetController.filterDog(filter);
+        });
+
+         router.on('/best-pet/cat/best-cat', () => {
+            let filter = { childFriendly: 4 };
+            bestPetController.filterCat(filter)
+        });
+
+        router.on('/best-pet/cat/low-maintenance', () => {
+            let filter = { grooming: 2, sheddingLevel: 2, healthIssues: 2 };
+            bestPetController.filterCat(filter)
         });
 
         router.on('/best-pet/cat', () => {
