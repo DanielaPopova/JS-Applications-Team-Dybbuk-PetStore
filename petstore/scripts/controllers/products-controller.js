@@ -3,11 +3,10 @@ import { getCatFood } from 'db';
 import { getDogFood } from 'db';
 import { getCatFoodDetails } from 'db';
 import { getDogFoodDetails } from 'db';
-import { getAllDogFood } from 'db';
 import { getAllDogAccessories } from 'db';
 import { getDogAccessoryDetails } from 'db';
-import { getCatAccessoryDetails } from 'db';
 import { getAllCatAccessories } from 'db';
+import { getCatAccessoryDetails } from 'db';
 import { getTemplate } from 'templates';
 import { CONSTANTS } from 'constants';
 import { filterStringToFilterObject } from 'filter-string-to-filter-object';
@@ -15,6 +14,7 @@ import { filterObjectToFilterString } from 'filter-string-to-filter-object';
 import { addToCart } from 'cart-manipulator';
 
 class ProductsController {
+
     loadCatFood(filterString) {
         let filter = {};
 
@@ -175,8 +175,7 @@ class ProductsController {
                         filterItems[filterKey].push($(this).val());
                     });
 
-                    const filterString = filterObjectToFilterString(filterItems);
-                    console.log(filterString);
+                    const filterString = filterObjectToFilterString(filterItems);                    
 
                     window.location.href = "/#/dog-food-list/" + filterString;
                 }

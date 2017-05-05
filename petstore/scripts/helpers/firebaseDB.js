@@ -122,28 +122,6 @@ export function getCatBreedDetails(id){
     });
 }
 
-export function getAllDogFood() {
-    return firebase.database().ref('dogFood').once('value').then(function(snapshot) {
-        let dogFoodList = [],
-            allDogFood = snapshot.val();
-
-        allDogFood.forEach(function(dogFood) {
-            let name = dogFood.name,
-                imageURL = dogFood.imageURL,
-                description = dogFood.description,
-                price = dogFood.price,
-                amountInKg = dogFood.amountInKg,
-                dogAgeSpecific = dogFood.dogAgeSpecific,
-                dogSizeSpecific = dogFood.dogSizeSpecific;
-
-            let dogFoodObj = new DogFood(name, imageURL, description, price, amountInKg, dogAgeSpecific, dogSizeSpecific);
-            dogFoodList.push(dogFoodObj);
-        });
-
-        return dogFoodList;
-    });
-}
-
 export function getDogFood(filter) {
     if (typeof filter != 'object') {
         filter = {};
@@ -210,29 +188,6 @@ export function getDogFoodDetails(id) {
         return dogFoodObj;
     });
 }
-export function getCatFoodDetails(id) {
-    return firebase.database().ref('catFood/' + id).once('value').then(function(snapshot) {
-        const catFood = snapshot.val();
-
-        if (!catFood) {
-            return null;
-        }
-
-        let name = catFood.name,
-            imageURL = catFood.imageURL,
-            description = catFood.description,
-            price = catFood.price,
-            amountInKg = catFood.amountInKg,
-            catAgeSpecific = catFood.catAgeSpecific;
-
-        let catFoodObj = new CatFood(name, imageURL, description, price, amountInKg, catAgeSpecific);
-        // Maybe these should be in the constructor...
-        catFoodObj.catFoodId = id;
-        catFoodObj.productDetailPath = '/cat-food-details/' + id;
-
-        return catFoodObj;
-    });
-}
 
 export function getCatFood(filter) {
     if (typeof filter != 'object') {
@@ -274,24 +229,27 @@ export function getCatFood(filter) {
     });
 }
 
-export function getAllCatFood() {
-    return firebase.database().ref('catFood').once('value').then(function(snapshot) {
-        let catFoodList = [],
-            allCatFood = snapshot.val();
+export function getCatFoodDetails(id) {
+    return firebase.database().ref('catFood/' + id).once('value').then(function(snapshot) {
+        const catFood = snapshot.val();
 
-        allCatFood.forEach(function(catFood) {
-            let name = catFood.name,
-                imageURL = catFood.imageURL,
-                description = catFood.description,
-                price = catFood.price,
-                amountInKg = catFood.amountInKg,
-                catAgeSpecific = catFood.catAgeSpecific;
+        if (!catFood) {
+            return null;
+        }
 
-            let catFoodObj = new CatFood(name, imageURL, description, price, amountInKg, catAgeSpecific);
-            catFoodList.push(catFoodObj);
-        });
+        let name = catFood.name,
+            imageURL = catFood.imageURL,
+            description = catFood.description,
+            price = catFood.price,
+            amountInKg = catFood.amountInKg,
+            catAgeSpecific = catFood.catAgeSpecific;
 
-        return catFoodList;
+        let catFoodObj = new CatFood(name, imageURL, description, price, amountInKg, catAgeSpecific);
+        // Maybe these should be in the constructor...
+        catFoodObj.catFoodId = id;
+        catFoodObj.productDetailPath = '/cat-food-details/' + id;
+
+        return catFoodObj;
     });
 }
 
@@ -382,7 +340,7 @@ export function getCatAccessoryDetails(id) {
     });
 }
 
-export function loadDogQuizResults(filter){
+export function getDogQuizResults(filter){
 
     if (typeof filter != 'object') {
         throw new Error(`${filter} must be object!`);
@@ -410,7 +368,7 @@ export function loadDogQuizResults(filter){
     });    
 }
 
-export function loadCatQuizResults(filter){
+export function getCatQuizResults(filter){
 
     if (typeof filter != 'object') {
         throw new Error(`${filter} must be object!`);

@@ -1,6 +1,6 @@
 import { getTemplate } from 'templates';
-import { loadDogQuizResults } from 'db';
-import { loadCatQuizResults } from 'db';
+import { getDogQuizResults } from 'db';
+import { getCatQuizResults } from 'db';
 
 
 class BestPetController {
@@ -48,7 +48,7 @@ class BestPetController {
                     if ($isInteligentDogChecked) {
                         let filter = { intelligence: 4 };
 
-                        let requestInteligentDogData = loadDogQuizResults(filter);
+                        let requestInteligentDogData = getDogQuizResults(filter);
                         let quizTemplate = getTemplate('breeds');
                         
                         Promise.all([requestInteligentDogData, quizTemplate]).then(([dogBreedList, template]) => {                            
@@ -57,10 +57,10 @@ class BestPetController {
                         
                     } else if ($isFamiliesDogChecked) {
                         let filter = { childeFriendly: 4 };
-                        loadDogQuizResults(filter);
+                        getDogQuizResults(filter);
                     } else if ($isAppartmentDogChecked) {
                         let filter = { appFriendly: 4 };
-                        loadDogQuizResults(filter);
+                        getDogQuizResults(filter);
                     } else {
                         loadDogQuiz();
                     }

@@ -81,8 +81,7 @@ let router = (() => {
             breedController.loadCatBreeds();
         });
 
-        router.on('/cat-breeds-details/:catbreedid', (params, query) => {
-            console.log("loading");
+        router.on('/cat-breeds-details/:catbreedid', (params, query) => {            
             breedController.loadCatBreedDetails(params.catbreedid);
         });
 
