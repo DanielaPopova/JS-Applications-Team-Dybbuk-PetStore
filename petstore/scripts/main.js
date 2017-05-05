@@ -6,4 +6,3 @@ updateCartIcon();
 $('#cart-nav-button').click(() => window.location.href = '/#/cart');
 
 router.init();
-console.log('Router loaded');

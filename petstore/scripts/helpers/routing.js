@@ -20,6 +20,7 @@ let router = (() => {
             productsController.loadCatFood(params.filter);
         });
 
+
         router.on('/cat-food-list', () => {
             productsController.loadCatFood();
         });
