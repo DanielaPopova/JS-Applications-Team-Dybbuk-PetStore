@@ -18,8 +18,7 @@ class BestPetController {
                     const $isCatChecked = $("#btn-cat").is(":checked");
 
                     if ($isDogChecked) {
-                        window.location.hash = "#/best-pet/dog";
-                        console.log(window.location.hash);
+                        window.location.hash = "#/best-pet/dog";                        
                     } else if ($isCatChecked) {
                         window.location.hash = "#/best-pet/cat";
                     } else {

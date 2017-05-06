@@ -93,9 +93,7 @@ class UserController {
 
                     if (errorCode == 'auth/email-already-in-use') {
                         _this.alertWithMessage('#email-message', errorMessage, 'danger');
-                    } else {
-                        console.log("something went wrong");
-                    }
+                    } 
                 });
         }
     };

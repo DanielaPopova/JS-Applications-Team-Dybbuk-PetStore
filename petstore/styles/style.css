@@ -5,6 +5,11 @@
     border-color: #6E3667;
 }
 
+#nav-controls-container {
+    font-size: 16px;
+    font-weight: bold;
+}
+
 #nav-controls-container ul .dropdown-toggle {
     background-color: #6E3667;
 }
@@ -22,13 +27,18 @@
     background-color: #535353;
 }
 
+#cart-nav-button {
+    position: relative;
+    right: 0px;
+    top: 8px;
+}
+
 .shopping-cart {
     background-color: #88D317;
 }
 
 .navbar-nav>li {
-    margin-left: 5px;
-    margin-bottom: 5px;
+    margin: 2px;   
 }
 
 ul li .badge {
@@ -37,7 +47,7 @@ ul li .badge {
     /*margin-left:2px;*/
     position: relative;
     right: 10px;
-    top: 18px;
+    top: 22px;
 }
 /*end navigation style*/
 
