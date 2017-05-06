@@ -112,7 +112,7 @@ let router = (() => {
         });
 
         router.on('/best-pet/cat/low-maintenance', () => {
-            let filter = { grooming: 2, sheddingLevel: 2, healthIssues: 2 };
+            let filter = { grooming: 2, sheddingLevel: 3, healthIssues: 2 };
             bestPetController.filterCat(filter)
         });
 
