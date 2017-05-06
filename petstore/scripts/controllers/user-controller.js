@@ -7,13 +7,13 @@ class UserController {
         value = value.trim();
         let htmlEscaper = /[&<>"'\/]/g,
             htmlEscapes = {
-            "&": "&amp;",
-            "<": "&lt;",
-            ">": "&gt;",
-            '"': '&quot;',
-            "'": '&#39;',
-            "/": '&#x2F;'
-        }; 
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': '&quot;',
+                "'": '&#39;',
+                "/": '&#x2F;'
+            };
 
         function escapeHtml(str) {
             return String(str).replace(htmlEscaper, function (match) {
@@ -30,7 +30,7 @@ class UserController {
     };
 
     alertWithMessage(element, message, alertType) {
-        
+
         let $validationMessage = $(`
             <div class="alert alert-${alertType}">
                 <button type="button" class="close" data-dismiss="alert">x</button>
@@ -42,17 +42,17 @@ class UserController {
         $validationMessage.fadeTo(3000, 500).slideUp(500, function () {
             $validationMessage.slideUp(500).remove();
         });
-    }  
+    }
 
-    updateLogInButton(){
-         firebase.auth().onAuthStateChanged(function (user) {            
+    updateLogInButton() {
+        firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
-                $('#main-log-in-btn').html('Log Out');             
+                $('#main-log-in-btn').html('Log Out');
             } else {
                 $('#main-log-in-btn').html('Log In');
             }
         });
-    }  
+    }
 
     userSignUp() {
         let _this = this;
@@ -128,14 +128,15 @@ class UserController {
 
     userSignOut() {
         let _this = this;
-       
+
         firebase.auth().signOut().then(function () {
-            _this.alertWithMessage('#message-container', 'You have successfully signed out!', 'success');            
+            let $container = $("#message-container").empty();
+            _this.alertWithMessage('#message-container', 'You have successfully signed out!', 'success');
             _this.updateLogInButton();
         }, function (error) {
             console.error('Sign Out Error', error);
-        });                    
-    }    
+        });
+    }
 
     initializeUserLogin() {
         let _this = this;
@@ -143,10 +144,10 @@ class UserController {
         $('#sign-up-btn').on('click', () => this.userSignUp());
         $('#sign-in-btn').on('click', () => this.userSignIn());
         $('#main-log-in-btn').on('click', function () {
-            if ($('#main-log-in-btn').html() === 'Log Out') {                
-                _this.userSignOut();                 
+            if ($('#main-log-in-btn').html() === 'Log Out') {
+                _this.userSignOut();
             }
-        });        
+        });
     };
 
     renderLoginForm() {
