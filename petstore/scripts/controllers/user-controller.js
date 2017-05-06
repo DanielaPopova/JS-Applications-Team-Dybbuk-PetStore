@@ -37,6 +37,7 @@ class UserController {
                 <span>${message}</span>
             </div>`);
 
+        $(element).empty();
         $(element).append($validationMessage);
         $validationMessage.alert();
         $validationMessage.fadeTo(3000, 500).slideUp(500, function () {
@@ -129,8 +130,7 @@ class UserController {
     userSignOut() {
         let _this = this;
 
-        firebase.auth().signOut().then(function () {
-            let $container = $("#message-container").empty();
+        firebase.auth().signOut().then(function () {            
             _this.alertWithMessage('#message-container', 'You have successfully signed out!', 'success');
             _this.updateLogInButton();
         }, function (error) {
