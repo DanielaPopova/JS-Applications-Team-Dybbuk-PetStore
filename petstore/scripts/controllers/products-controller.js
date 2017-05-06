@@ -59,6 +59,14 @@ class ProductsController {
 
             $('#main-content-container').html(template(templateObject));
 
+             if (templateObject.catFoodList.length === 0) {
+                let $container = $("#items-container");
+                let $messageBox = $("<div>");
+                $messageBox.attr("id", "msg-box");
+                $messageBox.html("No results.");
+                $container.append($messageBox);
+            }
+
             $('#filter-cat-food-button').click(() => {
                 if ($('#show-all-products').is(':checked')) {
                     window.location.href = "/#/cat-food-list";
@@ -152,15 +160,22 @@ class ProductsController {
                 dogAvailableSize.push(newDogSize);
             });
 
-
             const templateObject = {
                 dogFoodList,
                 dogAges,
                 dogFoodAvailableAmounts,
                 dogAvailableSize
             }
-
+            
             $('#main-content-container').html(template(templateObject));
+
+            if (templateObject.dogFoodList.length === 0) {
+                let $container = $("#items-container");
+                let $messageBox = $("<div>");
+                $messageBox.attr("id", "msg-box");
+                $messageBox.html("No results.");
+                $container.append($messageBox);
+            }
 
             $('#filter-dog-food-button').click(() => {
                 if ($('#show-all-products').is(':checked')) {
@@ -175,11 +190,12 @@ class ProductsController {
                         filterItems[filterKey].push($(this).val());
                     });
 
-                    const filterString = filterObjectToFilterString(filterItems);                    
+                    const filterString = filterObjectToFilterString(filterItems);
 
                     window.location.href = "/#/dog-food-list/" + filterString;
                 }
             });
+
 
             $('.add-to-cart-button').click(function () {
                 const indexInDogFoodList = $(this).val();
