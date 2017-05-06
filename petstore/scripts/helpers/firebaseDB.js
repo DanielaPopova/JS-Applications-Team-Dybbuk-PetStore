@@ -29,7 +29,7 @@ export function getAllDogBreeds() {
             let dogObj = new DogBreed(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence, appFriendly, exerciseNeeds, trainability, size);
 
             dogObj.dogId = index;
-            dogObj.breedDetailPath = '/dog-breeds-details/' + index;           
+            dogObj.breedDetailPath = '/dog-breeds-details/' + index;
             dogBreeds.push(dogObj);
         });
 
@@ -37,8 +37,8 @@ export function getAllDogBreeds() {
     });
 }
 
-export function getDogBreedDetails(id){
-     return firebase.database().ref('dogBreeds/' + id).once('value').then(function(snapshot) {
+export function getDogBreedDetails(id) {
+    return firebase.database().ref('dogBreeds/' + id).once('value').then(function(snapshot) {
         const dogBreed = snapshot.val();
 
         if (!dogBreed) {
@@ -58,7 +58,7 @@ export function getDogBreedDetails(id){
             size = dogBreed.size;
 
         let dogBreedObj = new DogBreed(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence, appFriendly, exerciseNeeds, trainability, size);
-        
+
         dogBreedObj.dogBreedId = id;
         dogBreedObj.breedDetailPath = '/dog-breeds-details/' + id;
 
@@ -84,9 +84,9 @@ export function getAllCatBreeds() {
                 sheddingLevel = cat.sheddingLevel;
 
             let catObj = new CatBreed(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence, energyLevel, adaptability, sheddingLevel);
-            
+
             catObj.catId = index;
-            catObj.breedDetailPath = '/cat-breeds-details/' + index; 
+            catObj.breedDetailPath = '/cat-breeds-details/' + index;
             catBreeds.push(catObj);
         });
 
@@ -94,8 +94,8 @@ export function getAllCatBreeds() {
     });
 }
 
-export function getCatBreedDetails(id){
-     return firebase.database().ref('catBreeds/' + id).once('value').then(function(snapshot) {
+export function getCatBreedDetails(id) {
+    return firebase.database().ref('catBreeds/' + id).once('value').then(function(snapshot) {
         const catBreed = snapshot.val();
 
         if (!catBreed) {
@@ -112,9 +112,9 @@ export function getCatBreedDetails(id){
             energyLevel = catBreed.energyLevel,
             adaptability = catBreed.adaptability,
             sheddingLevel = catBreed.sheddingLevel;
-            
+
         let catBreedObj = new CatBreed(name, imageURL, description, childFriendly, grooming, healthIssues, intelligence, energyLevel, adaptability, sheddingLevel);
-        
+
         catBreedObj.catBreedId = id;
         catBreedObj.breedDetailPath = '/cat-breeds-details/' + id;
 
@@ -142,12 +142,12 @@ export function getDogFood(filter) {
 
             let dogFoodObj = new DogFood(name, imageURL, description, price, amountInKg, dogAgeSpecific, dogSizeSpecific);
             // Maybe these should be in the constructor...
-           
+
             dogFoodObj.dogFoodId = index;
             dogFoodObj.productDetailPath = '/dog-food-details/' + index;
             dogFoodList.push(dogFoodObj);
         });
-        
+
         for (let filterKey in filter) {
             dogFoodList = dogFoodList.filter(dogFoodItem => {
                 for (let filterValue of filter[filterKey]) {
@@ -179,9 +179,9 @@ export function getDogFoodDetails(id) {
             amountInKg = dogFood.amountInKg,
             dogAgeSpecific = dogFood.dogAgeSpecific,
             dogSizeSpecific = dogFood.dogSizeSpecific;
-            					
+
         let dogFoodObj = new DogFood(name, imageURL, description, price, amountInKg, dogAgeSpecific, dogSizeSpecific);
-        
+
         dogFoodObj.dogFoodId = id;
         dogFoodObj.productDetailPath = '/dog-food-details/' + id;
 
@@ -286,13 +286,13 @@ export function getDogAccessoryDetails(id) {
         let name = dogAccessories.name,
             imageURL = dogAccessories.imageURL,
             description = dogAccessories.description,
-            price = dogAccessories.price;           
+            price = dogAccessories.price;
 
         let dogAccessoryObj = new DogAccessory(name, imageURL, description, price);
-       
+
         dogAccessoryObj.dogAccessoryId = id;
         dogAccessoryObj.productDetailPath = '/dog-items-details/' + id;
-        
+
         return dogAccessoryObj;
     });
 }
@@ -308,9 +308,9 @@ export function getAllCatAccessories() {
                 description = catAccessory.description,
                 price = catAccessory.price;
 
-            let catAccessoryObj = new CatAccessory(name, imageURL, description, price);   
+            let catAccessoryObj = new CatAccessory(name, imageURL, description, price);
             catAccessoryObj.catAccessoryId = index;
-            catAccessoryObj.productDetailPath = '/cat-items-details/' + index;         
+            catAccessoryObj.productDetailPath = '/cat-items-details/' + index;
             catAccessories.push(catAccessoryObj);
         });
 
@@ -329,18 +329,18 @@ export function getCatAccessoryDetails(id) {
         let name = catAccessories.name,
             imageURL = catAccessories.imageURL,
             description = catAccessories.description,
-            price = catAccessories.price;           
+            price = catAccessories.price;
 
         let catAccessoryObj = new CatAccessory(name, imageURL, description, price);
-        
+
         catAccessoryObj.catAccessoryId = id;
-        catAccessoryObj.productDetailPath = '/cat-items-details/' + id;        
+        catAccessoryObj.productDetailPath = '/cat-items-details/' + id;
 
         return catAccessoryObj;
     });
 }
 
-export function getDogQuizResults(filter){
+export function getDogQuizResults(filter) {
 
     if (typeof filter != 'object') {
         throw new Error(`${filter} must be object!`);
@@ -349,26 +349,26 @@ export function getDogQuizResults(filter){
     let allFilters = Object.keys(filter).length;
     let filteredDogBreeds = [];
 
-    return getAllDogBreeds().then(function(dogBreedList){
+    return getAllDogBreeds().then(function(dogBreedList) {
 
-        dogBreedList.forEach(function (dogBreed) {
+        dogBreedList.forEach(function(dogBreed) {
             let matches = 0;
-            for (let key in filter) {            
+            for (let key in filter) {
                 if (dogBreed[key] >= filter[key]) {
                     matches++;
-                }           
+                }
             }
-            
+
             if (matches === allFilters) {
                 filteredDogBreeds.push(dogBreed);
             }
         });
 
         return filteredDogBreeds;
-    });    
+    });
 }
 
-export function getCatQuizResults(filter){
+export function getCatQuizResults(filter) {
 
     if (typeof filter != 'object') {
         throw new Error(`${filter} must be object!`);
@@ -377,27 +377,27 @@ export function getCatQuizResults(filter){
     let allFilters = Object.keys(filter).length;
     let filteredCatBreeds = [];
 
-    return getAllCatBreeds().then(function(catBreedList){
+    return getAllCatBreeds().then(function(catBreedList) {
 
-        catBreedList.forEach(function (catBreed) {
+        catBreedList.forEach(function(catBreed) {
             let matches = 0;
-            for (let key in filter) { 
-                if(key === 'childFriendly'){
+            for (let key in filter) {
+                if (key === 'childFriendly') {
                     if (catBreed[key] >= filter[key]) {
                         matches++;
-                    } 
+                    }
                 } else {
                     if (catBreed[key] <= filter[key]) {
                         matches++;
-                    } 
-                }        
+                    }
+                }
             }
-            
+
             if (matches === allFilters) {
                 filteredCatBreeds.push(catBreed);
             }
         });
 
         return filteredCatBreeds;
-    });    
+    });
 }

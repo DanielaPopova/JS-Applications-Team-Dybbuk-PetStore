@@ -5,15 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS Applications Team Dybbuk PetStore 2017</title>
-    <script src="./node_modules/systemjs/dist/system.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
-    <script src="./scripts/system.config.js"></script>
-    <script src="./scripts/firebase.config.js"></script>
+    <title>JS Applications Team Dybbuk PetStore 2017 tests</title>
+    <link rel="stylesheet" href="/node_modules/mocha/mocha.css" />
 </head>
 
 <body>
+    <div id="mocha"></div>
 
+    <!-- Testing -->
+    <script src="/node_modules/mocha/mocha.js"></script>
+    <script src="/node_modules/chai/chai.js"></script>
+    <script src="/node_modules/sinon/pkg/sinon.js"></script>
+    <script src="/node_modules/sinon-chai/lib/sinon-chai.js"></script>
+    <script src="/node_modules/systemjs/dist/system.js"></script>
+    <script src="/scripts/system.config.js"></script>
+
+    <!-- test scripts -->
+    <!--script src="/tests/models-tests.js"></script-->
+
+    <!-- Unit tests -->
+    <script>
+        mocha.setup('bdd');
+        const {
+            expect
+        } = chai;
+
+        Promise.all([System.import('/tests/models-tests.js')])
+            .then(() => mocha.run());
+    </script>
 </body>
 
 </html>

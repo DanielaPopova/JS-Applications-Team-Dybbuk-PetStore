@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--Meta tags for facebook-->
-	<meta property="og:title" content="Dybbuk Petstore" />	
+    <meta property="og:title" content="Dybbuk Petstore" />
     <meta property="og:description" content="JS Application Team Project" />
     <meta property="og:image" content="https://s-media-cache-ak0.pinimg.com/564x/45/bc/b4/45bcb42c47d3107135e6ff3e100c10b0.jpg" />
     <meta property="og:image:width" content="400" />
@@ -15,11 +15,14 @@
     <title>JS Applications Team Dybbuk PetStore 2017</title>
     <link rel="shortcut icon" href="images/fav-icon/fav-icon-pet.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
-    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">   
-    <script src="./node_modules/systemjs/dist/system.js"></script>    
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./node_modules/systemjs/dist/system.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
     <script src="./scripts/system.config.js"></script>
     <script src="./scripts/firebase.config.js"></script>
+    <script>
+        System.import('main');
+    </script>
 </head>
 
 <body>
@@ -68,7 +71,9 @@
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#/login" id="main-log-in-btn"></a></li>
+                            <li>
+                                <a href="#/login" id="main-log-in-btn"></a>
+                            </li>
                             <li><button id="cart-nav-button" type="button" class="btn btn-success shopping-cart">
                                 <span class="glyphicon glyphicon-shopping-cart">
                                 </span>
