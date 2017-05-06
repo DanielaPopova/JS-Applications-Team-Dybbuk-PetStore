@@ -75,8 +75,8 @@ let router = (() => {
             breedController.loadCatBreedDetails(params.catbreedid);
         });
 
-        router.on('/login', () => {
-            userController.renderLoginForm();
+        router.on('/login', () => {            
+            userController.renderLoginForm();           
         });
 
         router.on('/cart', () => {
