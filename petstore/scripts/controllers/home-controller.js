@@ -1,5 +1,4 @@
 import handlebars from 'handlebars';
-import { getCatFood } from 'db';
 import { getTemplate } from 'templates';
 
 class HomeController {

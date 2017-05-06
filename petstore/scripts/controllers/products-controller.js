@@ -3,11 +3,10 @@ import { getCatFood } from 'db';
 import { getDogFood } from 'db';
 import { getCatFoodDetails } from 'db';
 import { getDogFoodDetails } from 'db';
-import { getAllDogFood } from 'db';
 import { getAllDogAccessories } from 'db';
 import { getDogAccessoryDetails } from 'db';
-import { getCatAccessoryDetails } from 'db';
 import { getAllCatAccessories } from 'db';
+import { getCatAccessoryDetails } from 'db';
 import { getTemplate } from 'templates';
 import { CONSTANTS } from 'constants';
 import { filterStringToFilterObject } from 'filter-string-to-filter-object';
@@ -15,6 +14,7 @@ import { filterObjectToFilterString } from 'filter-string-to-filter-object';
 import { addToCart } from 'cart-manipulator';
 
 class ProductsController {
+
     loadCatFood(filterString) {
         let filter = {};
 
@@ -58,6 +58,14 @@ class ProductsController {
             }
 
             $('#main-content-container').html(template(templateObject));
+
+             if (templateObject.catFoodList.length === 0) {
+                let $container = $("#items-container");
+                let $messageBox = $("<div>");
+                $messageBox.attr("id", "msg-box");
+                $messageBox.html("No results.");
+                $container.append($messageBox);
+            }
 
             $('#filter-cat-food-button').click(() => {
                 if ($('#show-all-products').is(':checked')) {
@@ -152,15 +160,22 @@ class ProductsController {
                 dogAvailableSize.push(newDogSize);
             });
 
-
             const templateObject = {
                 dogFoodList,
                 dogAges,
                 dogFoodAvailableAmounts,
                 dogAvailableSize
             }
-
+            
             $('#main-content-container').html(template(templateObject));
+
+            if (templateObject.dogFoodList.length === 0) {
+                let $container = $("#items-container");
+                let $messageBox = $("<div>");
+                $messageBox.attr("id", "msg-box");
+                $messageBox.html("No results.");
+                $container.append($messageBox);
+            }
 
             $('#filter-dog-food-button').click(() => {
                 if ($('#show-all-products').is(':checked')) {
@@ -176,11 +191,11 @@ class ProductsController {
                     });
 
                     const filterString = filterObjectToFilterString(filterItems);
-                    console.log(filterString);
 
                     window.location.href = "/#/dog-food-list/" + filterString;
                 }
             });
+
 
             $('.add-to-cart-button').click(function () {
                 const indexInDogFoodList = $(this).val();

@@ -1,25 +1,13 @@
-/*look themes*/
-
-.glass {
-    width: 50%;
-    height: 200px;
-    background-color: #6E3667;
-}
-
-/*16*/
-
-
-/*20*/
-
-
-/*62*/
-
 
 /*navigation style*/
-
 #wrapper header .navbar-inverse {
     background-color: #6E3667;
     border-color: #6E3667;
+}
+
+#nav-controls-container {
+    font-size: 16px;
+    font-weight: bold;
 }
 
 #nav-controls-container ul .dropdown-toggle {
@@ -39,14 +27,18 @@
     background-color: #535353;
 }
 
+#cart-nav-button {
+    position: relative;
+    right: 0px;
+    top: 8px;
+}
+
 .shopping-cart {
     background-color: #88D317;
 }
 
 .navbar-nav>li {
-    margin-left: 5px;
-    /*margin-right:5px;*/
-    margin-bottom: 5px;
+    margin: 2px;   
 }
 
 ul li .badge {
@@ -55,15 +47,11 @@ ul li .badge {
     /*margin-left:2px;*/
     position: relative;
     right: 10px;
-    top: 18px;
+    top: 22px;
 }
-
-
 /*end navigation style*/
 
-
 /*login register style*/
-
 #loginFormContainer form div input {
     margin-bottom: 10px;
 }
@@ -78,37 +66,31 @@ ul li .badge {
 #loginFormContainer div {
     background-color: #efe7d5;
 }
-
-
 /*end login register style*/
 
-
-/*food details style*/
-
-#food-details {
+/*product details style*/
+#product-details {
     display: flex;
     align-content: center;
 }
 
-.food-info {
+.product-info {
     background-color: #f5f5f5;
     padding: 15px;
     margin: auto;
 }
 
-.food-info img {
+.product-info img {
     width: 200px;
     float: left;
     margin-right: 10px;
     clear: both;
 }
 
-.food-info p {
+.product-info p {
     text-align: justify;
 }
-
-
-/*end food details style*/
+/*end product details style*/
 
 #wrapper {
     padding: 0;
@@ -127,9 +109,7 @@ main {
     z-index: 10;
 }
 
-
 /*slider style*/
-
 #slider-container {
     width: 70%;
     margin: auto;
@@ -142,72 +122,50 @@ img {
 .carousel-inner img {
     margin: auto;
 }
-
-
 /*end slider style*/
 
-
-/*dog food list style*/
-
+/*product list style*/
 #filter {
-    padding-left: 50px;
-    padding-bottom: 25px;
-    background: #f8eee7;
-    margin-bottom: 50px;
-}
-
-#items-container {
-    padding: 0 0 0 7px;
+    padding: 10px;    
+    background: #f8eee7;   
 }
 
 .sub-filter {
-    padding-left: 25px;
+    padding-left: 20px;
 }
 
-.food-list-item {
+.product-list-item {
     border: 1px solid #fff;
-    background-color: #535353;
-    color: #fff;
+    background-color: #2A1B3D;
+    color: #fff; 
+    padding: 1px 1px 1px 1px;  
 }
 
-.img-container {
-    width: 200px;
-    height: 200px;
+.product-list-item h4 {
+   margin: 5px;
+} 
+
+.product-list-item img {
+    width: 180px;
+    height: 230px;
 }
 
-.large-img-container {
-    width: 400px;
-    height: 400px;
+.product-list-item div {
+   padding: 2px;
 }
 
-.img-container img {
-    width: 100%;
-    height: 100%;
+.product-name {
+    height: 40px;
 }
 
-.large-img-container img {
-    width: 100%;
-    height: 100%;
-}
-
-.food-list-item h4 {
-    font-weight: normal;
-}
-
-.food-list-item h4 span {
+#msg-box {
+    font-size: 22px;
+    color:#5bc0de;
     font-weight: bold;
 }
-
-#name-and-price {
-    height: 60px;
-}
-
-
-
-/*end food list style*/
+/*end product list style*/
 
 /*breeds styles*/
-
 #breed-item {
     margin: 5px;
     width: 300px;
@@ -270,26 +228,15 @@ div.el-inline {
     float: right;
 }
 
-
+.fb-share-btn{
+    cursor: pointer;
+    width: 80px;
+    height: 30px; 
+    display: inline-block;
+};
 /*end breed style*/
 
 /*shopping cart style*/
-/*.shopping-row {
-    padding: 15px;
-    margin: auto;
-}
-
-.shopping-row img {
-    width: 200px;
-    float: left;
-    margin-right: 10px;
-    clear: both;
-}
-
-.shopping-row p {
-    text-align: justify;
-}*/
-/*--------*/
 .cart-img img {
     width: 50px;
 }
@@ -298,14 +245,18 @@ div.el-inline {
     background-color: #95a4bc;
     color: #fff;
     font-weight: bold;
+    box-sizing: border-box;
 }
 
-
+.shopping-cart-container {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
 /*end shopping cart style*/
 
-
 /*customize components styles*/
-
 .shadow {
     position: relative;
 }
@@ -341,8 +292,113 @@ div.el-inline {
     left: auto;
 }
 
+/*radio btn*/
+.button-label {
+    display: inline-block;
+    padding: 1em 1em;
+    margin: 0.5em;
+    width: 270px;
+    cursor: pointer;
+    background: #efefef;
+    border-radius: 0.25em;
+}
 
+.custom-radio + .button-label:hover {
+    filter: brightness(85%);
+    box-shadow: 0 3px 10px #3c763d;
+}
+
+.custom-radio:checked + .button-label:hover {
+    filter: brightness(85%);
+    box-shadow: 2px 3px 10px #2775d8;
+}
+
+.custom-radio:checked + .button-label {
+    background: #4183D7;
+    color: #fff;
+}
+
+.hidden {
+  display: none;
+}
 /* end customize components styles*/
+
+/*best pet cat/dog questions*/
+.questions {
+    background-color: #fff;
+    padding: 15px;
+    margin: auto;
+    box-shadow: 0 -3px 10px #777;
+    
+}
+
+#questions {
+    display: flex;
+    justify-content: center;
+}
+
+.questions-header {
+    color:#3c763d;
+    font-weight: bold;
+}
+/*end best pet cat/dog questions*/
+
+ /*best-pet */
+#dog-or-cat-header {
+    color: #8cc63e;
+    text-align: center;
+    font-weight: bold;
+}
+
+#cat-dog-radio {
+    display: flex;
+    justify-content: center;
+}
+
+#cat-dog-radio div{
+    background-color: #6E3667 ;
+    padding: 20px 0 20px 40px;
+}
+#holder {
+    width: 200px;
+    height: 130px;
+}
+
+label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+#dog-lbl > input + div{ /* IMAGE STYLES */
+  cursor:pointer;
+  /*border:2px solid transparent;*/
+   background: url('../images/best-pet-imgs/dog.png');
+   background-repeat: no-repeat;
+  
+}
+#dog-lbl > input:checked + div{ /* (RADIO CHECKED) IMAGE STYLES */
+   background: url('../images/best-pet-imgs/dog-selected.png');
+   background-repeat: no-repeat;
+}
+
+
+#cat-lbl > input + div{ /* IMAGE STYLES */
+  cursor:pointer;
+  /*border:2px solid transparent;*/
+   background: url('../images/best-pet-imgs/cat.png');
+   background-repeat: no-repeat;
+  
+}
+#cat-lbl > input:checked + div{ /* (RADIO CHECKED) IMAGE STYLES */
+   background: url('../images/best-pet-imgs/cat-selected.png');
+   background-repeat: no-repeat;
+}
+/*label > input:checked > div #dog-img {
+    visibility: hidden;
+}*/
+
+
+
+ /*end best-pet  */
 
 
 /*footer style*/

@@ -47,7 +47,9 @@ class BreedsControler {
 
             $('.el-inline').ready(function () {
                 $('[data-toggle="tooltip"]').tooltip();   
-            });       
+            });  
+
+            this._shareOnFaceBook();
         });
     }
 
@@ -64,8 +66,23 @@ class BreedsControler {
 
             $('.el-inline').ready(function () {
                 $('[data-toggle="tooltip"]').tooltip();   
-            });         
+            });   
+
+            this._shareOnFaceBook();      
         });
+    }
+
+    _shareOnFaceBook(){
+        let startIndex = window.location.href.indexOf('#');
+        let hostUrl = `https://petstore-3b99e.firebaseapp.com/`;
+        let breedDetailPath = window.location.href.substr(startIndex);
+        let url = encodeURIComponent(hostUrl + breedDetailPath);
+        let shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+
+        $('#facebook-share').on('click', function () {
+            let fbpopup = window.open(shareUrl, "pop", "width=400, height=400, scrollbars=no");
+            return false;
+        });     
     }
 }
 
