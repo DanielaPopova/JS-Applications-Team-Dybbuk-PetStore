@@ -1,20 +1,49 @@
 <div class="row" id="loginFormContainer">
     <div class="shadow col-lg-6 col-md-7 col-sm-8 col-xs-11">
-        <form action="">
+        <form action="" class="form-container">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11 form-group" id="login">
                 <label>Log in:</label>
-                <input class="form-control" type="text" name="" placeholder="Email" id="sign-in-email" autocomplete="off">
-                <input class="form-control" type="password" placeholder="Password" id="sign-in-password"><span id="login-wrong-message"></span>
+                <div class="form-group">                    
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input class="form-control" type="text" placeholder="Email" id="sign-in-email" autocomplete="off">  
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input class="form-control" type="password" placeholder="Password" id="sign-in-password">
+                    </div>
+                 </div>
+                 <div id="login-wrong-message"></div>
                 <button class="btn btn-success" type="button" id="sign-in-btn">Sign In</button>
             </div>
         </form>
 
         <form action="">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11 form-group" id="registration">
-                <label>Register:</label>                
-                <input class="form-control" type="text" placeholder="Email" id="sign-up-email" autocomplete="off" /><span id="email-message"></span>
-                <input class="form-control" type="password" placeholder="Password" id="sign-up-password" /><span id="password-message"></span>
-                <input class="form-control" type="password" placeholder="Repeat password" id="sign-up-repeat-password" /><span id="repeat-pass-message"></span>               
+                <label>Register:</label> 
+                <div class="form-group">                    
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope blue"></i></span>               
+                        <input class="form-control" type="text" placeholder="Email" id="sign-up-email" autocomplete="off" />
+                    </div>
+                    <div id="email-message"></div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock blue"></i></span>
+                        <input class="form-control" type="password" placeholder="Password" id="sign-up-password" />
+                    </div>
+                    <div id="password-message"></div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock blue"></i></span>
+                        <input class="form-control" type="password" placeholder="Repeat password" id="sign-up-repeat-password" />
+                    </div>  
+                    <div id="repeat-pass-message"></div> 
+                </div>            
                 <button class="btn btn-primary" type="button" id="sign-up-btn">Register</button>
             </div>
         </form>

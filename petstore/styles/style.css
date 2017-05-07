@@ -52,9 +52,9 @@ ul li .badge {
 /*end navigation style*/
 
 /*login register style*/
-#loginFormContainer form div input {
+/*#loginFormContainer form div input {
     margin-bottom: 10px;
-}
+}*/
 
 #loginFormContainer {
     display: flex;
@@ -63,9 +63,15 @@ ul li .badge {
     justify-content: center;
 }
 
-#loginFormContainer div {
-    background-color: #F5F5F5;
+#loginFormContainer div{
+    background-color: #2A1B3D;
 }
+
+#loginFormContainer label {
+    color: #fff;
+    padding: 5px;
+}
+
 /*end login register style*/
 
 /*product details style*/
@@ -428,9 +434,14 @@ footer p a:hover {
 /*contacts style*/
 
 #contacts-container  {
-   background-color: #9d9d9d;
+   background-color: #2A1B3D;
+   color: #fff;
    padding-top: 20px;
    padding-bottom: 20px;
+}
+
+#contacts-container legend {
+    color: #fff;
 }
 
 #contacts-section {
@@ -439,11 +450,15 @@ footer p a:hover {
 }
 
 i {
-    color: #fff;    
+    color: #5CB85C;    
+}
+
+.blue {
+    color: #337AB7;    
 }
 
 div .input-group-addon {
-    background-color: #337AB7;
+    background-color: #fff;
 }
  
 #map-image {
