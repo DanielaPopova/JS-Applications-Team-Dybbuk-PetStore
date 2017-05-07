@@ -418,12 +418,24 @@ footer p a:hover {
     text-decoration: none;
 }
 
+.footer p a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
 /*end footer style*/
 
 /*contacts style*/
 
-#contacts-container {
-    width: 80%;
+#contacts-container  {
+   background-color: #9d9d9d;
+   padding-top: 20px;
+   padding-bottom: 20px;
+}
+
+#contacts-section {
+    display: flex;
+    justify-content: center;
 }
 
 i {
@@ -434,10 +446,6 @@ div .input-group-addon {
     background-color: #337AB7;
 }
  
-.input-group {
-    width: 400px;
-}
-
 #map-image {
     width: 300px;
 }

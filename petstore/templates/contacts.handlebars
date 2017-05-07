@@ -1,50 +1,66 @@
-<div class="container" id="contacts-container">
-    <form class="well form-horizontal shadow" action="" id="contact_form">
-        <fieldset class="row">           
-            <legend class="col-md-6">Contact Us:</legend>
-            <legend class="col-md-6">Address:</legend>
-            <div class="col-md-6">
-                <div class="form-group">                
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                        <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
-                        <input name="first_name" placeholder="Your Name" class="form-control" type="text">
-                    </div>
-                </div>
-            </div>
-           
-            <div class="form-group">                
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                        <div class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></div>
-                        <input name="email" placeholder="E-Mail Address" class="form-control" type="text">
-                    </div>
-                </div>
-            </div>
+<section id="contacts-section"  class="container row">
 
-            <div class="form-group">                
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                        <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
-                        <textarea class="form-control" rows="5" name="comment" placeholder="Message"></textarea>
+    <div id="contacts-container" class="shadow col-lg-10 col-md-11 col-sm-11 col-xs-12">
+        <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
+            <fieldset class="row">
+                <legend class="">Contact Us:</legend>
+                <form class="well form-horizontal" action="" id="contact_form">
+
+                    <div class="">
+                        <div class="form-group">
+                            <div class="inputGroupContainer">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
+                                    <input name="first_name" placeholder="Your Name" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="inputGroupContainer">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></div>
+                                    <input name="email" placeholder="E-Mail Address" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="inputGroupContainer">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
+                                    <textarea class="form-control" rows="5" name="comment" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="form-group">
+                            <div class="">
+                                <button type="button" class="btn btn-primary">Send <span class="glyphicon glyphicon-send"></span></button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>          
 
-            <!-- Button -->
-            <div class="form-group">                
-                <div class="col-md-4">
-                    <button type="button" class="btn btn-primary">Send <span class="glyphicon glyphicon-send"></span></button>
-                </div>
-            </div>  
-            </div>            
 
-            <div class="col-md-6"> 
-                <p>Telerik Academy<br>blvd. "Alexander Malinov" 31, 1729 Sofia</p>               
-                <img src="" alt="address" class="img-thumbnail" id="map-image">                
-            </div>
-        </fieldset>        
-    </form> 
-    
-       
-</div>
+                </form>
+            </fieldset>
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
+            <fieldset>
+                <legend class="">Address:</legend>
+
+                <div class="">
+                    <p>Telerik Academy</p>
+                    <p>blvd. "Alexander Malinov" 31, 1729 Sofia</p>
+                    <img src="" alt="address" class="img-thumbnail" id="map-image">
+                </div>
+            </fieldset>
+        </div>
+
+    </div>
+
+</section>
