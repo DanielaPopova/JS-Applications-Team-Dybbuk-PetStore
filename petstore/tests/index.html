@@ -30,7 +30,10 @@
             expect
         } = chai;
 
-        Promise.all([System.import('/tests/models-tests.js')])
+        Promise.all([
+                System.import('/tests/models-tests.js'),
+                System.import('/tests/validation-tests.js')
+            ])
             .then(() => mocha.run());
     </script>
 </body>

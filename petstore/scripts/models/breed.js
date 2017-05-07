@@ -7,7 +7,7 @@ class Breed {
         this.imageURL = imageURL;
         this.description = description;
         this.childFriendly = childFriendly;
-        this.grooming = grooming;        
+        this.grooming = grooming;
         this.healthIssues = healthIssues;
         this.intelligence = intelligence;
     }
@@ -38,7 +38,7 @@ class Breed {
 
     set description(value) {
         VALIDATOR.isNonEmptyString(value);
-        VALIDATOR.isInRange(value, CONSTANTS.DESCRIPTION_MIN_LENGTH, CONSTANTS.DESCRIPTION_MAX_LENGTH);
+        VALIDATOR.isInRange(value.length, CONSTANTS.DESCRIPTION_MIN_LENGTH, CONSTANTS.DESCRIPTION_MAX_LENGTH);
         this._description = value;
     }
 
@@ -60,7 +60,7 @@ class Breed {
         VALIDATOR.isOfTypeNumber(value);
         VALIDATOR.isInRange(value, CONSTANTS.BREED_FEATURE_MIN_LEVEL, CONSTANTS.BREED_FEATURE_MAX_LEVEL);
         this._grooming = value;
-    }  
+    }
 
     get healthIssues() {
         return this._healthIssues;
