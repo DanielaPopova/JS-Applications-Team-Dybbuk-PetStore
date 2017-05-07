@@ -7,7 +7,7 @@ class HomeController {
         getTemplate('home').then((template) => {
             $('#main-content-container').html(template());
 			$('.carousel').carousel({
-                interval: 4000
+                interval: 3500
             });
         })
     }
