@@ -64,7 +64,7 @@ ul li .badge {
 }
 
 #loginFormContainer div {
-    background-color: #efe7d5;
+    background-color: #F5F5F5;
 }
 /*end login register style*/
 
@@ -396,10 +396,7 @@ label > input{ /* HIDE RADIO */
     visibility: hidden;
 }*/
 
-
-
  /*end best-pet  */
-
 
 /*footer style*/
 
@@ -421,5 +418,29 @@ footer p a:hover {
     text-decoration: none;
 }
 
-
 /*end footer style*/
+
+/*contacts style*/
+
+#contacts-container {
+    width: 80%;
+}
+
+i {
+    color: #fff;    
+}
+
+div .input-group-addon {
+    background-color: #337AB7;
+}
+ 
+.input-group {
+    width: 400px;
+}
+
+#map-image {
+    width: 300px;
+}
+
+/*end contacts style*/
+
