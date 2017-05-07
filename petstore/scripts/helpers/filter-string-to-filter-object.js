@@ -1,5 +1,5 @@
 // Converts string in the format catAgeSpecific=kitten,adult;amountInKg=0.25,1.5 to
-// {catAgeSpecific: ['kitten', 'adult'], amountInKg: ['0.2', '0.5']}
+// {catAgeSpecific: ['kitten', 'adult'], amountInKg: ['0.25', '1.5']}
 export function filterStringToFilterObject(filterString) {
     if (typeof filterString != 'string') {
         throw new Error('String must be supplied as the only argument');

@@ -1,14 +1,14 @@
 import handlebars from 'handlebars';
 import { getTemplate } from 'templates';
 import { getProductsInCart } from 'cart-manipulator';
-import { removeFromCart } from 'cart-manipulator';
+import { cartManipulator } from 'cart-manipulator';
 
 class CartController {
     loadCart() {
         let requestCartTemplate = getTemplate('cart');
 
         requestCartTemplate.then(template => {
-            const products = getProductsInCart();
+            const products = cartManipulator.getProductsInCart();
             let totalPrice = 0;
 
             for (let product of products) {
@@ -31,7 +31,7 @@ class CartController {
                     .find('.item-price').html();
                 $('#total-price-container').html(currentTotalPrice - removedItemPrice);
 
-                removeFromCart(idInCart);
+                cartManipulator.removeFromCart(idInCart);
                 $(this).closest('.shopping-cart-item').remove();
             });
         });

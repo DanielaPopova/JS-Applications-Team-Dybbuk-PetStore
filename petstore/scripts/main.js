@@ -1,8 +1,8 @@
 import { router } from 'router';
-import { updateCartIcon } from 'cart-manipulator';
+import { cartManipulator } from 'cart-manipulator';
 import { userController } from 'user-controller';
 
-updateCartIcon();
+cartManipulator.updateCartIcon();
 userController.updateLogInButton();
 
 

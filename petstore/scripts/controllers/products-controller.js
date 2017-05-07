@@ -4,7 +4,7 @@ import { getTemplate } from 'templates';
 import { CONSTANTS } from 'constants';
 import { filterStringToFilterObject } from 'filter-string-to-filter-object';
 import { filterObjectToFilterString } from 'filter-string-to-filter-object';
-import { addToCart } from 'cart-manipulator';
+import { cartManipulator } from 'cart-manipulator';
 
 class ProductsController {
 
@@ -52,7 +52,7 @@ class ProductsController {
 
             $('#main-content-container').html(template(templateObject));
 
-             if (templateObject.catFoodList.length === 0) {
+            if (templateObject.catFoodList.length === 0) {
                 let $container = $("#items-container");
                 let $messageBox = $("<div>");
                 $messageBox.attr("id", "msg-box");
@@ -65,7 +65,7 @@ class ProductsController {
                     window.location.href = "/#/cat-food-list";
                 } else {
                     let filterItems = {};
-                    $('#filter input[type=checkbox]:checked').each(function () {
+                    $('#filter input[type=checkbox]:checked').each(function() {
                         const filterKey = $(this).attr('name');
                         if (typeof filterItems[filterKey] == 'undefined') {
                             filterItems[filterKey] = [];
@@ -79,10 +79,10 @@ class ProductsController {
                 }
             });
 
-            $('.add-to-cart-button').click(function () {
+            $('.add-to-cart-button').click(function() {
                 const indexInCatFoodList = $(this).val();
 
-                addToCart(catFoodList[indexInCatFoodList]);
+                cartManipulator.addToCart(catFoodList[indexInCatFoodList]);
             });
         });
     }
@@ -100,7 +100,7 @@ class ProductsController {
             $('#main-content-container').html(catFoodTemplate(catFoodDetails));
 
             $('#add-to-cart-button').click(() => {
-                addToCart(catFoodDetails);
+                cartManipulator.addToCart(catFoodDetails);
             })
         });
     }
@@ -159,7 +159,7 @@ class ProductsController {
                 dogFoodAvailableAmounts,
                 dogAvailableSize
             }
-            
+
             $('#main-content-container').html(template(templateObject));
 
             if (templateObject.dogFoodList.length === 0) {
@@ -175,7 +175,7 @@ class ProductsController {
                     window.location.href = "/#/dog-food-list";
                 } else {
                     let filterItems = {};
-                    $('#filter input[type=checkbox]:checked').each(function () {
+                    $('#filter input[type=checkbox]:checked').each(function() {
                         const filterKey = $(this).attr('name');
                         if (typeof filterItems[filterKey] == 'undefined') {
                             filterItems[filterKey] = [];
@@ -190,10 +190,10 @@ class ProductsController {
             });
 
 
-            $('.add-to-cart-button').click(function () {
+            $('.add-to-cart-button').click(function() {
                 const indexInDogFoodList = $(this).val();
 
-                addToCart(dogFoodList[indexInDogFoodList]);
+                cartManipulator.addToCart(dogFoodList[indexInDogFoodList]);
             });
         });
     }
@@ -210,7 +210,7 @@ class ProductsController {
             $('#main-content-container').html(dogFoodTemplate(dogFoodDetails));
 
             $('#add-to-cart-button').click(() => {
-                addToCart(dogFoodDetails);
+                cartManipulator.addToCart(dogFoodDetails);
             })
         });
     }
@@ -227,10 +227,10 @@ class ProductsController {
 
             $('#main-content-container').html(dogAccessoriesTemplate(dogAccessories));
 
-            $('.add-to-cart-button').click(function () {
+            $('.add-to-cart-button').click(function() {
                 const indexInDogAccessories = $(this).val();
 
-                addToCart(dogAccessories[indexInDogAccessories]);
+                cartManipulator.addToCart(dogAccessories[indexInDogAccessories]);
             });
         });
     }
@@ -247,7 +247,7 @@ class ProductsController {
             $('#main-content-container').html(accessoryTemplate(accessoryDetails));
 
             $('#add-to-cart-button').click(() => {
-                addToCart(accessoryDetails);
+                cartManipulator.addToCart(accessoryDetails);
             })
         });
     }
@@ -263,7 +263,7 @@ class ProductsController {
 
             $('#main-content-container').html(catAccessoriesTemplate(catAccessories));
 
-            $('.add-to-cart-button').click(function () {
+            $('.add-to-cart-button').click(function() {
                 const indexInCatAccessories = $(this).val();
 
                 addToCart(catAccessories[indexInCatAccessories]);
@@ -283,7 +283,7 @@ class ProductsController {
             $('#main-content-container').html(accessoryTemplate(accessoryDetails));
 
             $('#add-to-cart-button').click(() => {
-                addToCart(accessoryDetails);
+                cartManipulator.addToCart(accessoryDetails);
             })
         });
     }
