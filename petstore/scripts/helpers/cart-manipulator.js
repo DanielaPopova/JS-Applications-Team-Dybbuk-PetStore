@@ -69,4 +69,4 @@ const cartManipulator = (() => {
     }
 })();
 
-export { cartManipulator }
+export { cartManipulator };

@@ -32,7 +32,9 @@
 
         Promise.all([
                 System.import('/tests/models-tests.js'),
-                System.import('/tests/validation-tests.js')
+                System.import('/tests/validation-tests.js'),
+                System.import('/tests/product-filter-tests.js'),
+                System.import('/tests/cart-tests.js')
             ])
             .then(() => mocha.run());
     </script>
