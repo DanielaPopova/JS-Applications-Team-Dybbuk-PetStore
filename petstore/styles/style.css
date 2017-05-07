@@ -72,6 +72,23 @@ ul li .badge {
     padding: 5px;
 }
 
+#email-message .alert {
+    font-weight: bold;
+    background-color: #fff;
+}
+#login-wrong-message .alert {
+    font-weight: bold;
+    background-color: #fff;
+}
+#password-message .alert {
+    font-weight: bold;
+    background-color: #fff;
+}
+#repeat-pass-message .alert {
+    font-weight: bold;
+    background-color: #fff;
+}
+
 /*end login register style*/
 
 /*product details style*/
