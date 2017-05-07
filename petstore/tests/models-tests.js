@@ -426,6 +426,182 @@ describe('Models tests', () => {
         });
     });
 
+    describe('Dog breed tests', () => {
+        let validatorInRangeStub;
+        let validatorIsTypeNumberStub;
+        let validatorDogSizeCategory;
+
+        beforeEach(() => {
+            validatorInRangeStub = sinon.stub(VALIDATOR, 'isInRange');
+            validatorIsTypeNumberStub = sinon.stub(VALIDATOR, 'isOfTypeNumber');
+            validatorDogSizeCategory = sinon.stub(VALIDATOR, 'checkDogSizeCategory');
+        });
+
+        afterEach(() => {
+            validatorInRangeStub.restore();
+            validatorIsTypeNumberStub.restore();
+            validatorDogSizeCategory.restore();
+        });
+
+        it('Expect dog breed object to be constructed with correct properties when constructor is invoked', () => {
+            const expectedName = 'Breed name';
+            const expectedImageURL = 'poroda.jpg';
+            const expectedDescription = 'valid description';
+            const expectedChildFriendly = 1;
+            const expectedGrooming = 1;
+            const expectedHealthIssues = 1;
+            const expectedIntelligence = 1;
+            const expectedAppFirendly = 5;
+            const expectedExerciseNeeds = 4;
+            const expectedTrainability = 3;
+            const expectedDogSize = CONSTANTS.DOG_AVAILABLE_SIZE[0];
+
+            const sut = new DogBreed(
+                expectedName,
+                expectedImageURL,
+                expectedDescription,
+                expectedChildFriendly,
+                expectedGrooming,
+                expectedHealthIssues,
+                expectedIntelligence,
+                expectedAppFirendly,
+                expectedExerciseNeeds,
+                expectedTrainability,
+                expectedDogSize);
+
+            expect(sut.name).to.equal(expectedName);
+            expect(sut.imageURL).to.equal(expectedImageURL);
+            expect(sut.description).to.equal(expectedDescription);
+            expect(sut.childFriendly).to.equal(expectedChildFriendly);
+            expect(sut.grooming).to.equal(expectedGrooming);
+            expect(sut.healthIssues).to.equal(expectedHealthIssues);
+            expect(sut.intelligence).to.equal(expectedIntelligence);
+            expect(sut.appFriendly).to.equal(expectedAppFirendly);
+            expect(sut.exerciseNeeds).to.equal(expectedExerciseNeeds);
+            expect(sut.trainability).to.equal(expectedTrainability);
+            expect(sut.size).to.equal(expectedDogSize);
+        });
+
+        it('Expect type number and correct range validation to be performed for app friendly parameter when dog breed is constructed', () => {
+            const expectedName = 'Breed name';
+            const expectedImageURL = 'poroda.jpg';
+            const expectedDescription = 'valid description';
+            const expectedChildFriendly = 1;
+            const expectedGrooming = 1;
+            const expectedHealthIssues = 1;
+            const expectedIntelligence = 1;
+            const expectedAppFirendly = 5;
+            const expectedExerciseNeeds = 4;
+            const expectedTrainability = 3;
+            const expectedDogSize = CONSTANTS.DOG_AVAILABLE_SIZE[0];
+
+            const sut = new DogBreed(
+                expectedName,
+                expectedImageURL,
+                expectedDescription,
+                expectedChildFriendly,
+                expectedGrooming,
+                expectedHealthIssues,
+                expectedIntelligence,
+                expectedAppFirendly,
+                expectedExerciseNeeds,
+                expectedTrainability,
+                expectedDogSize);
+
+            expect(validatorIsTypeNumberStub).to.have.been.calledWith(expectedAppFirendly);
+            expect(validatorInRangeStub).to.have.been.calledWith(expectedAppFirendly, CONSTANTS.BREED_FEATURE_MIN_LEVEL, CONSTANTS.BREED_FEATURE_MAX_LEVEL);
+        });
+
+        it('Expect type number and correct range validation to be performed for exercise needs parameter when dog breed is constructed', () => {
+            const expectedName = 'Breed name';
+            const expectedImageURL = 'poroda.jpg';
+            const expectedDescription = 'valid description';
+            const expectedChildFriendly = 1;
+            const expectedGrooming = 1;
+            const expectedHealthIssues = 1;
+            const expectedIntelligence = 1;
+            const expectedAppFirendly = 5;
+            const expectedExerciseNeeds = 4;
+            const expectedTrainability = 3;
+            const expectedDogSize = CONSTANTS.DOG_AVAILABLE_SIZE[0];
+
+            const sut = new DogBreed(
+                expectedName,
+                expectedImageURL,
+                expectedDescription,
+                expectedChildFriendly,
+                expectedGrooming,
+                expectedHealthIssues,
+                expectedIntelligence,
+                expectedAppFirendly,
+                expectedExerciseNeeds,
+                expectedTrainability,
+                expectedDogSize);
+
+            expect(validatorIsTypeNumberStub).to.have.been.calledWith(expectedExerciseNeeds);
+            expect(validatorInRangeStub).to.have.been.calledWith(expectedExerciseNeeds, CONSTANTS.BREED_FEATURE_MIN_LEVEL, CONSTANTS.BREED_FEATURE_MAX_LEVEL);
+        });
+
+        it('Expect type number and correct range validation to be performed for trainability parameter when cat breed is constructed', () => {
+            const expectedName = 'Breed name';
+            const expectedImageURL = 'poroda.jpg';
+            const expectedDescription = 'valid description';
+            const expectedChildFriendly = 1;
+            const expectedGrooming = 1;
+            const expectedHealthIssues = 1;
+            const expectedIntelligence = 1;
+            const expectedAppFirendly = 5;
+            const expectedExerciseNeeds = 4;
+            const expectedTrainability = 3;
+            const expectedDogSize = CONSTANTS.DOG_AVAILABLE_SIZE[0];
+
+            const sut = new DogBreed(
+                expectedName,
+                expectedImageURL,
+                expectedDescription,
+                expectedChildFriendly,
+                expectedGrooming,
+                expectedHealthIssues,
+                expectedIntelligence,
+                expectedAppFirendly,
+                expectedExerciseNeeds,
+                expectedTrainability,
+                expectedDogSize);
+
+            expect(validatorIsTypeNumberStub).to.have.been.calledWith(expectedTrainability);
+            expect(validatorInRangeStub).to.have.been.calledWith(expectedTrainability, CONSTANTS.BREED_FEATURE_MIN_LEVEL, CONSTANTS.BREED_FEATURE_MAX_LEVEL);
+        });
+
+        it('Expect dog size validation to be performed for size parameter when cat breed is constructed', () => {
+            const expectedName = 'Breed name';
+            const expectedImageURL = 'poroda.jpg';
+            const expectedDescription = 'valid description';
+            const expectedChildFriendly = 1;
+            const expectedGrooming = 1;
+            const expectedHealthIssues = 1;
+            const expectedIntelligence = 1;
+            const expectedAppFirendly = 5;
+            const expectedExerciseNeeds = 4;
+            const expectedTrainability = 3;
+            const expectedDogSize = CONSTANTS.DOG_AVAILABLE_SIZE[0];
+
+            const sut = new DogBreed(
+                expectedName,
+                expectedImageURL,
+                expectedDescription,
+                expectedChildFriendly,
+                expectedGrooming,
+                expectedHealthIssues,
+                expectedIntelligence,
+                expectedAppFirendly,
+                expectedExerciseNeeds,
+                expectedTrainability,
+                expectedDogSize);
+
+            expect(validatorDogSizeCategory).to.have.been.calledWith(expectedDogSize, CONSTANTS.DOG_AVAILABLE_SIZE);
+        });
+    });
+
     describe('Cat breed tests', () => {
         let validatorInRangeStub;
         let validatorIsTypeNumberStub;
@@ -473,6 +649,7 @@ describe('Models tests', () => {
             expect(sut.intelligence).to.equal(expectedIntelligence);
             expect(sut.energyLevel).to.equal(expectedEnergyLevel);
             expect(sut.adaptability).to.equal(expectedAdaptability);
+            expect(sut.sheddingLevel).to.equal(expectedSheddingLevel)
         });
 
         it('Expect type number and correct range validation to be performed for energy parameter when cat breed is constructed', () => {
