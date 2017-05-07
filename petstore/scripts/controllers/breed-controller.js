@@ -1,13 +1,10 @@
 import { getTemplate } from 'templates';
-import { getAllDogBreeds } from 'db';
-import { getAllCatBreeds } from 'db';
-import { getDogBreedDetails } from 'db';
-import { getCatBreedDetails } from 'db';
+import { database } from 'db';
 
 class BreedsControler {
 
     loadDogBreeds() {
-        let requestDogBreeds = getAllDogBreeds();
+        let requestDogBreeds = database.getAllDogBreeds();
         let requestDobBreedTemplate = getTemplate('breeds');
 
         Promise.all([requestDogBreeds, requestDobBreedTemplate]).then(([dogBreeds, dogBreedTemplate]) => {
@@ -21,7 +18,7 @@ class BreedsControler {
     }
 
     loadCatBreeds() {
-        let requestCatBreeds = getAllCatBreeds();
+        let requestCatBreeds = database.getAllCatBreeds();
         let requestCatBreedTemplate = getTemplate('breeds');
 
         Promise.all([requestCatBreeds, requestCatBreedTemplate]).then(([catBreeds, catBreedTemplate]) => {
@@ -35,7 +32,7 @@ class BreedsControler {
     }
 	
 	loadDogBreedDetails(dogBreedId) {
-        let requestDogBreedDetails = getDogBreedDetails(dogBreedId);
+        let requestDogBreedDetails = database.getDogBreedDetails(dogBreedId);
         let requestDogBreedTemplate = getTemplate('dog-breed-details');
         
         Promise.all([requestDogBreedDetails, requestDogBreedTemplate]).then(([dogBreedDetails, dogBreedTemplate]) => {
@@ -54,7 +51,7 @@ class BreedsControler {
     }
 
     loadCatBreedDetails(catBreedId) {
-        let requestCatBreedDetails = getCatBreedDetails(catBreedId);
+        let requestCatBreedDetails = database.getCatBreedDetails(catBreedId);
         let requestCatBreedTemplate = getTemplate('cat-breed-details');
         
         Promise.all([requestCatBreedDetails, requestCatBreedTemplate]).then(([catBreedDetails, catBreedTemplate]) => {

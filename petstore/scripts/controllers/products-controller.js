@@ -1,12 +1,5 @@
 import handlebars from 'handlebars';
-import { getCatFood } from 'db';
-import { getDogFood } from 'db';
-import { getCatFoodDetails } from 'db';
-import { getDogFoodDetails } from 'db';
-import { getAllDogAccessories } from 'db';
-import { getDogAccessoryDetails } from 'db';
-import { getAllCatAccessories } from 'db';
-import { getCatAccessoryDetails } from 'db';
+import { database } from 'db';
 import { getTemplate } from 'templates';
 import { CONSTANTS } from 'constants';
 import { filterStringToFilterObject } from 'filter-string-to-filter-object';
@@ -22,7 +15,7 @@ class ProductsController {
             filter = filterStringToFilterObject(filterString);
         }
 
-        let requestCatFoodData = getCatFood(filter);
+        let requestCatFoodData = database.getCatFood(filter);
         let requestCatFoodTemplate = getTemplate('cat-food');
 
         Promise.all([requestCatFoodData, requestCatFoodTemplate]).then(([catFoodList, template]) => {
@@ -95,7 +88,7 @@ class ProductsController {
     }
 
     loadCatFoodDetails(catFoodId) {
-        let requestCatFoodDetails = getCatFoodDetails(catFoodId);
+        let requestCatFoodDetails = database.getCatFoodDetails(catFoodId);
         let requestCatFoodTemplate = getTemplate('cat-food-details');
 
         Promise.all([requestCatFoodDetails, requestCatFoodTemplate]).then(([catFoodDetails, catFoodTemplate]) => {
@@ -119,7 +112,7 @@ class ProductsController {
             filter = filterStringToFilterObject(filterString);
         }
 
-        let requestDogFoodData = getDogFood(filter);
+        let requestDogFoodData = database.getDogFood(filter);
         let requestDogFoodTemplate = getTemplate('dog-food');
 
         Promise.all([requestDogFoodData, requestDogFoodTemplate]).then(([dogFoodList, template]) => {
@@ -206,7 +199,7 @@ class ProductsController {
     }
 
     loadDogFoodDetails(dogFoodId) {
-        let requestDogFoodDetails = getDogFoodDetails(dogFoodId);
+        let requestDogFoodDetails = database.getDogFoodDetails(dogFoodId);
         let requestDogFoodTemplate = getTemplate('dog-food-details');
 
         Promise.all([requestDogFoodDetails, requestDogFoodTemplate]).then(([dogFoodDetails, dogFoodTemplate]) => {
@@ -223,7 +216,7 @@ class ProductsController {
     }
 
     loadDogAccessories() {
-        let requestDogAccessories = getAllDogAccessories();
+        let requestDogAccessories = database.getAllDogAccessories();
         let requestDogAccessoriesTemplate = getTemplate('accessories');
 
         Promise.all([requestDogAccessories, requestDogAccessoriesTemplate]).then(([dogAccessories, dogAccessoriesTemplate]) => {
@@ -243,7 +236,7 @@ class ProductsController {
     }
 
     loadDogAccessoryDetails(dogAccessoryId) {
-        let requestDogAccessoryDetails = getDogAccessoryDetails(dogAccessoryId);
+        let requestDogAccessoryDetails = database.getDogAccessoryDetails(dogAccessoryId);
         let requestDogAccessoryTemplate = getTemplate('accessory-details');
 
         Promise.all([requestDogAccessoryDetails, requestDogAccessoryTemplate]).then(([accessoryDetails, accessoryTemplate]) => {
@@ -260,7 +253,7 @@ class ProductsController {
     }
 
     loadCatAccessories() {
-        let requestCatAccessories = getAllCatAccessories();
+        let requestCatAccessories = database.getAllCatAccessories();
         let requestCatAccessoriesTemplate = getTemplate('accessories');
 
         Promise.all([requestCatAccessories, requestCatAccessoriesTemplate]).then(([catAccessories, catAccessoriesTemplate]) => {
@@ -279,7 +272,7 @@ class ProductsController {
     }
 
     loadCatAccessoryDetails(catAccessoryId) {
-        let requestCatAccessoryDetails = getCatAccessoryDetails(catAccessoryId);
+        let requestCatAccessoryDetails = database.getCatAccessoryDetails(catAccessoryId);
         let requestCatAccessoryTemplate = getTemplate('accessory-details');
 
         Promise.all([requestCatAccessoryDetails, requestCatAccessoryTemplate]).then(([accessoryDetails, accessoryTemplate]) => {

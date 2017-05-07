@@ -1,7 +1,5 @@
 import { getTemplate } from 'templates';
-import { getDogQuizResults } from 'db';
-import { getCatQuizResults } from 'db';
-
+import { database } from 'db';
 
 class BestPetController {
     
@@ -77,7 +75,7 @@ class BestPetController {
 
 
     filterDog(filter) {
-        let requestDogData = getDogQuizResults(filter);
+        let requestDogData = database.getDogQuizResults(filter);
         let quizTemplate = getTemplate('breeds');
 
         Promise.all([requestDogData, quizTemplate]).then(([dogBreedList, template]) => {
@@ -86,7 +84,7 @@ class BestPetController {
     }
 
     filterCat(filter) {
-        let requestCatData = getCatQuizResults(filter);
+        let requestCatData = database.getCatQuizResults(filter);
         let quizTemplate = getTemplate('breeds');
 
         Promise.all([requestCatData, quizTemplate]).then(([catBreedList, template]) => {
