@@ -35,6 +35,7 @@ SystemJS.config({
         'cart-controller': '/scripts/controllers/cart-controller.js',
         'breed-controller': '/scripts/controllers/breed-controller.js',
         'best-pet-controller': '/scripts/controllers/best-pet-controller.js',
+        'contacts=controller': '/scripts/controllers/contacts-controller.js',
         'filter-string-to-filter-object': '/scripts/helpers/filter-string-to-filter-object.js',
         'cart-manipulator': '/scripts/helpers/cart-manipulator.js'
     }

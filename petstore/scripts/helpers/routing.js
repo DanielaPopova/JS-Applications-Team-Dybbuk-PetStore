@@ -4,6 +4,7 @@ import { userController } from 'user-controller';
 import { breedController } from 'breed-controller';
 import { cartController } from 'cart-controller';
 import { bestPetController } from 'best-pet-controller';
+import { contactsController } from 'contacts-controller';
 import Navigo from 'navigo';
 
 let router = (() => {
@@ -118,6 +119,10 @@ let router = (() => {
 
         router.on('/best-pet/cat', () => {
             bestPetController.loadCatQuiz();
+        });
+
+         router.on('/contacts', () => {
+            contactsController.loadContacts();
         });
 
         router.notFound(() => {
