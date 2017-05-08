@@ -1,6 +1,40 @@
-# JavaScript Applications: Teamwork Assignment
+# Team Dybbuk - Online Petstore
 
-This document describes the teamwork assignment for Telerik Academy students in "JavaScript Applications" course
+## Application Description
+
+Online Petstore is a Single-Page Application developed by Team "Dybbuk" as part of the JavaScript Applications course at Telerik Academy 2016/17.
+
+### Main features:
+
+- login/register user
+- add/delete items from shopping cart
+- filter dog food by dog size/dog age category/food amount
+- filter cat food by cat age category/food amount
+- get statistics about most intelligent dog breeds/appartment-friendly dogs/best dogs for families with children
+- get statistics about low-maintenance cats/best cats for families with children
+- share cat/dog breed information on facebook
+
+### Used Libreries:
+
+- [SystemJS](https://github.com/systemjs/systemjs)
+- [Navigo](https://github.com/krasimir/navigo)
+- [Twitter Bootstrap](http://getbootstrap.com/)
+- [Handlebars](http://handlebarsjs.com/)
+- [jQuery](https://jquery.com/)
+- [Firebase](https://firebase.google.com/) 
+
+### Team Members
+
+| Name | Student system username |
+|:----:|:------------------------|
+| [Georgi Tonchev](https://github.com/ShwangShwing) | ShwangShwing   |
+| [Daniela Popova](https://github.com/DanielaPopova) | Daniela_Popova | 
+| [Ilia Velev](https://github.com/velev1) | velev1         | 
+
+### Live demos
+
+* [YouTube Video](https://youtu.be/EZR42OlYUu0)
+* [Live Demo]()
 
 ## Project Description
 
