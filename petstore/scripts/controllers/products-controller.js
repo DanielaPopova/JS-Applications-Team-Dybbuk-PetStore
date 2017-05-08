@@ -266,7 +266,7 @@ class ProductsController {
             $('.add-to-cart-button').click(function() {
                 const indexInCatAccessories = $(this).val();
 
-                addToCart(catAccessories[indexInCatAccessories]);
+                cartManipulator.addToCart(catAccessories[indexInCatAccessories]);
             });
         });
     }
