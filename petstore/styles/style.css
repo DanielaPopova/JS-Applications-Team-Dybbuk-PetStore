@@ -215,6 +215,23 @@ img {
     justify-content: center;
 }
 
+.breed-details-center {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#dog-breed-details, #cat-breed-details {    
+    padding: 10px;
+    background-color: #2A1B3D;
+    color: #fff;
+}
+
+#dog-breed-details ul, #cat-breed-details ul {
+    color: black;
+}
+
 #stars-1 .star.star-1 {
     background-color: purple;
 }
@@ -380,7 +397,7 @@ div.el-inline {
 }
 
 #cat-dog-radio div{
-    background-color: #6E3667 ;
+    background-color: #2A1B3D;
     padding: 20px 0 20px 40px;
 }
 #holder {
