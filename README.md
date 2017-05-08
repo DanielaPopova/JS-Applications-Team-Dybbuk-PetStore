@@ -14,7 +14,7 @@ Online Petstore is a Single-Page Application developed by Team "Dybbuk" as part 
 - get statistics about low-maintenance cats/best cats for families with children
 - share cat/dog breed information on facebook
 
-### Used Libreries:
+### Used Libraries:
 
 - [SystemJS](https://github.com/systemjs/systemjs)
 - [Navigo](https://github.com/krasimir/navigo)
