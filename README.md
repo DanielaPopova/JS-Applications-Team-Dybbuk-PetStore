@@ -7,7 +7,7 @@ Online Petstore is a Single-Page Application developed by Team "Dybbuk" as part 
 ### Main features:
 
 - login/register user
-- add/delete items from shopping cart
+- add/delete items to/from shopping cart
 - filter dog food by dog size/dog age category/food amount
 - filter cat food by cat age category/food amount
 - get statistics about most intelligent dog breeds/appartment-friendly dogs/best dogs for families with children
